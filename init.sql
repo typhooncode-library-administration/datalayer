@@ -1,41 +1,50 @@
--- SQL-Skript zum Erstellen einer Testtabelle
---CREATE TABLE IF NOT EXISTS test (
---id SERIAL PRIMARY KEY,
---name VARCHAR(255) NOT NULL
---);
-CREATE TABLE IF NOT EXISTS authors (
-  author_id SERIAL PRIMARY KEY,
-  title VARCHAR(100),
-  first_name VARCHAR(100),
-  last_name VARCHAR(100),
-  birth_date DATE
+-- First step create all the tables with their relationships
+CREATE TABLE IF NOT EXISTS libraries (
+  library_id SERIAL PRIMARY KEY,
+  library_name VARCHAR(100) NOT NULL,
+  street VARCHAR(100) NOT NULL,
+  house_number VARCHAR(10) NOT NULL,
+  city VARCHAR(50) NOT NULL,
+  postal_code VARCHAR(15) NOT NULL,
+  latitude DECIMAL(9.6) NOT NULL,
+  longitude DECIMAL(9.6) NOT NULL,
+  country_code VARCHAR(5) NOT NULL,
+  landline_area_code VARCHAR(5) NOT NULL,
+  landline_number VARCHAR(20) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  established_date DATE,
+  total_study_seats SMALLINT,
+  total_parking_spots SMALLINT,
+  total_books INT
 );
 
-CREATE TABLE IF NOT EXISTS books (
-  book_id SERIAL PRIMARY KEY,
-  fk_media_id INT NOT NULL,
-  isbn_10 VARCHAR(15),
-  dewey_decimal TEXT,
-  _edition VARCHAR(30),
-  page_count INT,
-  overview TEXT,
-  excerpt TEXT,
-  synopsis TEXT,
-  reviewers TEXT,
-  related TEXT,
-  other_isbns VARCHAR(20)
-);
-
-CREATE TABLE IF NOT EXISTS employees (
-  employee_id SERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS library_opening_hours (
   fk_library_id INT NOT NULL,
-  first_name VARCHAR(50) NOT NULL,
-  last_name VARCHAR(50) NOT NULL,
-  birth_date DATE NOT NULL,
-  email VARCHAR(100) UNIQUE NOT NULL,
-  landline_area_code VARCHAR(10),
-  landline_number VARCHAR(20),
-  hire_date DATE NOT NULL,
-  position VARCHAR(100),
-  is_manager BOOLEAN DEFAULT FALSE NOT NULL
+  day_of_week SMALLINT,
+  open_time TIME NOT NULL,
+  close_time TIME NOT NULL,
+  PRIMARY KEY (fk_library_id, day_of_week),
+  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS special_opening_hours (
+  fk_library_id INT NOT NULL,
+  special_date DATE NOT NULL,
+  description VARCHAR(255),
+  open_time TIME NOT NULL,
+  close_time TIME NOT NULL,
+  PRIMARY KEY (fk_library_id, special_date),
+  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS events (
+  event_id SERIAL PRIMARY KEY fk_library_id INT NOT NULL,
+  floor SMALLINT,
+  room VARCHAR(10),
+  title VARCHAR(100) NOT NULL,
+  description TEXT,
+  start_time TIMESTAMP NOT NULL,
+  end_time TIMESTAMP NOT NULL,
+  max_participants SMALLINT NOT NULL,
+  registered_participants SMALLINT FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
+)
