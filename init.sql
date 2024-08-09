@@ -98,3 +98,30 @@ CREATE TABLE IF NOT EXISTS library_managers (
   FOREIGN KEY (fk_employee_id) REFERENCES employees (employee_id) ON UPDATE CASCADE ON DELETE RESTRICT,
   PRIMARY KEY (fk_library_id, fk_employee_id)
 );
+
+CREATE TABLE IF NOT EXISTS universities (
+  university_id SERIAL PRIMARY KEY,
+  university_name VARCHAR(250) NOT NULL,
+  postalc_code VARCHAR(5) NOT NULL
+);
+
+CREATE TYPE user_type AS ENUM ('internal', 'general');
+
+CREATE TABLE IF NOT EXISTS members (
+  member_id SERIAL PRIMARY KEY,
+  fk_univerisity_id INT,
+  user_type user_type DEFAULT 'general',
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  birthdate DATE NOT NULL,
+  street VARCHAR(100) NOT NULL,
+  house_number VARCHAR(100) NOT NULL,
+  city VARCHAR(50) NOT NULL,
+  postal_code VARCHAR(5) NOT NULL,
+  country_code VARCHAR(5),
+  landline_area_code VARCHAR(10),
+  landline_number VARCHAR(20),
+  mobile_prefix VARCHAR(10),
+  mobile_number VARCHAR(20),
+  email VARCHAR(100) NOT NULL UNIQUE
+);
