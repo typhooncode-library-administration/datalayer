@@ -125,3 +125,5 @@ CREATE TABLE IF NOT EXISTS members (
   mobile_number VARCHAR(20),
   email VARCHAR(100) NOT NULL UNIQUE
 );
+
+--
