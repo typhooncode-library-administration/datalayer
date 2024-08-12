@@ -1,6 +1,21 @@
 -- First step create all the tables with their relationships
+CREATE TABLE IF NOT EXISTS universities (
+  university_id SERIAL PRIMARY KEY,
+  university_name VARCHAR(250) NOT NULL,
+  postal_code VARCHAR(5) NOT NULL,
+  CONSTRAINT unique_postal_code_universityname UNIQUE (postal_code, university_name)
+);
+
+-- The following table 'libraries' represents an aggregation relationship with the 'universities' table
+-- specifically for libraries that are not public (is_public = FALSE).
+-- In this relationship, non-public libraries are considered parts of a university (the whole),
+-- but they can exist independently if the university is deleted.
+-- This is enforced by the FOREIGN KEY constraint with ON DELETE SET NULL,
+-- which allows non-public libraries to continue existing without a university association.
 CREATE TABLE IF NOT EXISTS libraries (
   library_id SERIAL PRIMARY KEY,
+  fk_univerisity_id int,
+  is_public BOOLEAN NOT NULL,
   library_name VARCHAR(100) NOT NULL,
   street VARCHAR(100) NOT NULL,
   house_number VARCHAR(10) NOT NULL,
@@ -15,7 +30,9 @@ CREATE TABLE IF NOT EXISTS libraries (
   established_date DATE,
   total_study_seats SMALLINT,
   total_parking_spots SMALLINT,
-  total_books INT
+  total_books INT,
+  FOREIGN KEY (fk_univerisity_id) REFERENCES universities (university_id) ON UPDATE CASCADE ON DELETE SET NULL,
+  CONSTRAINT unique_library UNIQUE (library_name, postal_code, street, house_number)
 );
 
 CREATE TABLE IF NOT EXISTS library_opening_hours (
@@ -99,12 +116,6 @@ CREATE TABLE IF NOT EXISTS library_managers (
   PRIMARY KEY (fk_library_id, fk_employee_id)
 );
 
-CREATE TABLE IF NOT EXISTS universities (
-  university_id SERIAL PRIMARY KEY,
-  university_name VARCHAR(250) NOT NULL,
-  postalc_code VARCHAR(5) NOT NULL
-);
-
 CREATE TYPE user_type AS ENUM ('internal', 'general');
 
 CREATE TABLE IF NOT EXISTS members (
@@ -126,4 +137,5 @@ CREATE TABLE IF NOT EXISTS members (
   email VARCHAR(100) NOT NULL UNIQUE
 );
 
---
+-- Definition of the indexes
+CREATE INDEX hash_postal_code ON universities USING hash (postal_code)
