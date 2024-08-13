@@ -74,12 +74,22 @@ CREATE TABLE IF NOT EXISTS positions (
   position_description TEXT
 );
 
+CREATE TYPE gender_type AS ENUM (
+  'male',
+  'female',
+  'non-binary',
+  'diverse',
+  'prefer_not_to_say'
+);
+
 CREATE TABLE IF NOT EXISTS employees (
   employee_id SERIAL PRIMARY KEY,
   fk_library_id INT NOT NULL,
   fk_position_id INT NOT NULL,
   fk_supervisor_id INT,
+  gender gender_type DEFAULT 'prefer_not_to_say',
   first_name VARCHAR(50) NOT NULL,
+  middle_name VARCHAR(50),
   last_name VARCHAR(50) NOT NULL,
   birthdate DATE NOT NULL,
   email VARCHAR(100) NOT NULL UNIQUE,
@@ -119,7 +129,9 @@ CREATE TABLE IF NOT EXISTS members (
   member_id SERIAL PRIMARY KEY,
   fk_univerisity_id INT,
   is_student BOOLEAN NOT NULL,
+  gender gender_type DEFAULT 'prefer_not_to_say',
   first_name VARCHAR(50) NOT NULL,
+  middle_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
   birthdate DATE NOT NULL,
   street VARCHAR(100) NOT NULL,
@@ -135,13 +147,13 @@ CREATE TABLE IF NOT EXISTS members (
   FOREIGN KEY (fk_univerisity_id) REFERENCES universities (university_id) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-CREATE TYPE lib_card_status AS ENUM ('valid', 'invalid', 'expired');
+CREATE TYPE library_cards_status AS ENUM ('valid', 'invalid', 'expired');
 
 CREATE TABLE IF NOT EXISTS library_cards (
   library_card_id SERIAL PRIMARY KEY,
   fk_member_id INT NOT NULL,
   fk_library_id INT NOT NULL,
-  status lib_card_status NOT NULL DEFAULT 'invalid',
+  status libray_cards_status NOT NULL DEFAULT 'invalid',
   card_number VARCHAR(20) UNIQUE,
   issue_date DATE NOT NULL,
   extension_date DATE,
@@ -160,9 +172,9 @@ CREATE TABLE IF NOT EXISTS media_inventory (
   FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-CREATE TYPE med_inst_status AS ENUM ('available', 'checked_out', 'reserved', 'lost');
+CREATE TYPE media_instances_status AS ENUM ('available', 'checked_out', 'reserved', 'lost');
 
-CREATE TYPE med_inst_acc_restriction AS ENUM (
+CREATE TYPE media_instances_access_restriction AS ENUM (
   'internal',
   'external',
   'general',
@@ -172,9 +184,9 @@ CREATE TYPE med_inst_acc_restriction AS ENUM (
 CREATE TABLE IF NOT EXISTS media_instances (
   instance_id SERIAL PRIMARY KEY,
   fk_media_inventory_id INT NOT NULL,
-  status med_inst_status NOT NULL DEFAULT 'available',
+  status media_instances_status NOT NULL DEFAULT 'available',
   location VARCHAR(100),
-  access_restriction med_inst_acc_restriction NOT NULL,
+  access_restriction media_instances_access_restriction NOT NULL,
   FOREIGN KEY (fk_media_inventory_id) REFERENCES media_inventory (media_inventory_id) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
@@ -192,13 +204,13 @@ CREATE TABLE IF NOT EXISTS media (
   FOREIGN KEY (fk_media_type_id) REFERENCES media_types (media_type_id) ON UPDATE RESTRICT ON DELETE RESTRICT
 );
 
-CREATE TYPE enum_member_type AS ENUM ('internal', 'external', 'general');
+CREATE TYPE loan_fee_policies_member_type AS ENUM ('internal', 'external', 'general');
 
 CREATE TABLE IF NOT EXISTS loan_fee_policies (
   policy_id SERIAL PRIMARY KEY,
   fk_media_type_id INT NOT NULL,
   fk_library_id INT NOT NULL,
-  member_type enum_member_type NOT NULL DEFAULT 'general',
+  member_type loan_fee_policies_member_type NOT NULL DEFAULT 'general',
   max_loan_duration INT NOT NULL,
   max_extensions INT NOT NULL,
   extension_duration INT NOT NULL, -- in days
@@ -222,7 +234,7 @@ CREATE TABLE IF NOT EXISTS magazines (
   publisher VARCHAR(255) NOT NULL FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TYPE book_binding AS ENUM (
+CREATE TYPE books_binding AS ENUM (
   'Hardcover',
   'Paperback',
   'Spiral Binding',
@@ -236,7 +248,7 @@ CREATE TABLE IF NOT EXISTS books (
   isbn -10 VARCHAR(10),
   isbn -13 VARCHAR(13),
   dewey_code VARCHAR(10),
-  binding book_binding NOT NULL,
+  binding books_binding NOT NULL,
   edition VARCHAR(50),
   page_count INT NOT NULL,
   overview TEXT,
@@ -245,6 +257,82 @@ CREATE TABLE IF NOT EXISTS books (
   reviews TEXT,
   related TEXT,
   FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS publishers (
+  publisher_id SERIAL PRIMARY KEY,
+  publisher_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS genres (
+  genre_id SERIAL PRIMARY KEY,
+  genre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS authors (
+  author_id SERIAL PRIMARY KEY,
+  title VARCHAR(100),
+  gender gender_type DEFAULT 'prefer_not_to_say',
+  first_name VARCHAR(50) NOT NULL,
+  middle_name VARCHAR(50),
+  last_name VARCHAR(50) NOT NULL,
+  birthdate DATE
+);
+
+CREATE TABLE IF NOT EXISTS rel_publishers_books (
+  fk_publisher_id INT NOT NULL,
+  fk_book_id INT NOT NULL,
+  FOREIGN KEY (fk_publisher_id) REFERENCES publisher (publisher_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  PRIMARY KEY (fk_publisher_id, fk_book_id)
+);
+
+CREATE TABLE IF NOT EXISTS rel_genre_books (
+  fk_genre_id INT NOT NULL,
+  fk_book_id INT NOT NULL,
+  FOREIGN KEY (fk_genre_id) REFERENCES genres (genre_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  PRIMARY KEY (fk_genre_id, fk_book_id)
+);
+
+CREATE TABLE IF NOT EXISTS rel_authors_books (
+  fk_author_id INT NOT NULL,
+  fk_book_id INT NOT NULL,
+  FOREIGN KEY (fk_author_id) REFERENCES authors (author_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  FOREIGN KEY (fk_book_id) REFERENCES books (book_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  PRIMARY KEY (fk_author_id, fk_book_id)
+);
+
+CREATE TYPE loans_status AS ENUM ('active', 'completed', 'overdue') DEFAULT 'active';
+
+CREATE TABLE IF NOT EXISTS loans (
+  loan_id SERIAL PRIMARY KEY,
+  fk_member_id INT NOT NULL,
+  loan_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  status loans_status DEFAULT 'active',
+  FOREIGN KEY (fk_member_id) REFERENCES members (member_id) ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+CREATE TYPE rel_loan_items_status AS ENUM ('on loan', 'returned', 'lost');
+
+CREATE TABLE IF NOT EXISTS rel_loan_items (
+  loan_item_id SERIAL PRIMARY KEY,
+  fk_loan_id INT NOT NULL,
+  fk_media_instance_id INT NOT NULL,
+  loan_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  due_date DATE NOT NULL,
+  return_date DATE,
+  max_extensions SMALLINT NOT NULL,
+  extensions_used SMALLINT DEFAULT 0,
+  status rel_loan_items_status NOT NULL DEFAULT 'on_loan',
+  FOREIGN KEY (fk_loan_id) REFERENCES loan (loan_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  FOREIGN KEY (fk_media_instance_id) REFERENCES media_instances (instance_id) ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS loan_extensions (
+  extenison_id SERIAL PRIMARY KEY,
+  fk_loan_items_id INT NOT NULL,
+  extension_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  new_due_date DATE,
+  FOREIGN KEY (fk_loan_item_id) REFERENCES rel_loan_items (loan_item_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Definition of the indexes
