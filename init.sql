@@ -3,8 +3,11 @@ CREATE TABLE IF NOT EXISTS universities (
   university_id SERIAL PRIMARY KEY,
   university_name VARCHAR(250) NOT NULL,
   postal_code VARCHAR(5) NOT NULL,
-  CONSTRAINT unique_postal_code_universityname UNIQUE (postal_code, university_name)
+  CONSTRAINT unique_university UNIQUE (postal_code, university_name)
 );
+
+-- Using Hash-Index on universities for faster lookup
+CREATE INDEX hash_postal_code ON universities USING hash (postal_code);
 
 -- The following table 'libraries' represents an aggregation relationship with the 'universities' table
 -- specifically for libraries that are not public (is_public = FALSE).
@@ -41,7 +44,7 @@ CREATE TABLE IF NOT EXISTS library_opening_hours (
   open_time TIME NOT NULL,
   close_time TIME NOT NULL,
   PRIMARY KEY (fk_library_id, day_of_week),
-  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE,
 );
 
 CREATE TABLE IF NOT EXISTS special_opening_hours (
@@ -64,14 +67,17 @@ CREATE TABLE IF NOT EXISTS events (
   start_time TIMESTAMP NOT NULL,
   end_time TIMESTAMP NOT NULL,
   max_participants SMALLINT NOT NULL,
-  registered_participants SMALLINT,
-  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE RESTRICT
+  registered_participants SMALLINT DEFAULT 0,
+  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT unique_event_time UNIQUE (fk_library_id, floor, room, start_time),
+  CONSTRAINT unique_event_time UNIQUE (fk_library_id, floor, room, end_time)
 );
 
 CREATE TABLE IF NOT EXISTS positions (
   position_id SERIAL PRIMARY KEY,
   position_name VARCHAR(100),
-  position_description TEXT
+  position_description TEXT,
+  CONSTRAINT unique_positions UNIQUE (position_name)
 );
 
 CREATE TYPE gender_type AS ENUM (
@@ -106,7 +112,8 @@ CREATE TABLE IF NOT EXISTS employees (
 CREATE TABLE IF NOT EXISTS activities (
   activity_id SERIAL PRIMARY KEY,
   activity_name VARCHAR(100),
-  activity_description TEXT
+  activity_description TEXT,
+  CONSTRAINT unique_activities UNIQUE (activity_name)
 );
 
 CREATE TABLE IF NOT EXISTS rel_employee_activites (
@@ -118,8 +125,8 @@ CREATE TABLE IF NOT EXISTS rel_employee_activites (
 );
 
 CREATE TABLE IF NOT EXISTS library_managers (
-  fk_library_id INT NOT NULL UNIQUE,
-  fk_employee_id INT NOT NULL UNIQUE,
+  fk_library_id INT NOT NULL,
+  fk_employee_id INT NOT NULL,
   FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE RESTRICT,
   FOREIGN KEY (fk_employee_id) REFERENCES employees (employee_id) ON UPDATE CASCADE ON DELETE RESTRICT,
   PRIMARY KEY (fk_library_id, fk_employee_id)
@@ -151,10 +158,10 @@ CREATE TYPE library_cards_status AS ENUM ('valid', 'invalid', 'expired');
 
 CREATE TABLE IF NOT EXISTS library_cards (
   library_card_id SERIAL PRIMARY KEY,
-  fk_member_id INT NOT NULL,
+  fk_member_id INT NOT NULL UNIQUE,
   fk_library_id INT NOT NULL,
   status libray_cards_status NOT NULL DEFAULT 'invalid',
-  card_number VARCHAR(20) UNIQUE,
+  card_number INT NOT NULL DEFAULT 1,
   issue_date DATE NOT NULL,
   extension_date DATE,
   expiry_date DATE NOT NULL,
@@ -192,7 +199,7 @@ CREATE TABLE IF NOT EXISTS media_instances (
 
 CREATE TABLE IF NOT EXISTS media_types (
   media_type_id SERIAL PRIMARY KEY,
-  media_type_name VARCHAR(50) NOT NULL
+  media_type_name VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS media (
@@ -201,7 +208,8 @@ CREATE TABLE IF NOT EXISTS media (
   title VARCHAR(100) NOT NULL,
   publish_date INT,
   language VARCHAR(50) NOT NULL,
-  FOREIGN KEY (fk_media_type_id) REFERENCES media_types (media_type_id) ON UPDATE RESTRICT ON DELETE RESTRICT
+  FOREIGN KEY (fk_media_type_id) REFERENCES media_types (media_type_id) ON UPDATE RESTRICT ON DELETE RESTRICT,
+  CONSTRAINT unique_media UNIQUE (title, fk_media_type_id, publish_date, language)
 );
 
 CREATE TYPE loan_fee_policies_member_type AS ENUM ('internal', 'external', 'general');
@@ -217,7 +225,8 @@ CREATE TABLE IF NOT EXISTS loan_fee_policies (
   overdue_fee DECIMAL(7, 2) NOT NULL,
   max_overdue_fee DECIMAL(7, 2) NOT NULL,
   FOREIGN KEY (fk_media_type_id) REFERENCES media_types (media_type_id) ON UPDATE RESTRICT ON DELETE RESTRICT,
-  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT unique_loan_fee_policy UNIQUE (fk_media_type_id, fk_library_id, member_type)
 );
 
 CREATE TABLE IF NOT EXISTS rel_media_inventory_media (
@@ -231,7 +240,8 @@ CREATE TABLE IF NOT EXISTS rel_media_inventory_media (
 CREATE TABLE IF NOT EXISTS magazines (
   magazine_id SERIAL PRIMARY KEY,
   fk_media_id BIGINT NOT NULL,
-  publisher VARCHAR(255) NOT NULL FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE
+  publisher VARCHAR(255) NOT NULL FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT unique_magazine UNIQUE (fk_media_id)
 );
 
 CREATE TYPE books_binding AS ENUM (
@@ -245,8 +255,8 @@ CREATE TYPE books_binding AS ENUM (
 CREATE TABLE IF NOT EXISTS books (
   book_id SERIAL PRIMARY KEY,
   fk_media_id BIGINT NOT NULL,
-  isbn -10 VARCHAR(10),
-  isbn -13 VARCHAR(13),
+  isbn_10 VARCHAR(10),
+  isbn_13 VARCHAR(13),
   dewey_code VARCHAR(10),
   binding books_binding NOT NULL,
   edition VARCHAR(50),
@@ -256,17 +266,22 @@ CREATE TABLE IF NOT EXISTS books (
   synopsis TEXT,
   reviews TEXT,
   related TEXT,
-  FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE,
 );
 
+/* sql-formatter-disable */
+-- creating some partial indexes on books
+CREATE UNIQUE INDEX unique_isbn_10 ON books (isbn_10) WHERE isbn_10 IS NOT NULL;
+CREATE UNIQUE INDEX unique_isbn_13 ON books (isbn_13) WHERE isbn_13 IS NOT NULL;
+/* sql-formatter-enable */
 CREATE TABLE IF NOT EXISTS publishers (
   publisher_id SERIAL PRIMARY KEY,
-  publisher_name VARCHAR(255) NOT NULL
+  publisher_name VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS genres (
   genre_id SERIAL PRIMARY KEY,
-  genre VARCHAR(50) NOT NULL
+  genre VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS authors (
@@ -276,7 +291,8 @@ CREATE TABLE IF NOT EXISTS authors (
   first_name VARCHAR(50) NOT NULL,
   middle_name VARCHAR(50),
   last_name VARCHAR(50) NOT NULL,
-  birthdate DATE
+  birthdate DATE,
+  CONSTRAINT unique_author_name_birthdate UNIQUE (first_name, middle_name, last_name, birthdate)
 );
 
 CREATE TABLE IF NOT EXISTS rel_publishers_books (
@@ -324,7 +340,8 @@ CREATE TABLE IF NOT EXISTS rel_loan_items (
   extensions_used SMALLINT DEFAULT 0,
   status rel_loan_items_status NOT NULL DEFAULT 'on_loan',
   FOREIGN KEY (fk_loan_id) REFERENCES loan (loan_id) ON UPDATE CASCADE ON DELETE RESTRICT,
-  FOREIGN KEY (fk_media_instance_id) REFERENCES media_instances (instance_id) ON UPDATE CASCADE ON DELETE RESTRICT
+  FOREIGN KEY (fk_media_instance_id) REFERENCES media_instances (instance_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT unique_loan_media_instance UNIQUE (fk_loan_id, fk_media_instance_id)
 );
 
 CREATE TABLE IF NOT EXISTS loan_extensions (
@@ -332,8 +349,6 @@ CREATE TABLE IF NOT EXISTS loan_extensions (
   fk_loan_items_id INT NOT NULL,
   extension_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
   new_due_date DATE,
-  FOREIGN KEY (fk_loan_item_id) REFERENCES rel_loan_items (loan_item_id) ON UPDATE CASCADE ON DELETE CASCADE
+  FOREIGN KEY (fk_loan_item_id) REFERENCES rel_loan_items (loan_item_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT unique_loan_extension UNIQUE (fk_loan_item_id, extension_date)
 );
-
--- Definition of the indexes
-CREATE INDEX hash_postal_code ON universities USING hash (postal_code)
