@@ -41,8 +41,8 @@ CREATE TABLE IF NOT EXISTS libraries (
 CREATE TABLE IF NOT EXISTS library_opening_hours (
   fk_library_id INT NOT NULL,
   day_of_week SMALLINT,
-  open_time TIME NOT NULL,
-  close_time TIME NOT NULL,
+  open_time TIME,
+  close_time TIME,
   PRIMARY KEY (fk_library_id, day_of_week),
   FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS special_opening_hours (
   fk_library_id INT NOT NULL,
   special_date DATE NOT NULL,
   description VARCHAR(255),
-  open_time TIME NOT NULL,
-  close_time TIME NOT NULL,
+  open_time TIME,
+  close_time TIME,
   PRIMARY KEY (fk_library_id, special_date),
   FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
@@ -80,13 +80,7 @@ CREATE TABLE IF NOT EXISTS positions (
   CONSTRAINT unique_positions UNIQUE (position_name)
 );
 
-CREATE TYPE gender_type AS ENUM(
-  'male',
-  'female',
-  'non-binary',
-  'diverse',
-  'prefer_not_to_say'
-);
+CREATE TYPE gender_type AS ENUM('male', 'female', 'non-binary', 'diverse', 'prefer_not_to_say');
 
 CREATE TABLE IF NOT EXISTS employees (
   employee_id SERIAL PRIMARY KEY,
@@ -189,12 +183,7 @@ CREATE TABLE IF NOT EXISTS media_inventory (
 
 CREATE TYPE media_instances_status AS ENUM('available', 'checked_out', 'reserved', 'lost');
 
-CREATE TYPE media_instances_access_restriction AS ENUM(
-  'internal',
-  'external',
-  'general',
-  'reference_only'
-);
+CREATE TYPE media_instances_access_restriction AS ENUM('internal', 'external', 'general', 'reference_only');
 
 CREATE TABLE IF NOT EXISTS media_instances (
   instance_id SERIAL PRIMARY KEY,
@@ -288,10 +277,7 @@ CREATE TABLE IF NOT EXISTS publishers (
   publisher_name VARCHAR(255) NOT NULL UNIQUE
 );
 
-CREATE TABLE IF NOT EXISTS genres (
-  genre_id SERIAL PRIMARY KEY,
-  genre VARCHAR(50) NOT NULL UNIQUE
-);
+CREATE TABLE IF NOT EXISTS genres (genre_id SERIAL PRIMARY KEY, genre VARCHAR(50) NOT NULL UNIQUE);
 
 CREATE TABLE IF NOT EXISTS authors (
   author_id SERIAL PRIMARY KEY,
