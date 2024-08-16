@@ -154,6 +154,14 @@ CREATE TABLE IF NOT EXISTS members (
   FOREIGN KEY (fk_univerisity_id) REFERENCES universities (university_id) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
+CREATE TABLE IF NOT EXISTS rel_event_participants (
+  fk_event_id INT NOT NULL,
+  fk_member_id INT NOT NULL,
+  FOREIGN KEY (fk_event_id) REFERENCES events (event_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+  FOREIGN KEY (fk_member_id) REFERENCES members (member_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  PRIMARY KEY (fk_event_id, fk_member_id)
+);
+
 CREATE TYPE library_cards_status AS ENUM('valid', 'invalid', 'expired');
 
 CREATE TABLE IF NOT EXISTS library_cards (
