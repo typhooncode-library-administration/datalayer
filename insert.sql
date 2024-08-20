@@ -1470,3 +1470,86 @@ VALUES
     (20, 'Grant Writing', 'Write grant proposals to secure funding for programs'),
     (20, 'Report Writing', 'Prepare reports on program outcomes for library management'),
     (20, 'Stakeholder Engagement', 'Engage with stakeholders to ensure program success');
+
+-- Assigning additional cross-functional activities to employees to reflect broader skillsets beyond their primary roles. 
+-- These tasks fall outside their typical job responsibilities but are still relevant to the library's operations.
+-- Heinrich Heine University Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (1, 19), -- Library Manager: Event Planning (nicht-typisch)
+    (2, 27) -- Assistant Library Manager: Press Releases (nicht-typisch)
+;
+
+-- Assistant Library Manager: Press Releases (nicht-typisch)
+-- Düsseldorf University of Applied Sciences Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (16, 21), -- Librarian: Recruitment (nicht-typisch)
+    (17, 30) -- Archivist: Vendor Coordination (nicht-typisch)
+;
+
+-- University of Wuppertal Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (31, 23), -- Systems Librarian: Book Shelving (nicht-typisch)
+    (32, 37) -- IT Support Specialist: Lesson Planning (nicht-typisch)
+;
+
+-- University of Duisburg-Essen Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (46, 19), -- Database Administrator: Event Planning (nicht-typisch)
+    (47, 24) -- Web Developer: Circulation Desk Support (nicht-typisch)
+;
+
+-- Folkwang University of the Arts Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (61, 17), -- Event Coordinator: Routine Maintenance (nicht-typisch)
+    (62, 12) -- Administrative Assistant: Network Management (nicht-typisch)
+;
+
+-- Bergische Universität Wuppertal Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (76, 25), -- HR Manager: Front Desk Support (nicht-typisch)
+    (77, 33) -- Library Assistant: Patrol Duties (nicht-typisch)
+;
+
+-- Hochschule Niederrhein Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (91, 20), -- Customer Service Representative: Filing and Documentation (nicht-typisch)
+    (92, 8) -- Public Relations Officer: Digital Preservation (nicht-typisch)
+;
+
+-- University of Applied Sciences Ruhr West Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (106, 9), -- Facilities Manager: Systems Maintenance (nicht-typisch)
+    (107, 6) -- Maintenance Worker: Collection Development (nicht-typisch)
+;
+
+-- University of Cologne Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (121, 16), -- Security Officer: UX/UI Design (nicht-typisch)
+    (122, 18) -- Custodian: Vendor Coordination (nicht-typisch)
+;
+
+-- German Sport University Cologne Library
+INSERT INTO
+    rel_employee_activites (fk_employee_id, fk_activity_id)
+VALUES
+    (136, 22), -- Instructor: Employee Onboarding (nicht-typisch)
+    (137, 15) -- Program Coordinator: Website Maintenance (nicht-typisch)
+;
