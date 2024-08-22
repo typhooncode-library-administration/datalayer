@@ -1568,15 +1568,15 @@ VALUES
 INSERT INTO
     media (fk_media_type_id, title, publish_date, language)
 VALUES
-    (1, 'Harry Potter and the Philosophers Stone', 1997, 'English'),
-    (1, 'Harry Potter and the Chamber of Secrets', 1998, 'English'),
-    (1, 'Harry Potter and the Prisoner of Azkaban', 1999, 'English'),
-    (1, 'Harry Potter and the Goblet of Fire', 2000, 'English'),
-    (1, 'Harry Potter and the Order of the Phoenix', 2003, 'English'),
-    (1, 'Harry Potter and the Half-Blood Prince', 2005, 'English'),
-    (1, 'Harry Potter and the Deathly Hallows', 2007, 'English'),
-    (1, 'The Fellowship of the Ring', 1954, 'English'),
-    (1, 'The Two Towers', 1954, 'English'),
+    (1, 'Harry Potter and the Philosophers Stone', 1997, 'English'), --1
+    (1, 'Harry Potter and the Chamber of Secrets', 1998, 'English'), --2
+    (1, 'Harry Potter and the Prisoner of Azkaban', 1999, 'English'), --3
+    (1, 'Harry Potter and the Goblet of Fire', 2000, 'English'), --4
+    (1, 'Harry Potter and the Order of the Phoenix', 2003, 'English'), --5
+    (1, 'Harry Potter and the Half-Blood Prince', 2005, 'English'), --6
+    (1, 'Harry Potter and the Deathly Hallows', 2007, 'English'), --7
+    (1, 'The Fellowship of the Ring', 1954, 'English'), --8
+    (1, 'The Two Towers', 1954, 'English'), --9
     (1, 'The Return of the King', 1955, 'English'),
     (1, 'The Hobbit', 1937, 'English'),
     (1, 'The Silmarillion', 1977, 'English'),
@@ -1721,7 +1721,7 @@ INSERT INTO
 VALUES
     (1, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
     (1, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (1, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (1, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Düsseldorf University of Applied Sciences Library
@@ -1730,7 +1730,7 @@ INSERT INTO
 VALUES
     (2, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
     (2, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (2, 2, 2, 0, 0) -- The Fellowship of the Ring
+    (2, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Wuppertal Library
@@ -1739,7 +1739,7 @@ INSERT INTO
 VALUES
     (3, 4, 4, 0, 0), -- Harry Potter and the Philosopher's Stone
     (3, 3, 3, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (3, 2, 2, 0, 0) -- The Fellowship of the Ring
+    (3, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Duisburg-Essen Library - Duisburg Campus
@@ -1748,7 +1748,7 @@ INSERT INTO
 VALUES
     (4, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
     (4, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (4, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (4, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Folkwang University of the Arts Library
@@ -1757,7 +1757,7 @@ INSERT INTO
 VALUES
     (5, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
     (5, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (5, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (5, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Bergische Universität Wuppertal Library - Campus Haspel
@@ -1766,7 +1766,7 @@ INSERT INTO
 VALUES
     (6, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
     (6, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (6, 2, 2, 0, 0) -- The Fellowship of the Ring
+    (6, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Hochschule Niederrhein Library - Campus Krefeld
@@ -1775,7 +1775,7 @@ INSERT INTO
 VALUES
     (7, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
     (7, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (7, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (7, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Applied Sciences Ruhr West Library
@@ -1784,7 +1784,7 @@ INSERT INTO
 VALUES
     (8, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
     (8, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (8, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (8, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Cologne Library
@@ -1793,7 +1793,7 @@ INSERT INTO
 VALUES
     (9, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
     (9, 4, 4, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (9, 3, 3, 0, 0) -- The Fellowship of the Ring
+    (9, 3, 3, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- German Sport University Cologne Library
@@ -1802,7 +1802,7 @@ INSERT INTO
 VALUES
     (10, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
     (10, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (10, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (10, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbücherei Düsseldorf - Zentralbibliothek
@@ -1811,7 +1811,7 @@ INSERT INTO
 VALUES
     (11, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
     (11, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (11, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (11, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbibliothek Essen
@@ -1820,7 +1820,7 @@ INSERT INTO
 VALUES
     (12, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
     (12, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (12, 2, 2, 0, 0) -- The Fellowship of the Ring
+    (12, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbücherei Duisburg
@@ -1829,7 +1829,7 @@ INSERT INTO
 VALUES
     (13, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
     (13, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (13, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (13, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbibliothek Krefeld
@@ -1838,7 +1838,7 @@ INSERT INTO
 VALUES
     (14, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
     (14, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (14, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (14, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbibliothek Wuppertal
@@ -1847,7 +1847,7 @@ INSERT INTO
 VALUES
     (15, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
     (15, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (15, 2, 2, 0, 0) -- The Fellowship of the Ring
+    (15, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Hochschule Bonn-Rhein-Sieg Library
@@ -1856,7 +1856,7 @@ INSERT INTO
 VALUES
     (16, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
     (16, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (16, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (16, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- RWTH Aachen University Library
@@ -1865,7 +1865,7 @@ INSERT INTO
 VALUES
     (17, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
     (17, 4, 4, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (17, 3, 3, 0, 0) -- The Fellowship of the Ring
+    (17, 3, 3, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- FH Aachen Library
@@ -1874,7 +1874,7 @@ INSERT INTO
 VALUES
     (18, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
     (18, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (18, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (18, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Technische Hochschule Köln Library
@@ -1883,7 +1883,7 @@ INSERT INTO
 VALUES
     (19, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
     (19, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (19, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (19, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Rheinische Fachhochschule Köln Library
@@ -1892,7 +1892,7 @@ INSERT INTO
 VALUES
     (20, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
     (20, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (20, 1, 1, 0, 0) -- The Fellowship of the Ring
+    (20, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- insert sample data in rel_media_inventory table
@@ -1902,7 +1902,7 @@ INSERT INTO
 VALUES
     (1, 1), -- Harry Potter and the Philosopher's Stone
     (2, 2), -- Harry Potter and the Chamber of Secrets
-    (3, 3) -- The Fellowship of the Ring
+    (3, 3) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Düsseldorf University of Applied Sciences Library
@@ -1911,7 +1911,7 @@ INSERT INTO
 VALUES
     (1, 4), -- Harry Potter and the Philosopher's Stone
     (2, 5), -- Harry Potter and the Chamber of Secrets
-    (3, 6) -- The Fellowship of the Ring
+    (3, 6) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Wuppertal Library
@@ -1920,7 +1920,7 @@ INSERT INTO
 VALUES
     (1, 7), -- Harry Potter and the Philosopher's Stone
     (2, 8), -- Harry Potter and the Chamber of Secrets
-    (3, 9) -- The Fellowship of the Ring
+    (3, 9) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Duisburg-Essen Library - Duisburg Campus
@@ -1929,7 +1929,7 @@ INSERT INTO
 VALUES
     (1, 10), -- Harry Potter and the Philosopher's Stone
     (2, 11), -- Harry Potter and the Chamber of Secrets
-    (3, 12) -- The Fellowship of the Ring
+    (3, 12) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Folkwang University of the Arts Library
@@ -1938,7 +1938,7 @@ INSERT INTO
 VALUES
     (1, 13), -- Harry Potter and the Philosopher's Stone
     (2, 14), -- Harry Potter and the Chamber of Secrets
-    (3, 15) -- The Fellowship of the Ring
+    (3, 15) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Bergische Universität Wuppertal Library - Campus Haspel
@@ -1947,7 +1947,7 @@ INSERT INTO
 VALUES
     (1, 16), -- Harry Potter and the Philosopher's Stone
     (2, 17), -- Harry Potter and the Chamber of Secrets
-    (3, 18) -- The Fellowship of the Ring
+    (3, 18) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Hochschule Niederrhein Library - Campus Krefeld
@@ -1956,7 +1956,7 @@ INSERT INTO
 VALUES
     (1, 19), -- Harry Potter and the Philosopher's Stone
     (2, 20), -- Harry Potter and the Chamber of Secrets
-    (3, 21) -- The Fellowship of the Ring
+    (3, 21) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Applied Sciences Ruhr West Library
@@ -1965,7 +1965,7 @@ INSERT INTO
 VALUES
     (1, 22), -- Harry Potter and the Philosopher's Stone
     (2, 23), -- Harry Potter and the Chamber of Secrets
-    (3, 24) -- The Fellowship of the Ring
+    (3, 24) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Cologne Library
@@ -1974,7 +1974,7 @@ INSERT INTO
 VALUES
     (1, 25), -- Harry Potter and the Philosopher's Stone
     (2, 26), -- Harry Potter and the Chamber of Secrets
-    (3, 27) -- The Fellowship of the Ring
+    (3, 27) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- German Sport University Cologne Library
@@ -1983,7 +1983,7 @@ INSERT INTO
 VALUES
     (1, 28), -- Harry Potter and the Philosopher's Stone
     (2, 29), -- Harry Potter and the Chamber of Secrets
-    (3, 30) -- The Fellowship of the Ring
+    (3, 30) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbücherei Düsseldorf - Zentralbibliothek
@@ -1992,7 +1992,7 @@ INSERT INTO
 VALUES
     (1, 31), -- Harry Potter and the Philosopher's Stone
     (2, 32), -- Harry Potter and the Chamber of Secrets
-    (3, 33) -- The Fellowship of the Ring
+    (3, 33) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbibliothek Essen
@@ -2001,7 +2001,7 @@ INSERT INTO
 VALUES
     (1, 34), -- Harry Potter and the Philosopher's Stone
     (2, 35), -- Harry Potter and the Chamber of Secrets
-    (3, 36) -- The Fellowship of the Ring
+    (3, 36) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbücherei Duisburg
@@ -2010,7 +2010,7 @@ INSERT INTO
 VALUES
     (1, 37), -- Harry Potter and the Philosopher's Stone
     (2, 38), -- Harry Potter and the Chamber of Secrets
-    (3, 39) -- The Fellowship of the Ring
+    (3, 39) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbibliothek Krefeld
@@ -2019,7 +2019,7 @@ INSERT INTO
 VALUES
     (1, 40), -- Harry Potter and the Philosopher's Stone
     (2, 41), -- Harry Potter and the Chamber of Secrets
-    (3, 42) -- The Fellowship of the Ring
+    (3, 42) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Stadtbibliothek Wuppertal
@@ -2028,7 +2028,7 @@ INSERT INTO
 VALUES
     (1, 43), -- Harry Potter and the Philosopher's Stone
     (2, 44), -- Harry Potter and the Chamber of Secrets
-    (3, 45) -- The Fellowship of the Ring
+    (3, 45) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Hochschule Bonn-Rhein-Sieg Library
@@ -2037,7 +2037,7 @@ INSERT INTO
 VALUES
     (1, 46), -- Harry Potter and the Philosopher's Stone
     (2, 47), -- Harry Potter and the Chamber of Secrets
-    (3, 48) -- The Fellowship of the Ring
+    (3, 48) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- RWTH Aachen University Library
@@ -2046,7 +2046,7 @@ INSERT INTO
 VALUES
     (1, 49), -- Harry Potter and the Philosopher's Stone
     (2, 50), -- Harry Potter and the Chamber of Secrets
-    (3, 51) -- The Fellowship of the Ring
+    (3, 51) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- FH Aachen Library
@@ -2055,7 +2055,7 @@ INSERT INTO
 VALUES
     (1, 52), -- Harry Potter and the Philosopher's Stone
     (2, 53), -- Harry Potter and the Chamber of Secrets
-    (3, 54) -- The Fellowship of the Ring
+    (3, 54) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Technische Hochschule Köln Library
@@ -2064,7 +2064,7 @@ INSERT INTO
 VALUES
     (1, 55), -- Harry Potter and the Philosopher's Stone
     (2, 56), -- Harry Potter and the Chamber of Secrets
-    (3, 57) -- The Fellowship of the Ring
+    (3, 57) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- Rheinische Fachhochschule Köln Library
@@ -2073,5 +2073,5 @@ INSERT INTO
 VALUES
     (1, 58), -- Harry Potter and the Philosopher's Stone
     (2, 59), -- Harry Potter and the Chamber of Secrets
-    (3, 60) -- The Fellowship of the Ring
+    (3, 60) -- Harry Potter and the Prisoner of Azkaban
 ;
