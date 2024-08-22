@@ -1,21 +1,22 @@
 INSERT INTO
     universities (university_name, postal_code)
 VALUES
-    ('Heinrich Heine University Düsseldorf', '40225'),
-    ('Düsseldorf University of Applied Sciences', '40476'),
-    ('University of Wuppertal', '42119'),
-    ('University of Duisburg-Essen - Campus Duisburg', '47057'),
-    ('Folkwang University of the Arts - Campus Essen', '45127'),
-    ('Bergische Universität Wuppertal - Campus Haspel', '42285'),
-    ('Hochschule Niederrhein - Campus Krefeld', '47798'),
-    ('University of Applied Sciences Ruhr West - Mülheim', '45479'),
-    ('University of Cologne', '50923'),
-    ('German Sport University Cologne', '50933'),
-    ('Cologne University of Applied Sciences', '50679'),
-    ('Hochschule Bonn-Rhein-Sieg', '53757'),
-    ('Rheinische Fachhochschule Köln', '50667'),
-    ('Hochschule Düsseldorf - Campus Derendorf', '40476'),
-    ('FOM University of Applied Sciences Düsseldorf', '40221');
+    ('Heinrich Heine University Düsseldorf', '40225'), --1
+    ('Düsseldorf University of Applied Sciences', '40476'), --2
+    ('University of Wuppertal', '42119'), --3
+    ('University of Duisburg-Essen - Campus Duisburg', '47057'), --4
+    ('Folkwang University of the Arts - Campus Essen', '45127'), --5
+    ('Bergische Universität Wuppertal - Campus Haspel', '42285'), --6
+    ('Hochschule Niederrhein - Campus Krefeld', '47798'), --7
+    ('University of Applied Sciences Ruhr West - Mülheim', '45479'), --8
+    ('University of Cologne', '50923'), --9
+    ('German Sport University Cologne', '50933'), --10
+    ('Cologne University of Applied Sciences', '50679'), --11
+    ('Hochschule Bonn-Rhein-Sieg', '53757'), --12
+    ('Rheinische Fachhochschule Köln', '50667'), --13
+    ('Hochschule Düsseldorf - Campus Derendorf', '40476'), --14
+    ('FOM University of Applied Sciences Düsseldorf', '40221') --15
+;
 
 INSERT INTO
     libraries (fk_univerisity_id, is_public, library_name, street, house_number, city, postal_code, latitude, longitude, country_code, landline_area_code, landline_number, email, established_date, total_study_seats, total_parking_spots, total_books)
@@ -30,16 +31,16 @@ VALUES
     (8, FALSE, 'University of Applied Sciences Ruhr West Library', 'Duisburger Straße', '100', 'Mülheim an der Ruhr', '45479', 51.4246, 6.8819, '+49', '0208', '8825400', 'info@hs-ruhrwest.de', '2009-01-01', 500, 80, 70000),
     (9, FALSE, 'University of Cologne Library', 'Albertus-Magnus-Platz', '1', 'Köln', '50923', 50.9308, 6.9382, '+49', '0221', '4701', 'info@uni-koeln.de', '1388-01-01', 1400, 350, 300000),
     (10, FALSE, 'German Sport University Cologne Library', 'Am Sportpark Müngersdorf', '6', 'Köln', '50933', 50.9430, 6.8672, '+49', '0221', '49820', 'info@dshs-koeln.de', '1947-01-01', 500, 100, 100000),
-    (11, TRUE, 'Stadtbücherei Düsseldorf - Zentralbibliothek', 'Bertha-von-Suttner-Platz', '1', 'Düsseldorf', '40227', 51.2206, 6.7913, '+49', '0211', '8994399', 'info@stadtbuecherei-duesseldorf.de', '1902-01-01', 600, 150, 180000),
-    (12, TRUE, 'Stadtbibliothek Essen', 'Hollestraße', '3', 'Essen', '45127', 51.4545, 7.0116, '+49', '0201', '8845400', 'info@stadtbibliothek.essen.de', '1900-01-01', 700, 200, 200000),
-    (13, TRUE, 'Stadtbücherei Duisburg', 'Düsseldorfer Straße', '5-7', 'Duisburg', '47051', 51.4300, 6.7617, '+49', '0203', '2834218', 'info@stadtbuecherei-duisburg.de', '1901-01-01', 550, 130, 150000),
-    (14, TRUE, 'Stadtbibliothek Krefeld', 'Theaterplatz', '2', 'Krefeld', '47798', 51.3392, 6.5590, '+49', '02151', '862771', 'info@stadtbibliothek.krefeld.de', '1900-01-01', 500, 120, 140000),
-    (15, TRUE, 'Stadtbibliothek Wuppertal', 'Kolpingstraße', '8', 'Wuppertal', '42103', 51.2593, 7.1497, '+49', '0202', '5632804', 'info@stadtbibliothek.wuppertal.de', '1897-01-01', 650, 140, 160000),
-    (16, FALSE, 'Hochschule Bonn-Rhein-Sieg Library', 'Grantham-Allee', '20', 'Sankt Augustin', '53757', 50.7718, 7.1837, '+49', '02241', '8650', 'info@h-brs.de', '1995-01-01', 400, 100, 80000),
-    (17, FALSE, 'RWTH Aachen University Library', 'Templergraben', '55', 'Aachen', '52062', 50.7766, 6.0794, '+49', '0241', '801', 'info@rwth-aachen.de', '1870-01-01', 1500, 300, 320000),
-    (18, FALSE, 'FH Aachen Library', 'Bayernallee', '9', 'Aachen', '52066', 50.7739, 6.0908, '+49', '0241', '60090', 'info@fh-aachen.de', '1971-01-01', 600, 100, 150000),
-    (19, FALSE, 'Technische Hochschule Köln Library', 'Claudiusstraße', '1', 'Köln', '50678', 50.9271, 6.9648, '+49', '0221', '82750', 'info@th-koeln.de', '1971-01-01', 800, 200, 200000),
-    (20, FALSE, 'Rheinische Fachhochschule Köln Library', 'Schaevenstraße', '1', 'Köln', '50676', 50.9352, 6.9470, '+49', '0221', '203020', 'info@rfh-koeln.de', '1958-01-01', 400, 80, 90000);
+    (NULL, TRUE, 'Stadtbücherei Düsseldorf - Zentralbibliothek', 'Bertha-von-Suttner-Platz', '1', 'Düsseldorf', '40227', 51.2206, 6.7913, '+49', '0211', '8994399', 'info@stadtbuecherei-duesseldorf.de', '1902-01-01', 600, 150, 180000),
+    (NULL, TRUE, 'Stadtbibliothek Essen', 'Hollestraße', '3', 'Essen', '45127', 51.4545, 7.0116, '+49', '0201', '8845400', 'info@stadtbibliothek.essen.de', '1900-01-01', 700, 200, 200000),
+    (NULL, TRUE, 'Stadtbücherei Duisburg', 'Düsseldorfer Straße', '5-7', 'Duisburg', '47051', 51.4300, 6.7617, '+49', '0203', '2834218', 'info@stadtbuecherei-duisburg.de', '1901-01-01', 550, 130, 150000),
+    (NULL, TRUE, 'Stadtbibliothek Krefeld', 'Theaterplatz', '2', 'Krefeld', '47798', 51.3392, 6.5590, '+49', '02151', '862771', 'info@stadtbibliothek.krefeld.de', '1900-01-01', 500, 120, 140000),
+    (NULL, TRUE, 'Stadtbibliothek Wuppertal', 'Kolpingstraße', '8', 'Wuppertal', '42103', 51.2593, 7.1497, '+49', '0202', '5632804', 'info@stadtbibliothek.wuppertal.de', '1897-01-01', 650, 140, 160000),
+    (11, FALSE, 'Cologne University of Applied Sciences Library', 'Claudiusstraße', '1', 'Köln', '50679', 50.9352, 6.9470, '+49', '0221', '82750', 'info@cologne-university.de', '1971-01-01', 800, 200, 200000),
+    (12, FALSE, 'Hochschule Bonn-Rhein-Sieg Library', 'Grantham-Allee', '20', 'Sankt Augustin', '53757', 50.7718, 7.1837, '+49', '02241', '8650', 'info@h-brs.de', '1995-01-01', 400, 100, 80000),
+    (13, FALSE, 'Rheinische Fachhochschule Köln Library', 'Schaevenstraße', '1', 'Köln', '50667', 50.9352, 6.9470, '+49', '0221', '203020', 'info@rfh-koeln.de', '1958-01-01', 400, 80, 90000),
+    (14, FALSE, 'Hochschule Düsseldorf Library', 'Münsterstraße', '156', 'Düsseldorf', '40476', 51.2446, 6.7917, '+49', '0211', '435100', 'info@hs-duesseldorf.de', '1971-01-01', 800, 150, 150000),
+    (15, FALSE, 'FOM University of Applied Sciences Library', 'Hansaallee', '1', 'Düsseldorf', '40221', 51.2345, 6.7890, '+49', '0211', '493010', 'info@fom.de', '1991-01-01', 500, 120, 100000);
 
 -- Inserting library_opening hours
 -- Heinrich Heine University Library
