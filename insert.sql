@@ -2076,3 +2076,284 @@ VALUES
     (2, 59), -- Harry Potter and the Chamber of Secrets
     (3, 60) -- Harry Potter and the Prisoner of Azkaban
 ;
+
+-- inserting data in loan_fee_policies table
+-- Heinrich Heine University Library (library_id = 1)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 1, 'general', 14, 3, 7, 0.50, 20.00),
+    (1, 1, 'internal', 21, 4, 7, 0.25, 15.00),
+    (1, 1, 'external', 10, 2, 7, 1.00, 25.00),
+    (2, 1, 'general', 7, 2, 7, 0.50, 10.00),
+    (2, 1, 'internal', 14, 3, 7, 0.25, 10.00),
+    (2, 1, 'external', 7, 2, 7, 0.75, 15.00),
+    (3, 1, 'general', 21, 3, 7, 0.50, 30.00),
+    (3, 1, 'internal', 28, 4, 7, 0.25, 20.00),
+    (3, 1, 'external', 14, 2, 7, 1.00, 40.00);
+
+-- Düsseldorf University of Applied Sciences Library (library_id = 2)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 2, 'general', 14, 3, 7, 0.50, 20.00),
+    (1, 2, 'internal', 21, 4, 7, 0.25, 15.00),
+    (1, 2, 'external', 10, 2, 7, 1.00, 25.00),
+    (2, 2, 'general', 7, 2, 7, 0.50, 10.00),
+    (2, 2, 'internal', 14, 3, 7, 0.25, 10.00),
+    (2, 2, 'external', 7, 2, 7, 0.75, 15.00),
+    (3, 2, 'general', 21, 3, 7, 0.50, 30.00),
+    (3, 2, 'internal', 28, 4, 7, 0.25, 20.00),
+    (3, 2, 'external', 14, 2, 7, 1.00, 40.00);
+
+-- University of Wuppertal Library (library_id = 3)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 3, 'general', 14, 3, 7, 0.50, 20.00),
+    (1, 3, 'internal', 21, 4, 7, 0.25, 15.00),
+    (1, 3, 'external', 10, 2, 7, 1.00, 25.00),
+    (2, 3, 'general', 7, 2, 7, 0.50, 10.00),
+    (2, 3, 'internal', 14, 3, 7, 0.25, 10.00),
+    (2, 3, 'external', 7, 2, 7, 0.75, 15.00),
+    (3, 3, 'general', 21, 3, 7, 0.50, 30.00),
+    (3, 3, 'internal', 28, 4, 7, 0.25, 20.00),
+    (3, 3, 'external', 14, 2, 7, 1.00, 40.00);
+
+-- University of Duisburg-Essen Library - Duisburg Campus (library_id = 4)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 4, 'general', 14, 3, 7, 0.50, 20.00),
+    (1, 4, 'internal', 21, 4, 7, 0.25, 15.00),
+    (1, 4, 'external', 10, 2, 7, 1.00, 25.00),
+    (2, 4, 'general', 7, 2, 7, 0.50, 10.00),
+    (2, 4, 'internal', 14, 3, 7, 0.25, 10.00),
+    (2, 4, 'external', 7, 2, 7, 0.75, 15.00),
+    (3, 4, 'general', 21, 3, 7, 0.50, 30.00),
+    (3, 4, 'internal', 28, 4, 7, 0.25, 20.00),
+    (3, 4, 'external', 14, 2, 7, 1.00, 40.00);
+
+-- Folkwang University of the Arts Library (library_id = 5)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 5, 'internal', 21, 3, 7, 0.50, 20.00),
+    (1, 5, 'external', 14, 2, 7, 0.75, 25.00),
+    (1, 5, 'general', 30, 1, 14, 1.00, 50.00),
+    (2, 5, 'internal', 28, 4, 7, 0.50, 15.00),
+    (2, 5, 'external', 14, 2, 7, 0.75, 20.00),
+    (2, 5, 'general', 21, 3, 7, 1.00, 30.00),
+    (3, 5, 'internal', 30, 3, 14, 0.25, 10.00),
+    (3, 5, 'external', 21, 2, 7, 0.50, 15.00),
+    (3, 5, 'general', 14, 1, 7, 1.00, 20.00);
+
+-- Bergische Universität Wuppertal Library - Campus Haspel (library_id = 6)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 6, 'internal', 14, 2, 7, 0.50, 25.00),
+    (1, 6, 'external', 10, 2, 5, 0.75, 30.00),
+    (1, 6, 'general', 21, 1, 7, 1.50, 35.00),
+    (2, 6, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 6, 'external', 21, 2, 7, 0.75, 30.00),
+    (2, 6, 'general', 14, 1, 7, 1.00, 40.00),
+    (3, 6, 'internal', 21, 3, 7, 0.50, 20.00),
+    (3, 6, 'external', 14, 2, 7, 0.75, 25.00),
+    (3, 6, 'general', 28, 4, 14, 1.25, 50.00);
+
+-- Hochschule Niederrhein Library - Campus Krefeld (library_id = 7)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 7, 'internal', 21, 3, 7, 0.25, 10.00),
+    (1, 7, 'external', 14, 2, 7, 0.50, 15.00),
+    (1, 7, 'general', 30, 1, 14, 1.00, 25.00),
+    (2, 7, 'internal', 28, 4, 7, 0.50, 15.00),
+    (2, 7, 'external', 21, 2, 7, 0.75, 20.00),
+    (2, 7, 'general', 14, 1, 7, 1.00, 30.00),
+    (3, 7, 'internal', 30, 3, 14, 0.25, 10.00),
+    (3, 7, 'external', 21, 2, 7, 0.50, 15.00),
+    (3, 7, 'general', 14, 1, 7, 1.00, 20.00);
+
+-- University of Applied Sciences Ruhr West Library (library_id = 8)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 8, 'internal', 14, 2, 7, 0.50, 25.00),
+    (1, 8, 'external', 10, 2, 5, 0.75, 30.00),
+    (1, 8, 'general', 21, 1, 7, 1.50, 35.00),
+    (2, 8, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 8, 'external', 21, 2, 7, 0.75, 30.00),
+    (2, 8, 'general', 14, 1, 7, 1.00, 40.00),
+    (3, 8, 'internal', 21, 3, 7, 0.50, 20.00),
+    (3, 8, 'external', 14, 2, 7, 0.75, 25.00),
+    (3, 8, 'general', 28, 4, 14, 1.25, 50.00);
+
+-- University of Cologne Library (library_id = 9)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 9, 'internal', 30, 4, 14, 0.50, 20.00),
+    (1, 9, 'external', 21, 2, 7, 0.75, 30.00),
+    (1, 9, 'general', 14, 1, 7, 1.00, 40.00),
+    (2, 9, 'internal', 21, 3, 7, 0.50, 20.00),
+    (2, 9, 'external', 14, 2, 7, 0.75, 25.00),
+    (2, 9, 'general', 28, 4, 14, 1.25, 50.00),
+    (3, 9, 'internal', 30, 4, 14, 0.50, 20.00),
+    (3, 9, 'external', 21, 2, 7, 0.75, 30.00),
+    (3, 9, 'general', 14, 1, 7, 1.00, 40.00);
+
+-- German Sport University Cologne Library (library_id = 10)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 10, 'internal', 21, 3, 7, 0.50, 20.00),
+    (1, 10, 'external', 14, 2, 7, 0.75, 25.00),
+    (1, 10, 'general', 28, 4, 14, 1.25, 50.00),
+    (2, 10, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 10, 'external', 21, 2, 7, 0.75, 30.00),
+    (2, 10, 'general', 14, 1, 7, 1.00, 40.00),
+    (3, 10, 'internal', 21, 3, 7, 0.50, 20.00),
+    (3, 10, 'external', 14, 2, 7, 0.75, 25.00),
+    (3, 10, 'general', 28, 4, 14, 1.25, 50.00);
+
+-- Stadtbücherei Düsseldorf - Zentralbibliothek (library_id = 11)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 11, 'internal', 14, 2, 7, 0.50, 25.00),
+    (1, 11, 'external', 10, 2, 5, 0.75, 30.00),
+    (1, 11, 'general', 21, 1, 7, 1.50, 35.00),
+    (2, 11, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 11, 'external', 21, 2, 7, 0.75, 30.00),
+    (2, 11, 'general', 14, 1, 7, 1.00, 40.00),
+    (3, 11, 'internal', 21, 3, 7, 0.50, 20.00),
+    (3, 11, 'external', 14, 2, 7, 0.75, 25.00),
+    (3, 11, 'general', 28, 4, 14, 1.25, 50.00);
+
+-- Stadtbibliothek Essen (library_id = 12)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 12, 'internal', 30, 4, 14, 0.50, 20.00),
+    (1, 12, 'external', 21, 2, 7, 0.75, 30.00),
+    (1, 12, 'general', 14, 1, 7, 1.00, 40.00),
+    (2, 12, 'internal', 21, 3, 7, 0.50, 20.00),
+    (2, 12, 'external', 14, 2, 7, 0.75, 25.00),
+    (2, 12, 'general', 28, 4, 14, 1.25, 50.00),
+    (3, 12, 'internal', 30, 4, 14, 0.50, 20.00),
+    (3, 12, 'external', 21, 2, 7, 0.75, 30.00),
+    (3, 12, 'general', 14, 1, 7, 1.00, 40.00);
+
+-- Stadtbücherei Duisburg (library_id = 13)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 13, 'internal', 21, 3, 7, 0.50, 20.00),
+    (1, 13, 'external', 14, 2, 7, 0.75, 25.00),
+    (1, 13, 'general', 28, 4, 14, 1.25, 50.00),
+    (2, 13, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 13, 'external', 21, 2, 7, 0.75, 30.00),
+    (2, 13, 'general', 14, 1, 7, 1.00, 40.00),
+    (3, 13, 'internal', 21, 3, 7, 0.50, 20.00),
+    (3, 13, 'external', 14, 2, 7, 0.75, 25.00),
+    (3, 13, 'general', 28, 4, 14, 1.25, 50.00);
+
+-- Stadtbibliothek Krefeld (library_id = 14)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 14, 'internal', 30, 4, 14, 0.50, 20.00),
+    (1, 14, 'external', 21, 2, 7, 0.75, 30.00),
+    (1, 14, 'general', 14, 1, 7, 1.00, 40.00),
+    (2, 14, 'internal', 21, 3, 7, 0.50, 20.00),
+    (2, 14, 'external', 14, 2, 7, 0.75, 25.00),
+    (2, 14, 'general', 28, 4, 14, 1.25, 50.00),
+    (3, 14, 'internal', 30, 4, 14, 0.50, 20.00),
+    (3, 14, 'external', 21, 2, 7, 0.75, 30.00),
+    (3, 14, 'general', 14, 1, 7, 1.00, 40.00);
+
+-- Stadtbibliothek Wuppertal (library_id = 15)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 15, 'internal', 14, 2, 7, 0.50, 25.00),
+    (1, 15, 'external', 10, 2, 5, 0.75, 30.00),
+    (1, 15, 'general', 21, 1, 7, 1.50, 35.00),
+    (2, 15, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 15, 'external', 21, 2, 7, 0.75, 30.00),
+    (2, 15, 'general', 14, 1, 7, 1.00, 40.00),
+    (3, 15, 'internal', 21, 3, 7, 0.50, 20.00),
+    (3, 15, 'external', 14, 2, 7, 0.75, 25.00),
+    (3, 15, 'general', 28, 4, 14, 1.25, 50.00);
+
+-- Cologne University of Applied Sciences Library (library_id = 16)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 16, 'internal', 30, 3, 14, 0.50, 20.00),
+    (1, 16, 'external', 21, 2, 7, 0.75, 30.00),
+    (1, 16, 'general', 14, 1, 7, 1.00, 40.00),
+    (2, 16, 'internal', 21, 3, 7, 0.50, 20.00),
+    (2, 16, 'external', 14, 2, 7, 0.75, 25.00),
+    (2, 16, 'general', 28, 4, 14, 1.25, 50.00),
+    (3, 16, 'internal', 30, 4, 14, 0.50, 20.00),
+    (3, 16, 'external', 21, 2, 7, 0.75, 30.00),
+    (3, 16, 'general', 14, 1, 7, 1.00, 40.00);
+
+-- Hochschule Bonn-Rhein-Sieg Library (library_id = 17)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 17, 'internal', 35, 5, 14, 0.25, 15.00),
+    (1, 17, 'external', 25, 3, 7, 0.50, 25.00),
+    (1, 17, 'general', 14, 1, 7, 0.75, 35.00),
+    (2, 17, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 17, 'external', 20, 3, 7, 0.75, 30.00),
+    (2, 17, 'general', 28, 4, 14, 1.25, 50.00),
+    (3, 17, 'internal', 35, 5, 14, 0.25, 15.00),
+    (3, 17, 'external', 25, 3, 7, 0.50, 25.00),
+    (3, 17, 'general', 14, 1, 7, 0.75, 35.00);
+
+-- Rheinische Fachhochschule Köln Library (library_id = 18)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 18, 'internal', 28, 3, 14, 0.50, 18.00),
+    (1, 18, 'external', 21, 2, 7, 0.75, 30.00),
+    (1, 18, 'general', 14, 1, 7, 1.00, 35.00),
+    (2, 18, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 18, 'external', 20, 3, 7, 0.75, 30.00),
+    (2, 18, 'general', 14, 1, 7, 1.25, 45.00),
+    (3, 18, 'internal', 28, 3, 14, 0.50, 18.00),
+    (3, 18, 'external', 21, 2, 7, 0.75, 30.00),
+    (3, 18, 'general', 14, 1, 7, 1.00, 35.00);
+
+-- Hochschule Düsseldorf Library (library_id = 19)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 19, 'internal', 30, 4, 14, 0.50, 20.00),
+    (1, 19, 'external', 21, 2, 7, 0.75, 30.00),
+    (1, 19, 'general', 14, 1, 7, 1.00, 40.00),
+    (2, 19, 'internal', 21, 3, 7, 0.50, 20.00),
+    (2, 19, 'external', 14, 2, 7, 0.75, 25.00),
+    (2, 19, 'general', 28, 4, 14, 1.25, 50.00),
+    (3, 19, 'internal', 30, 4, 14, 0.50, 20.00),
+    (3, 19, 'external', 21, 2, 7, 0.75, 30.00),
+    (3, 19, 'general', 14, 1, 7, 1.00, 40.00);
+
+-- FOM University of Applied Sciences Library (library_id = 20)
+INSERT INTO
+    loan_fee_policies (fk_media_type_id, fk_library_id, member_type, max_loan_duration, max_extensions, extension_duration, overdue_fee, max_overdue_fee)
+VALUES
+    (1, 20, 'internal', 28, 3, 14, 0.50, 18.00),
+    (1, 20, 'external', 21, 2, 7, 0.75, 30.00),
+    (1, 20, 'general', 14, 1, 7, 1.00, 35.00),
+    (2, 20, 'internal', 30, 4, 14, 0.50, 20.00),
+    (2, 20, 'external', 20, 3, 7, 0.75, 30.00),
+    (2, 20, 'general', 14, 1, 7, 1.25, 45.00),
+    (3, 20, 'internal', 28, 3, 14, 0.50, 18.00),
+    (3, 20, 'external', 21, 2, 7, 0.75, 30.00),
+    (3, 20, 'general', 14, 1, 7, 1.00, 35.00);
