@@ -1560,10 +1560,8 @@ INSERT INTO
     media_types (media_type_name)
 VALUES
     ('Book'),
-    ('E-Book'),
-    ('Audiobook'),
     ('Magazine'),
-    ('Newspaper');
+    ('DVD');
 
 -- insert some media in the media_table
 INSERT INTO
