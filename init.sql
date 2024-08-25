@@ -1,5 +1,10 @@
--- First step create all the tables with their relationships
-CREATE TABLE IF NOT EXISTS universities (university_id SERIAL PRIMARY KEY, university_name VARCHAR(250) NOT NULL, postal_code VARCHAR(5) NOT NULL, CONSTRAINT unique_university UNIQUE (postal_code, university_name));
+-- First step create all the tables with their relationships 
+CREATE TABLE IF NOT EXISTS universities (
+	university_id SERIAL PRIMARY KEY,
+	university_name VARCHAR(250) NOT NULL,
+	postal_code VARCHAR(5) NOT NULL,
+	CONSTRAINT unique_university UNIQUE (postal_code, university_name)
+);
 
 -- Using Hash-Index on universities for faster lookup 
 CREATE INDEX hash_postal_code ON universities USING hash (postal_code);
@@ -33,7 +38,14 @@ CREATE TABLE IF NOT EXISTS libraries (
 	CONSTRAINT unique_library UNIQUE (library_name, postal_code, street, house_number)
 );
 
-CREATE TABLE IF NOT EXISTS library_opening_hours (fk_library_id INT NOT NULL, day_of_week SMALLINT, open_time TIME, close_time TIME, PRIMARY KEY (fk_library_id, day_of_week), FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS library_opening_hours (
+	fk_library_id INT NOT NULL,
+	day_of_week SMALLINT,
+	open_time TIME,
+	close_time TIME,
+	PRIMARY KEY (fk_library_id, day_of_week),
+	FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
 CREATE TABLE IF NOT EXISTS special_opening_hours (
 	fk_library_id INT NOT NULL,
@@ -195,7 +207,10 @@ CREATE TABLE IF NOT EXISTS media_instances (
 	FOREIGN KEY (fk_media_inventory_id) REFERENCES media_inventory (media_inventory_id) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
-CREATE TABLE IF NOT EXISTS media_types (media_type_id SERIAL PRIMARY KEY, media_type_name VARCHAR(50) NOT NULL UNIQUE);
+CREATE TABLE IF NOT EXISTS media_types (
+	media_type_id SERIAL PRIMARY KEY,
+	media_type_name VARCHAR(50) NOT NULL UNIQUE
+);
 
 CREATE TABLE IF NOT EXISTS media (
 	media_id SERIAL PRIMARY KEY,
@@ -232,9 +247,21 @@ CREATE TABLE IF NOT EXISTS rel_media_inventory_media (
 	PRIMARY KEY (fk_media_id, fk_media_inventory_id)
 );
 
-CREATE TABLE IF NOT EXISTS magazines (magazine_id SERIAL PRIMARY KEY, fk_media_id BIGINT NOT NULL, publisher VARCHAR(255) NOT NULL, FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE, CONSTRAINT unique_magazine UNIQUE (fk_media_id));
+CREATE TABLE IF NOT EXISTS magazines (
+	magazine_id SERIAL PRIMARY KEY,
+	fk_media_id BIGINT NOT NULL,
+	publisher VARCHAR(255) NOT NULL,
+	FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT unique_magazine UNIQUE (fk_media_id)
+);
 
-CREATE TYPE books_binding AS ENUM('Hardcover', 'Paperback', 'Spiral Binding', 'Saddle-Stitched', 'Perfect Binding');
+CREATE TYPE books_binding AS ENUM(
+	'Hardcover',
+	'Paperback',
+	'Spiral Binding',
+	'Saddle-Stitched',
+	'Perfect Binding'
+);
 
 CREATE TABLE IF NOT EXISTS books (
 	book_id SERIAL PRIMARY KEY,
@@ -258,7 +285,10 @@ CREATE TABLE IF NOT EXISTS books (
 CREATE UNIQUE INDEX unique_isbn_10 ON books (isbn_10) WHERE isbn_10 IS NOT NULL;
 CREATE UNIQUE INDEX unique_isbn_13 ON books (isbn_13) WHERE isbn_13 IS NOT NULL;
 /* sql-formatter-enable */
-CREATE TABLE IF NOT EXISTS publishers (publisher_id SERIAL PRIMARY KEY, publisher_name VARCHAR(255) NOT NULL UNIQUE);
+CREATE TABLE IF NOT EXISTS publishers (
+	publisher_id SERIAL PRIMARY KEY,
+	publisher_name VARCHAR(255) NOT NULL UNIQUE
+);
 
 CREATE TABLE IF NOT EXISTS genres (genre_id SERIAL PRIMARY KEY, genre VARCHAR(50) NOT NULL UNIQUE);
 
@@ -273,9 +303,19 @@ CREATE TABLE IF NOT EXISTS authors (
 	CONSTRAINT unique_author_name_birthdate UNIQUE (first_name, middle_name, last_name, birthdate)
 );
 
-CREATE TABLE IF NOT EXISTS rel_publishers_books (fk_publisher_id INT NOT NULL, fk_book_id INT NOT NULL, FOREIGN KEY (fk_publisher_id) REFERENCES publishers (publisher_id) ON UPDATE CASCADE ON DELETE RESTRICT, PRIMARY KEY (fk_publisher_id, fk_book_id));
+CREATE TABLE IF NOT EXISTS rel_publishers_books (
+	fk_publisher_id INT NOT NULL,
+	fk_book_id INT NOT NULL,
+	FOREIGN KEY (fk_publisher_id) REFERENCES publishers (publisher_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	PRIMARY KEY (fk_publisher_id, fk_book_id)
+);
 
-CREATE TABLE IF NOT EXISTS rel_genre_books (fk_genre_id INT NOT NULL, fk_book_id INT NOT NULL, FOREIGN KEY (fk_genre_id) REFERENCES genres (genre_id) ON UPDATE CASCADE ON DELETE RESTRICT, PRIMARY KEY (fk_genre_id, fk_book_id));
+CREATE TABLE IF NOT EXISTS rel_genre_books (
+	fk_genre_id INT NOT NULL,
+	fk_book_id INT NOT NULL,
+	FOREIGN KEY (fk_genre_id) REFERENCES genres (genre_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	PRIMARY KEY (fk_genre_id, fk_book_id)
+);
 
 CREATE TABLE IF NOT EXISTS rel_authors_books (
 	fk_author_id INT NOT NULL,
@@ -287,7 +327,13 @@ CREATE TABLE IF NOT EXISTS rel_authors_books (
 
 CREATE TYPE loans_status AS ENUM('active', 'completed', 'overdue');
 
-CREATE TABLE IF NOT EXISTS loans (loan_id SERIAL PRIMARY KEY, fk_member_id INT NOT NULL, loan_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP, status loans_status DEFAULT 'active', FOREIGN KEY (fk_member_id) REFERENCES members (member_id) ON UPDATE CASCADE ON DELETE RESTRICT);
+CREATE TABLE IF NOT EXISTS loans (
+	loan_id SERIAL PRIMARY KEY,
+	fk_member_id INT NOT NULL,
+	loan_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	status loans_status DEFAULT 'active',
+	FOREIGN KEY (fk_member_id) REFERENCES members (member_id) ON UPDATE CASCADE ON DELETE RESTRICT
+);
 
 CREATE TYPE rel_loan_items_status AS ENUM('on_loan', 'returned', 'lost');
 
