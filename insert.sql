@@ -2355,3 +2355,204 @@ VALUES
     (3, 20, 'internal', 28, 3, 14, 0.50, 18.00),
     (3, 20, 'external', 21, 2, 7, 0.75, 30.00),
     (3, 20, 'general', 14, 1, 7, 1.00, 35.00);
+
+-- insert members in members table
+-- Heinrich Heine University Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (1, TRUE, 'male', 'Lukas', 'Alexander', 'Müller', '1998-02-15', 'Musterstraße', '12', 'Düsseldorf', '40225', '+49', '0211', '1234567', '0170', '1234567890', 'lukas.mueller@uni-duesseldorf.de'),
+    (1, TRUE, 'female', 'Anna', 'Marie', 'Schmidt', '1997-06-30', 'Königsallee', '56', 'Düsseldorf', '40212', '+49', '0211', '7654321', '0171', '9876543210', 'anna.schmidt@uni-duesseldorf.de'),
+    (1, TRUE, 'non-binary', 'Max', 'David', 'Lehmann', '1999-11-20', 'Schadowstraße', '98', 'Düsseldorf', '40212', '+49', '0211', '3334444', '0172', '1122334455', 'max.lehmann@uni-duesseldorf.de'),
+    (1, FALSE, 'female', 'Sophia', 'Elisabeth', 'Becker', '1985-07-14', 'Flinger Straße', '34', 'Düsseldorf', '40213', '+49', '0211', '5556666', '0173', '6677889900', 'sophia.becker@example.com'),
+    (1, FALSE, 'male', 'Leon', 'Michael', 'Weber', '1980-03-05', 'Graf-Adolf-Straße', '77', 'Düsseldorf', '40210', '+49', '0211', '7778888', '0174', '9988776655', 'leon.weber@example.com');
+
+-- Düsseldorf University of Applied Sciences Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (2, TRUE, 'female', 'Clara', 'Marie', 'Hoffmann', '1998-10-25', 'Collenbachstraße', '25', 'Düsseldorf', '40476', '+49', '0211', '9876543', '0175', '1230987654', 'clara.hoffmann@hs-duesseldorf.de'),
+    (2, TRUE, 'male', 'Jonas', 'Peter', 'Wagner', '1997-09-18', 'Lütticher Straße', '45', 'Düsseldorf', '40476', '+49', '0211', '3219876', '0176', '5647382910', 'jonas.wagner@hs-duesseldorf.de'),
+    (2, TRUE, 'diverse', 'Lisa', 'Johanna', 'Fischer', '1996-04-04', 'Klever Straße', '63', 'Düsseldorf', '40477', '+49', '0211', '5432109', '0177', '9080706050', 'lisa.fischer@hs-duesseldorf.de'),
+    (2, FALSE, 'female', 'Nina', 'Katarina', 'Schneider', '1983-02-12', 'Nordstraße', '71', 'Düsseldorf', '40477', '+49', '0211', '1233214', '0178', '1029384756', 'nina.schneider@example.com'),
+    (2, FALSE, 'male', 'Kevin', 'Alexander', 'Bauer', '1975-11-23', 'Duisburger Straße', '89', 'Düsseldorf', '40477', '+49', '0211', '4321987', '0179', '5647382910', 'kevin.bauer@example.com');
+
+-- University of Wuppertal Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (3, TRUE, 'male', 'Felix', 'Paul', 'Keller', '1999-05-15', 'Steinbeck', '4', 'Wuppertal', '42119', '+49', '0202', '8765432', '0171', '9988776655', 'felix.keller@uni-wuppertal.de'),
+    (3, TRUE, 'female', 'Mia', 'Sophie', 'Schulz', '1997-01-22', 'Hainstraße', '12', 'Wuppertal', '42119', '+49', '0202', '1234567', '0172', '1122334455', 'mia.schulz@uni-wuppertal.de'),
+    (3, TRUE, 'non-binary', 'Tobias', 'David', 'Maier', '1998-08-30', 'Kipdorf', '9', 'Wuppertal', '42103', '+49', '0202', '7654321', '0173', '2233445566', 'tobias.maier@uni-wuppertal.de'),
+    (3, FALSE, 'female', 'Lea', 'Elisabeth', 'Koch', '1990-12-12', 'Kaiserstraße', '78', 'Wuppertal', '42103', '+49', '0202', '3456789', '0174', '4455667788', 'lea.koch@example.com'),
+    (3, FALSE, 'male', 'David', 'Jonas', 'Wolf', '1982-07-07', 'Morianstraße', '56', 'Wuppertal', '42103', '+49', '0202', '6543210', '0175', '6677889900', 'david.wolf@example.com');
+
+-- University of Duisburg-Essen Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (4, TRUE, 'female', 'Laura', 'Katharina', 'Neumann', '1997-11-11', 'Königstraße', '3', 'Duisburg', '47057', '+49', '0203', '5678901', '0171', '1029384756', 'laura.neumann@uni-due.de'),
+    (4, TRUE, 'male', 'Jan', 'Alexander', 'Meyer', '1998-03-23', 'Friedrich-Wilhelm-Straße', '45', 'Duisburg', '47057', '+49', '0203', '2345678', '0172', '0192837465', 'jan.meyer@uni-due.de'),
+    (4, TRUE, 'non-binary', 'Sarah', 'Johanna', 'Schuster', '1999-06-18', 'Landfermannstraße', '78', 'Duisburg', '47057', '+49', '0203', '8765432', '0173', '9988776655', 'sarah.schuster@uni-due.de'),
+    (4, FALSE, 'female', 'Julia', 'Anna', 'Hansen', '1988-02-28', 'Mercatorstraße', '12', 'Duisburg', '47051', '+49', '0203', '1234567', '0174', '1234567890', 'julia.hansen@example.com'),
+    (4, FALSE, 'male', 'Marc', 'Peter', 'Schmidt', '1980-09-19', 'Dellplatz', '34', 'Duisburg', '47051', '+49', '0203', '2345678', '0175', '0192837465', 'marc.schmidt@example.com');
+
+-- Folkwang University of the Arts Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (5, TRUE, 'male', 'Alexander', 'Lukas', 'Krämer', '1997-10-05', 'Rüttenscheider Straße', '50', 'Essen', '45127', '+49', '0201', '7890123', '0171', '2345678901', 'alexander.kraemer@folkwang-uni.de'),
+    (5, TRUE, 'female', 'Sophie', 'Marie', 'Schneider', '1998-12-25', 'Alfredstraße', '78', 'Essen', '45127', '+49', '0201', '5678901', '0172', '8765432109', 'sophie.schneider@folkwang-uni.de'),
+    (5, TRUE, 'non-binary', 'Leon', 'David', 'Koch', '1996-06-14', 'Bredeneyer Straße', '23', 'Essen', '45133', '+49', '0201', '2345678', '0173', '5647382910', 'leon.koch@folkwang-uni.de'),
+    (5, FALSE, 'female', 'Caroline', 'Eva', 'Hoffmann', '1986-09-09', 'Huyssenallee', '9', 'Essen', '45128', '+49', '0201', '1234567', '0174', '9988776655', 'caroline.hoffmann@example.com'),
+    (5, FALSE, 'male', 'Philipp', 'Andreas', 'Weiß', '1979-03-02', 'Gladbecker Straße', '89', 'Essen', '45141', '+49', '0201', '8765432', '0175', '2233445566', 'philipp.weiss@example.com');
+
+-- Bergische Universität Wuppertal Library - Campus Haspel Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (6, TRUE, 'female', 'Lena', 'Maria', 'Bauer', '1999-08-30', 'Hofkamp', '11', 'Wuppertal', '42285', '+49', '0202', '3456789', '0171', '5647382910', 'lena.bauer@uni-wuppertal.de'),
+    (6, TRUE, 'male', 'Maximilian', 'Paul', 'Fischer', '1997-03-05', 'Briller Straße', '67', 'Wuppertal', '42285', '+49', '0202', '9876543', '0172', '2233445566', 'maximilian.fischer@uni-wuppertal.de'),
+    (6, TRUE, 'diverse', 'Nina', 'Klara', 'Schulze', '1998-11-22', 'Neuenteich', '45', 'Wuppertal', '42285', '+49', '0202', '1234567', '0173', '1122334455', 'nina.schulze@uni-wuppertal.de'),
+    (6, FALSE, 'female', 'Theresa', 'Luisa', 'Becker', '1985-05-15', 'Uellendahler Straße', '33', 'Wuppertal', '42285', '+49', '0202', '5432109', '0174', '6677889900', 'theresa.becker@example.com'),
+    (6, FALSE, 'male', 'Sebastian', 'Jonas', 'Klein', '1978-01-10', 'Heckinghauser Straße', '55', 'Wuppertal', '42285', '+49', '0202', '8765432', '0175', '9988776655', 'sebastian.klein@example.com');
+
+-- Hochschule Niederrhein Library - Campus Krefeld Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (7, TRUE, 'male', 'Julian', 'Alexander', 'Wolff', '1998-04-07', 'Rheinstraße', '12', 'Krefeld', '47798', '+49', '02151', '2345678', '0171', '8765432109', 'julian.wolff@hs-niederrhein.de'),
+    (7, TRUE, 'female', 'Laura', 'Katharina', 'Schmitz', '1999-02-18', 'Gladbacher Straße', '34', 'Krefeld', '47798', '+49', '02151', '5432109', '0172', '1122334455', 'laura.schmitz@hs-niederrhein.de'),
+    (7, TRUE, 'non-binary', 'Lucas', 'Johannes', 'Braun', '1997-07-11', 'Uerdinger Straße', '56', 'Krefeld', '47798', '+49', '02151', '6789012', '0173', '6677889900', 'lucas.braun@hs-niederrhein.de'),
+    (7, FALSE, 'female', 'Maja', 'Sophia', 'Zimmermann', '1989-08-15', 'Bismarckstraße', '78', 'Krefeld', '47798', '+49', '02151', '1234567', '0174', '2233445566', 'maja.zimmermann@example.com'),
+    (7, FALSE, 'male', 'Simon', 'Lukas', 'Mayer', '1983-12-30', 'Hochstraße', '90', 'Krefeld', '47798', '+49', '02151', '9876543', '0175', '9988776655', 'simon.mayer@example.com');
+
+-- University of Applied Sciences Ruhr West Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (8, TRUE, 'male', 'Timo', 'Alexander', 'Schwarz', '1997-11-14', 'Leineweberstraße', '9', 'Mülheim an der Ruhr', '45479', '+49', '0208', '5678901', '0171', '1122334455', 'timo.schwarz@hs-ruhrwest.de'),
+    (8, TRUE, 'female', 'Julia', 'Elisabeth', 'Schmidt', '1998-06-23', 'Duisburger Straße', '31', 'Mülheim an der Ruhr', '45479', '+49', '0208', '2345678', '0172', '2233445566', 'julia.schmidt@hs-ruhrwest.de'),
+    (8, TRUE, 'non-binary', 'Marlene', 'Sophia', 'Möller', '1999-03-04', 'Friedrich-Ebert-Straße', '67', 'Mülheim an der Ruhr', '45479', '+49', '0208', '8765432', '0173', '6677889900', 'marlene.moeller@hs-ruhrwest.de'),
+    (8, FALSE, 'female', 'Nicole', 'Maria', 'Schulze', '1984-05-25', 'Heißener Straße', '21', 'Mülheim an der Ruhr', '45479', '+49', '0208', '5432109', '0174', '9988776655', 'nicole.schulze@example.com'),
+    (8, FALSE, 'male', 'Dominik', 'Lukas', 'Müller', '1977-02-02', 'Oberhausener Straße', '43', 'Mülheim an der Ruhr', '45479', '+49', '0208', '1234567', '0175', '2233445566', 'dominik.mueller@example.com');
+
+-- University of Cologne Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (9, TRUE, 'male', 'Christian', 'David', 'Lang', '1996-12-01', 'Universitätsstraße', '1', 'Köln', '50923', '+49', '0221', '2345678', '0171', '2233445566', 'christian.lang@uni-koeln.de'),
+    (9, TRUE, 'female', 'Hannah', 'Mareike', 'Fischer', '1997-09-09', 'Luxemburger Straße', '45', 'Köln', '50939', '+49', '0221', '5678901', '0172', '6677889900', 'hannah.fischer@uni-koeln.de'),
+    (9, TRUE, 'non-binary', 'Eva', 'Sophia', 'Becker', '1998-03-23', 'Zülpicher Straße', '78', 'Köln', '50937', '+49', '0221', '8765432', '0173', '9988776655', 'eva.becker@uni-koeln.de'),
+    (9, FALSE, 'female', 'Lisa', 'Katharina', 'Weber', '1982-06-18', 'Aachener Straße', '12', 'Köln', '50931', '+49', '0221', '1234567', '0174', '1122334455', 'lisa.weber@example.com'),
+    (9, FALSE, 'male', 'Matthias', 'Lukas', 'Hoffmann', '1975-11-07', 'Sülzgürtel', '34', 'Köln', '50937', '+49', '0221', '5432109', '0175', '2233445566', 'matthias.hoffmann@example.com');
+
+-- German Sport University Cologne Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (10, TRUE, 'male', 'Kevin', 'Alexander', 'Mayer', '1998-11-30', 'Am Sportpark', '5', 'Köln', '50933', '+49', '0221', '7654321', '0171', '1122334455', 'kevin.mayer@dshs-koeln.de'),
+    (10, TRUE, 'female', 'Sabrina', 'Johanna', 'Wagner', '1997-08-18', 'Dürener Straße', '3', 'Köln', '50933', '+49', '0221', '5432109', '0172', '6677889900', 'sabrina.wagner@dshs-koeln.de'),
+    (10, TRUE, 'non-binary', 'Nina', 'Sophia', 'Krause', '1996-01-07', 'Kitschburger Straße', '12', 'Köln', '50933', '+49', '0221', '8765432', '0173', '9988776655', 'nina.krause@dshs-koeln.de'),
+    (10, FALSE, 'female', 'Vanessa', 'Marie', 'Peters', '1988-04-25', 'Widdersdorfer Straße', '78', 'Köln', '50933', '+49', '0221', '2345678', '0174', '2233445566', 'vanessa.peters@example.com'),
+    (10, FALSE, 'male', 'Daniel', 'Peter', 'Koch', '1976-12-19', 'Bunzlauer Straße', '9', 'Köln', '50933', '+49', '0221', '9876543', '0175', '9988776655', 'daniel.koch@example.com');
+
+-- Stadtbücherei Düsseldorf - Zentralbibliothek Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (NULL, FALSE, 'female', 'Marina', 'Elisabeth', 'Schneider', '1985-03-23', 'Bertha-von-Suttner-Platz', '2', 'Düsseldorf', '40227', '+49', '0211', '8765432', '0171', '1122334455', 'marina.schneider@example.com'),
+    (NULL, FALSE, 'male', 'David', 'Alexander', 'Wolff', '1980-06-07', 'Graf-Adolf-Straße', '3', 'Düsseldorf', '40210', '+49', '0211', '5432109', '0172', '6677889900', 'david.wolff@example.com'),
+    (NULL, FALSE, 'diverse', 'Laura', 'Katharina', 'Müller', '1982-12-30', 'Königsallee', '10', 'Düsseldorf', '40212', '+49', '0211', '2345678', '0173', '9988776655', 'laura.mueller@example.com'),
+    (NULL, FALSE, 'female', 'Stefanie', 'Marie', 'Keller', '1977-07-11', 'Schadowstraße', '5', 'Düsseldorf', '40212', '+49', '0211', '9876543', '0174', '2233445566', 'stefanie.keller@example.com'),
+    (NULL, FALSE, 'male', 'Andreas', 'Michael', 'Schulze', '1973-09-02', 'Flinger Straße', '12', 'Düsseldorf', '40213', '+49', '0211', '5678901', '0175', '9988776655', 'andreas.schulze@example.com');
+
+-- Stadtbibliothek Essen Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (NULL, FALSE, 'male', 'Johannes', 'Lukas', 'Fischer', '1987-04-15', 'Hollestraße', '3', 'Essen', '45127', '+49', '0201', '7654321', '0171', '1234567890', 'johannes.fischer@example.com'),
+    (NULL, FALSE, 'female', 'Katrin', 'Marie', 'Schulz', '1979-11-30', 'Kettwiger Straße', '21', 'Essen', '45127', '+49', '0201', '5432109', '0172', '2345678901', 'katrin.schulz@example.com'),
+    (NULL, FALSE, 'non-binary', 'Fabian', 'Alexander', 'Meyer', '1990-06-09', 'Alfredstraße', '7', 'Essen', '45127', '+49', '0201', '1234567', '0173', '3456789012', 'fabian.meyer@example.com'),
+    (NULL, FALSE, 'female', 'Melanie', 'Sophie', 'Becker', '1984-02-25', 'Rüttenscheider Straße', '15', 'Essen', '45127', '+49', '0201', '8765432', '0174', '4567890123', 'melanie.becker@example.com'),
+    (NULL, FALSE, 'male', 'Sven', 'Jonas', 'Schmidt', '1976-08-11', 'Steeler Straße', '8', 'Essen', '45127', '+49', '0201', '9876543', '0175', '5678901234', 'sven.schmidt@example.com');
+
+-- Stadtbücherei Duisburg Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (NULL, FALSE, 'male', 'Markus', 'Peter', 'Klein', '1989-10-23', 'Düsseldorfer Straße', '6', 'Duisburg', '47051', '+49', '0203', '5678901', '0171', '6789012345', 'markus.klein@example.com'),
+    (NULL, FALSE, 'female', 'Nadine', 'Maria', 'Hoffmann', '1982-12-14', 'Königstraße', '19', 'Duisburg', '47051', '+49', '0203', '1234567', '0172', '7890123456', 'nadine.hoffmann@example.com'),
+    (NULL, FALSE, 'non-binary', 'Sabrina', 'Laura', 'Müller', '1991-01-05', 'Oberstraße', '11', 'Duisburg', '47051', '+49', '0203', '5432109', '0173', '8901234567', 'sabrina.mueller@example.com'),
+    (NULL, FALSE, 'female', 'Monika', 'Elisabeth', 'Schneider', '1985-09-17', 'Friedrich-Wilhelm-Straße', '8', 'Duisburg', '47051', '+49', '0203', '9876543', '0174', '9012345678', 'monika.schneider@example.com'),
+    (NULL, FALSE, 'male', 'Patrick', 'Alexander', 'Weber', '1978-05-30', 'Dellplatz', '4', 'Duisburg', '47051', '+49', '0203', '2345678', '0175', '0123456789', 'patrick.weber@example.com');
+
+-- Stadtbibliothek Krefeld Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (NULL, FALSE, 'female', 'Annika', 'Marie', 'Richter', '1988-07-12', 'Theaterplatz', '2', 'Krefeld', '47798', '+49', '02151', '1234567', '0171', '2345678901', 'annika.richter@example.com'),
+    (NULL, FALSE, 'male', 'Stefan', 'Lukas', 'Wagner', '1980-04-19', 'Hochstraße', '9', 'Krefeld', '47798', '+49', '02151', '7654321', '0172', '3456789012', 'stefan.wagner@example.com'),
+    (NULL, FALSE, 'diverse', 'Katharina', 'Eva', 'Schulze', '1992-11-03', 'Rheinstraße', '7', 'Krefeld', '47798', '+49', '02151', '5432109', '0173', '4567890123', 'katharina.schulze@example.com'),
+    (NULL, FALSE, 'female', 'Sarah', 'Johanna', 'Meier', '1985-08-22', 'Uerdinger Straße', '15', 'Krefeld', '47798', '+49', '02151', '9876543', '0174', '5678901234', 'sarah.meier@example.com'),
+    (NULL, FALSE, 'male', 'Daniel', 'Thomas', 'Schmidt', '1977-03-14', 'Bismarckstraße', '4', 'Krefeld', '47798', '+49', '02151', '2345678', '0175', '6789012345', 'daniel.schmidt@example.com');
+
+-- Stadtbibliothek Wuppertal Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (NULL, FALSE, 'female', 'Julia', 'Sophia', 'Krüger', '1986-10-11', 'Kolpingstraße', '8', 'Wuppertal', '42103', '+49', '0202', '5678901', '0171', '6789012345', 'julia.krueger@example.com'),
+    (NULL, FALSE, 'male', 'Felix', 'Lukas', 'Bauer', '1979-01-25', 'Friedrich-Engels-Allee', '12', 'Wuppertal', '42103', '+49', '0202', '1234567', '0172', '7890123456', 'felix.bauer@example.com'),
+    (NULL, FALSE, 'non-binary', 'Tobias', 'Alexander', 'Mayer', '1990-07-14', 'Hofkamp', '5', 'Wuppertal', '42103', '+49', '0202', '5432109', '0173', '8901234567', 'tobias.mayer@example.com'),
+    (NULL, FALSE, 'female', 'Michaela', 'Marie', 'Schmitt', '1984-09-19', 'Briller Straße', '6', 'Wuppertal', '42103', '+49', '0202', '9876543', '0174', '9012345678', 'michaela.schmitt@example.com'),
+    (NULL, FALSE, 'male', 'Florian', 'Jonas', 'Koch', '1976-12-28', 'Neuenteich', '14', 'Wuppertal', '42103', '+49', '0202', '2345678', '0175', '0123456789', 'florian.koch@example.com');
+
+-- Cologne University of Applied Sciences Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (11, TRUE, 'male', 'Jan', 'Alexander', 'Neumann', '1997-03-15', 'Claudiusstraße', '1', 'Köln', '50679', '+49', '0221', '2345678', '0171', '1234567890', 'jan.neumann@cologne-university.de'),
+    (11, TRUE, 'female', 'Clara', 'Elisabeth', 'König', '1996-12-05', 'Deutz-Kalker Straße', '7', 'Köln', '50679', '+49', '0221', '5678901', '0172', '2345678901', 'clara.koenig@cologne-university.de'),
+    (11, TRUE, 'non-binary', 'Leonie', 'Maria', 'Schuster', '1998-08-27', 'Mindener Straße', '10', 'Köln', '50679', '+49', '0221', '8765432', '0173', '3456789012', 'leonie.schuster@cologne-university.de'),
+    (11, FALSE, 'female', 'Martina', 'Katharina', 'Krüger', '1985-11-14', 'Gotenring', '3', 'Köln', '50679', '+49', '0221', '5432109', '0174', '4567890123', 'martina.krueger@example.com'),
+    (11, FALSE, 'male', 'Oliver', 'Peter', 'Zimmermann', '1979-07-21', 'Stolzestraße', '8', 'Köln', '50679', '+49', '0221', '9876543', '0175', '5678901234', 'oliver.zimmermann@example.com');
+
+-- Hochschule Bonn-Rhein-Sieg Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (12, TRUE, 'male', 'Timo', 'Andreas', 'Bauer', '1999-09-25', 'Grantham-Allee', '20', 'Sankt Augustin', '53757', '+49', '02241', '2345678', '0171', '6789012345', 'timo.bauer@h-brs.de'),
+    (12, TRUE, 'female', 'Vanessa', 'Marie', 'Fuchs', '1998-01-12', 'Rheinweg', '5', 'Sankt Augustin', '53757', '+49', '02241', '5432109', '0172', '7890123456', 'vanessa.fuchs@h-brs.de'),
+    (12, TRUE, 'non-binary', 'Paul', 'Alexander', 'Krause', '1997-05-19', 'Am Kleinen Theater', '7', 'Sankt Augustin', '53757', '+49', '02241', '8765432', '0173', '8901234567', 'paul.krause@h-brs.de'),
+    (12, FALSE, 'female', 'Monika', 'Johanna', 'Richter', '1983-06-11', 'Auf dem Nol', '2', 'Sankt Augustin', '53757', '+49', '02241', '9876543', '0174', '9012345678', 'monika.richter@example.com'),
+    (12, FALSE, 'male', 'Lars', 'Christian', 'Schmidt', '1977-08-29', 'Am Pleiser Hohl', '6', 'Sankt Augustin', '53757', '+49', '02241', '1234567', '0175', '0123456789', 'lars.schmidt@example.com');
+
+-- Rheinische Fachhochschule Köln Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (13, TRUE, 'male', 'Florian', 'Peter', 'Schulz', '1999-11-30', 'Schaevenstraße', '1', 'Köln', '50667', '+49', '0221', '2345678', '0171', '6789012345', 'florian.schulz@rfh-koeln.de'),
+    (13, TRUE, 'female', 'Nadine', 'Maria', 'Weber', '1998-08-12', 'Hohenzollernring', '9', 'Köln', '50667', '+49', '0221', '5678901', '0172', '7890123456', 'nadine.weber@rfh-koeln.de'),
+    (13, TRUE, 'non-binary', 'Sebastian', 'Lukas', 'Müller', '1997-03-18', 'Richard-Wagner-Straße', '15', 'Köln', '50667', '+49', '0221', '8765432', '0173', '8901234567', 'sebastian.mueller@rfh-koeln.de'),
+    (13, FALSE, 'female', 'Christina', 'Eva', 'Fischer', '1984-07-29', 'Venloer Straße', '2', 'Köln', '50667', '+49', '0221', '5432109', '0174', '9012345678', 'christina.fischer@example.com'),
+    (13, FALSE, 'male', 'Marcel', 'Jonas', 'Schneider', '1978-11-14', 'Ritterstraße', '8', 'Köln', '50667', '+49', '0221', '9876543', '0175', '0123456789', 'marcel.schneider@example.com');
+
+-- Hochschule Düsseldorf Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (14, TRUE, 'male', 'Simon', 'Alexander', 'Hoffmann', '1999-07-14', 'Münsterstraße', '156', 'Düsseldorf', '40476', '+49', '0211', '2345678', '0171', '6789012345', 'simon.hoffmann@hs-duesseldorf.de'),
+    (14, TRUE, 'female', 'Laura', 'Marie', 'Krause', '1998-05-30', 'Kölner Straße', '12', 'Düsseldorf', '40476', '+49', '0211', '5678901', '0172', '7890123456', 'laura.krause@hs-duesseldorf.de'),
+    (14, TRUE, 'non-binary', 'Christian', 'Lukas', 'Mayer', '1997-02-25', 'Jahnstraße', '7', 'Düsseldorf', '40476', '+49', '0211', '8765432', '0173', '8901234567', 'christian.mayer@hs-duesseldorf.de'),
+    (14, FALSE, 'female', 'Anja', 'Katharina', 'Schmidt', '1985-06-12', 'Bachstraße', '10', 'Düsseldorf', '40476', '+49', '0211', '5432109', '0174', '9012345678', 'anja.schmidt@example.com'),
+    (14, FALSE, 'male', 'Stefan', 'Peter', 'Weber', '1978-03-19', 'Graf-Adolf-Straße', '3', 'Düsseldorf', '40476', '+49', '0211', '9876543', '0175', '0123456789', 'stefan.weber@example.com');
+
+-- FOM University of Applied Sciences Library Members
+INSERT INTO
+    members (fk_univerisity_id, is_student, gender, first_name, middle_name, last_name, birthdate, street, house_number, city, postal_code, country_code, landline_area_code, landline_number, mobile_prefix, mobile_number, email)
+VALUES
+    (15, TRUE, 'male', 'Alexander', 'Lukas', 'Schmidt', '1999-01-23', 'Hansaallee', '1', 'Düsseldorf', '40221', '+49', '0211', '2345678', '0171', '6789012345', 'alexander.schmidt@fom.de'),
+    (15, TRUE, 'female', 'Miriam', 'Sophie', 'Müller', '1998-09-14', 'Friedrichstraße', '7', 'Düsseldorf', '40221', '+49', '0211', '5678901', '0172', '7890123456', 'miriam.mueller@fom.de'),
+    (15, TRUE, 'non-binary', 'Lisa', 'Katharina', 'Weber', '1997-05-11', 'Elisabethstraße', '10', 'Düsseldorf', '40221', '+49', '0211', '8765432', '0173', '8901234567', 'lisa.weber@fom.de'),
+    (15, FALSE, 'female', 'Nina', 'Maria', 'Fischer', '1986-02-28', 'Schwanenmarkt', '3', 'Düsseldorf', '40221', '+49', '0211', '5432109', '0174', '9012345678', 'nina.fischer@example.com'),
+    (15, FALSE, 'male', 'Martin', 'Thomas', 'Schneider', '1980-12-07', 'Bismarckstraße', '8', 'Düsseldorf', '40221', '+49', '0211', '9876543', '0175', '0123456789', 'martin.schneider@example.com');
