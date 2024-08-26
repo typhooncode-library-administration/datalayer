@@ -42,6 +42,141 @@ VALUES
     (14, FALSE, 'Hochschule Düsseldorf Library', 'Münsterstraße', '156', 'Düsseldorf', '40476', 51.2446, 6.7917, '+49', '0211', '435100', 'info@hs-duesseldorf.de', '1971-01-01', 800, 150, 150000),
     (15, FALSE, 'FOM University of Applied Sciences Library', 'Hansaallee', '1', 'Düsseldorf', '40221', 51.2345, 6.7890, '+49', '0211', '493010', 'info@fom.de', '1991-01-01', 500, 120, 100000);
 
+-- Heinrich Heine University Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (1, 1, TRUE), -- Heinrich Heine University Düsseldorf
+    (2, 1, TRUE), -- Düsseldorf University of Applied Sciences
+    (14, 1, TRUE) -- Hochschule Düsseldorf
+;
+
+-- Düsseldorf University of Applied Sciences Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (2, 2, TRUE), -- Düsseldorf University of Applied Sciences
+    (1, 2, TRUE), -- Heinrich Heine University Düsseldorf
+    (14, 2, TRUE) -- Hochschule Düsseldorf
+;
+
+-- University of Wuppertal Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (3, 3, TRUE), -- University of Wuppertal
+    (6, 3, TRUE), -- Bergische Universität Wuppertal - Campus Haspel
+    (7, 3, TRUE) -- Hochschule Niederrhein
+;
+
+-- University of Duisburg-Essen Library - Duisburg Campus
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (4, 4, TRUE), -- University of Duisburg-Essen
+    (5, 4, TRUE), -- Folkwang University of the Arts
+    (7, 4, TRUE) -- Hochschule Niederrhein
+;
+
+-- Folkwang University of the Arts Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (5, 5, TRUE), -- Folkwang University of the Arts
+    (4, 5, TRUE), -- University of Duisburg-Essen
+    (8, 5, TRUE) -- University of Applied Sciences Ruhr West
+;
+
+-- Bergische Universität Wuppertal Library - Campus Haspel
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (6, 6, TRUE), -- Bergische Universität Wuppertal
+    (3, 6, TRUE), -- University of Wuppertal
+    (14, 6, TRUE) -- Hochschule Düsseldorf
+;
+
+-- Hochschule Niederrhein Library - Campus Krefeld
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (7, 7, TRUE), -- Hochschule Niederrhein
+    (4, 7, TRUE), -- University of Duisburg-Essen
+    (1, 7, TRUE) -- Heinrich Heine University Düsseldorf
+;
+
+-- University of Applied Sciences Ruhr West Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (8, 8, TRUE), -- University of Applied Sciences Ruhr West
+    (5, 8, TRUE), -- Folkwang University of the Arts
+    (4, 8, TRUE) -- University of Duisburg-Essen
+;
+
+-- University of Cologne Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (9, 9, TRUE), -- University of Cologne
+    (10, 9, TRUE), -- German Sport University Cologne
+    (13, 9, TRUE) -- Rheinische Fachhochschule Köln
+;
+
+-- German Sport University Cologne Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (10, 10, TRUE), -- German Sport University Cologne
+    (9, 10, TRUE), -- University of Cologne
+    (13, 10, TRUE) -- Rheinische Fachhochschule Köln
+;
+
+-- Cologne University of Applied Sciences Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (11, 11, TRUE), -- Cologne University of Applied Sciences
+    (9, 11, TRUE), -- University of Cologne
+    (13, 11, TRUE) -- Rheinische Fachhochschule Köln
+;
+
+-- Hochschule Bonn-Rhein-Sieg Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (12, 12, TRUE), -- Hochschule Bonn-Rhein-Sieg
+    (9, 12, TRUE), -- University of Cologne
+    (8, 12, TRUE) -- University of Applied Sciences Ruhr West
+;
+
+-- Rheinische Fachhochschule Köln Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (13, 13, TRUE), -- Rheinische Fachhochschule Köln
+    (9, 13, TRUE), -- University of Cologne
+    (11, 13, TRUE) -- Cologne University of Applied Sciences
+;
+
+-- Hochschule Düsseldorf Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (14, 14, TRUE), -- Hochschule Düsseldorf
+    (1, 14, TRUE), -- Heinrich Heine University Düsseldorf
+    (2, 14, TRUE) -- Düsseldorf University of Applied Sciences
+;
+
+-- FOM University of Applied Sciences Library
+INSERT INTO
+    rel_universities_library_access (fk_univerisity_id, fk_library_id, can_borrow)
+VALUES
+    (15, 15, TRUE), -- FOM University of Applied Sciences
+    (1, 15, TRUE), -- Heinrich Heine University Düsseldorf
+    (2, 15, TRUE) -- Düsseldorf University of Applied Sciences
+;
+
 -- Inserting library_opening hours
 -- Heinrich Heine University Library
 INSERT INTO
