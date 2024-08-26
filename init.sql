@@ -38,6 +38,15 @@ CREATE TABLE IF NOT EXISTS libraries (
 	CONSTRAINT unique_library UNIQUE (library_name, postal_code, street, house_number)
 );
 
+CREATE TABLE IF NOT EXISTS rel_universities_library_access (
+	access_id SERIAL PRIMARY KEY,
+	fk_univerisity_id INT NOT NULL,
+	fk_library_id INT NOT NULL,
+	can_borrow BOOLEAN DEFAULT FALSE,
+	FOREIGN KEY (fk_univerisity_id) REFERENCES universities (university_id) ON UPDATE CASCADE ON DELETE SET NULL,
+	FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS library_opening_hours (
 	fk_library_id INT NOT NULL,
 	day_of_week SMALLINT,
