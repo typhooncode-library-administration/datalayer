@@ -1710,17 +1710,17 @@ VALUES
     (1, 'Harry Potter and the Half-Blood Prince', 2005, 'English'), --6
     (1, 'Harry Potter and the Deathly Hallows', 2007, 'English'), --7
     (1, 'The Fellowship of the Ring', 1954, 'English'), --8
-    (1, 'The Two Towers', 1954, 'English'), --9
-    (1, 'The Return of the King', 1955, 'English'),
-    (1, 'The Hobbit', 1937, 'English'),
-    (1, 'The Silmarillion', 1977, 'English'),
-    (1, 'Fantastic Beasts and Where to Find Them', 2001, 'English'),
-    (1, 'Quidditch Through the Ages', 2001, 'English'),
-    (1, 'The Tales of Beedle the Bard', 2008, 'English'),
-    (1, 'The Children of Húrin', 2007, 'English'),
-    (1, 'Beren and Lúthien', 2017, 'English'),
-    (1, 'The Fall of Gondolin', 2018, 'English'),
-    (1, 'Unfinished Tales', 1980, 'English'),
+    (1, 'The Two Towers', 2007, 'English'), --9
+    (1, 'The Return of the King', 2007, 'English'), --10
+    (1, 'The Hobbit', 2009, 'English'), --11
+    (1, 'The Silmarillion', 2013, 'English'), --12
+    (1, 'Fantastic Beasts and Where to Find Them', 2017, 'English'), --13
+    (1, 'Quidditch Through the Ages', 2001, 'English'), --14
+    (1, 'The Tales of Beedle the Bard', 2008, 'English'), --15
+    (1, 'The Children of Húrin', 2009, 'English'), --16
+    (1, 'Beren and Lúthien', 2017, 'English'), --17
+    (1, 'The Fall of Gondolin', 2018, 'English'), --18
+    (1, 'Unfinished Tales', 1980, 'English'), --19
     (1, 'The History of Middle-earth', 1983, 'English');
 
 -- insert the relevant publishers
@@ -1759,20 +1759,15 @@ VALUES
     (5, '0747551006', '9780747551003', '823.914', 'Hardcover', '1st', 766, 'The fifth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
     (6, '0747581088', '9780747581086', '823.914', 'Hardcover', '1st', 607, 'The sixth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
     (7, '0747591059', '9780747591054', '823.914', 'Hardcover', '1st', 607, 'The seventh book in the Harry Potter series.', NULL, NULL, NULL, NULL),
-    --
-    (8, '0261103571', '9780261103573', '823.912', 'Hardcover', '1st', 423, 'The first book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
-    (9, '0261102362', '9780261102361', '823.912', 'Hardcover', '1st', 352, 'The second book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
-    (10, '0261102389', '9780261102385', '823.912', 'Hardcover', '1st', 416, 'The third book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
-    (11, '0261102214', '9780261102217', '823.912', 'Hardcover', '1st', 310, 'The prequel to The Lord of the Rings, The Hobbit.', NULL, NULL, NULL, NULL),
-    (12, '0618391118', '9780618391110', '823.912', 'Hardcover', '1st', 365, 'A collection of mythopoeic stories by J.R.R. Tolkien.', NULL, NULL, NULL, NULL),
-    (13, '043932162X', '9780439321624', '823.914', 'Hardcover', '1st', 42, 'A book by J.K. Rowling detailing magical creatures.', NULL, NULL, NULL, NULL),
-    (14, '0439321611', '9780439321617', '823.914', 'Hardcover', '1st', 56, 'A book by J.K. Rowling about Quidditch.', NULL, NULL, NULL, NULL),
-    (15, '0747599874', '9780747599876', '823.914', 'Hardcover', '1st', 144, 'A collection of childrens stories by J.K. Rowling.', NULL, NULL, NULL, NULL),
-    (16, '0618894640', '9780618894642', '823.912', 'Hardcover', '1st', 313, 'A posthumous novel by J.R.R. Tolkien.', NULL, NULL, NULL, NULL),
-    (17, '1328791824', '9781328791825', '823.912', 'Hardcover', '1st', 288, 'A story from the First Age of Middle-earth.', NULL, NULL, NULL, NULL),
-    (18, '0008302767', '9780008302764', '823.912', 'Hardcover', '1st', 304, 'The fall of the hidden city of Gondolin.', NULL, NULL, NULL, NULL),
-    (19, '0618190738', '9780618190737', '823.912', 'Hardcover', '1st', 472, 'A collection of stories by J.R.R. Tolkien.', NULL, NULL, NULL, NULL),
-    (20, '0618391118', '9780618391110', '823.912', 'Hardcover', '1st', 365, 'A 12-volume series exploring the vast mythology of Middle-earth.', NULL, NULL, NULL, NULL);
+    (8, '0008537771', '9780008537777', '823.912', 'Hardcover', '1st', 576, 'The first book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
+    (9, '0261102362', '9780261102361', '823.912', 'Hardcover', '1st', 464, 'The second book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
+    (10, '0261102370', '9780261102378', '823.912', 'Hardcover', '1st', 416, 'The third book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
+    (11, '0261102214', '9780261102217', '823.912', 'Hardcover', '1st', 251, 'The prequel to The Lord of the Rings, The Hobbit.', NULL, NULL, NULL, NULL),
+    (12, '0261102737', '9780261102736', '823.912', 'Hardcover', '1st', 443, 'A collection of mythopoeic stories by J.R.R. Tolkien.', NULL, NULL, NULL, NULL),
+    (13, '1338216791', '9781338216790', '823.914', 'Hardcover', '1st', 160, 'A book by J.K. Rowling detailing magical creatures.', NULL, NULL, NULL, NULL),
+    (14, '1408880733', '9781408880739', '823.914', 'Hardcover', '1st', 144, 'A book by J.K. Rowling about Quidditch.', NULL, NULL, NULL, NULL),
+    (15, '0747599874', '9780747599876', '823.914', 'Hardcover', '1st', 128, 'A collection of childrens stories by J.K. Rowling.', NULL, NULL, NULL, NULL),
+    (16, '0007309368', '9780007309368', '823.912', 'Hardcover', '1st', 313, 'A posthumous novel by J.R.R. Tolkien.', NULL, NULL, NULL, NULL);
 
 -- insert relation between books and publishers
 INSERT INTO
@@ -1785,20 +1780,15 @@ VALUES
     (1, 5),
     (1, 6),
     (1, 7),
-    --
-    (2, 8),
-    (2, 9),
-    (2, 10),
-    (2, 11),
-    (2, 12),
-    (1, 13),
+    (3, 8),
+    (3, 9),
+    (3, 10),
+    (3, 11),
+    (3, 12),
+    (2, 13),
     (1, 14),
     (1, 15),
-    (3, 16),
-    (3, 17),
-    (3, 18),
-    (3, 19),
-    (3, 20);
+    (3, 16);
 
 -- insert relation between books and genres
 INSERT INTO
@@ -1811,7 +1801,6 @@ VALUES
     (1, 5),
     (1, 6),
     (1, 7),
-    --
     (1, 8),
     (1, 9),
     (1, 10),
@@ -1820,11 +1809,7 @@ VALUES
     (1, 13),
     (1, 14),
     (1, 15),
-    (4, 16),
-    (4, 17),
-    (4, 18),
-    (4, 19),
-    (4, 20);
+    (3, 16);
 
 -- insert relation between books and authors
 INSERT INTO
@@ -1837,7 +1822,6 @@ VALUES
     (1, 5),
     (1, 6),
     (1, 7),
-    --
     (2, 8),
     (2, 9),
     (2, 10),
@@ -1846,372 +1830,227 @@ VALUES
     (1, 13),
     (1, 14),
     (1, 15),
-    (2, 16),
-    (2, 17),
-    (2, 18),
-    (2, 19),
-    (2, 20);
+    (2, 16);
 
 -- inserting sample data in media_inventory table
 -- Heinrich Heine University Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (1, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (1, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (1, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (1, 1, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
+    (1, 2, 5, 5, 0, 0), -- Harry Potter and the Chamber of Secrets
+    (1, 3, 5, 5, 0, 0), -- Harry Potter and the Prisoner of Azkaban
+    (1, 4, 5, 5, 0, 0), -- Harry Potter and the Goblet of Fire
+    (1, 5, 5, 5, 0, 0) -- Harry Potter and the Order of the Phoenix
 ;
 
 -- Düsseldorf University of Applied Sciences Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (2, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (2, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (2, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (2, 6, 5, 5, 0, 0), -- Harry Potter and the Half-Blood Prince
+    (2, 7, 5, 5, 0, 0), -- Harry Potter and the Deathly Hallows
+    (2, 8, 5, 5, 0, 0), -- The Fellowship of the Ring
+    (2, 9, 5, 5, 0, 0), -- The Two Towers
+    (2, 10, 5, 5, 0, 0) -- The Return of the King
 ;
 
 -- University of Wuppertal Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (3, 4, 4, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (3, 3, 3, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (3, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (3, 11, 5, 5, 0, 0), -- The Hobbit
+    (3, 12, 5, 5, 0, 0), -- The Silmarillion
+    (3, 13, 5, 5, 0, 0), -- Fantastic Beasts and Where to Find Them
+    (3, 14, 5, 5, 0, 0), -- Quidditch Through the Ages
+    (3, 15, 5, 5, 0, 0) -- The Tales of Beedle the Bard
 ;
 
 -- University of Duisburg-Essen Library - Duisburg Campus
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (4, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (4, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (4, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (4, 16, 5, 5, 0, 0), -- The Children of Húrin
+    (4, 1, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
+    (4, 2, 5, 5, 0, 0), -- Harry Potter and the Chamber of Secrets
+    (4, 3, 5, 5, 0, 0), -- Harry Potter and the Prisoner of Azkaban
+    (4, 4, 5, 5, 0, 0) -- Harry Potter and the Goblet of Fire
 ;
 
 -- Folkwang University of the Arts Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (5, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (5, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (5, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (5, 5, 5, 5, 0, 0), -- Harry Potter and the Order of the Phoenix
+    (5, 6, 5, 5, 0, 0), -- Harry Potter and the Half-Blood Prince
+    (5, 7, 5, 5, 0, 0), -- Harry Potter and the Deathly Hallows
+    (5, 8, 5, 5, 0, 0), -- The Fellowship of the Ring
+    (5, 9, 5, 5, 0, 0) -- The Two Towers
 ;
 
 -- Bergische Universität Wuppertal Library - Campus Haspel
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (6, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (6, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (6, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (6, 10, 5, 5, 0, 0), -- The Return of the King
+    (6, 11, 5, 5, 0, 0), -- The Hobbit
+    (6, 12, 5, 5, 0, 0), -- The Silmarillion
+    (6, 13, 5, 5, 0, 0), -- Fantastic Beasts and Where to Find Them
+    (6, 14, 5, 5, 0, 0) -- Quidditch Through the Ages
 ;
 
 -- Hochschule Niederrhein Library - Campus Krefeld
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (7, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (7, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (7, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (7, 15, 5, 5, 0, 0), -- The Tales of Beedle the Bard
+    (7, 16, 5, 5, 0, 0), -- The Children of Húrin
+    (7, 1, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
+    (7, 2, 5, 5, 0, 0), -- Harry Potter and the Chamber of Secrets
+    (7, 3, 5, 5, 0, 0) -- Harry Potter and the Prisoner of Azkaban
 ;
 
 -- University of Applied Sciences Ruhr West Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (8, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (8, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (8, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (8, 4, 5, 5, 0, 0), -- Harry Potter and the Goblet of Fire
+    (8, 5, 5, 5, 0, 0), -- Harry Potter and the Order of the Phoenix
+    (8, 6, 5, 5, 0, 0), -- Harry Potter and the Half-Blood Prince
+    (8, 7, 5, 5, 0, 0), -- Harry Potter and the Deathly Hallows
+    (8, 8, 5, 5, 0, 0) -- The Fellowship of the Ring
 ;
 
 -- University of Cologne Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (9, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (9, 4, 4, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (9, 3, 3, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (9, 9, 5, 5, 0, 0), -- The Two Towers
+    (9, 10, 5, 5, 0, 0), -- The Return of the King
+    (9, 11, 5, 5, 0, 0), -- The Hobbit
+    (9, 12, 5, 5, 0, 0), -- The Silmarillion
+    (9, 13, 5, 5, 0, 0) -- Fantastic Beasts and Where to Find Them
 ;
 
 -- German Sport University Cologne Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (10, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (10, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (10, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (10, 14, 5, 5, 0, 0), -- Quidditch Through the Ages
+    (10, 15, 5, 5, 0, 0), -- The Tales of Beedle the Bard
+    (10, 16, 5, 5, 0, 0), -- The Children of Húrin
+    (10, 1, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
+    (10, 2, 5, 5, 0, 0) -- Harry Potter and the Chamber of Secrets
 ;
 
 -- Stadtbücherei Düsseldorf - Zentralbibliothek
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (11, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (11, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (11, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (11, 3, 5, 5, 0, 0), -- Harry Potter and the Prisoner of Azkaban
+    (11, 4, 5, 5, 0, 0), -- Harry Potter and the Goblet of Fire
+    (11, 5, 5, 5, 0, 0), -- Harry Potter and the Order of the Phoenix
+    (11, 6, 5, 5, 0, 0), -- Harry Potter and the Half-Blood Prince
+    (11, 7, 5, 5, 0, 0) -- Harry Potter and the Deathly Hallows
 ;
 
 -- Stadtbibliothek Essen
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (12, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (12, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (12, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (12, 8, 5, 5, 0, 0), -- The Fellowship of the Ring
+    (12, 9, 5, 5, 0, 0), -- The Two Towers
+    (12, 10, 5, 5, 0, 0), -- The Return of the King
+    (12, 11, 5, 5, 0, 0), -- The Hobbit
+    (12, 12, 5, 5, 0, 0) -- The Silmarillion
 ;
 
 -- Stadtbücherei Duisburg
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (13, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (13, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (13, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (13, 13, 5, 5, 0, 0), -- Fantastic Beasts and Where to Find Them
+    (13, 14, 5, 5, 0, 0), -- Quidditch Through the Ages
+    (13, 15, 5, 5, 0, 0), -- The Tales of Beedle the Bard
+    (13, 16, 5, 5, 0, 0), -- The Children of Húrin
+    (13, 1, 5, 5, 0, 0) -- Harry Potter and the Philosopher's Stone
 ;
 
 -- Stadtbibliothek Krefeld
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (14, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (14, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (14, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (14, 2, 5, 5, 0, 0), -- Harry Potter and the Chamber of Secrets
+    (14, 3, 5, 5, 0, 0), -- Harry Potter and the Prisoner of Azkaban
+    (14, 4, 5, 5, 0, 0), -- Harry Potter and the Goblet of Fire
+    (14, 5, 5, 5, 0, 0), -- Harry Potter and the Order of the Phoenix
+    (14, 6, 5, 5, 0, 0) -- Harry Potter and the Half-Blood Prince
 ;
 
 -- Stadtbibliothek Wuppertal
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (15, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (15, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (15, 2, 2, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (15, 7, 5, 5, 0, 0), -- Harry Potter and the Deathly Hallows
+    (15, 8, 5, 5, 0, 0), -- The Fellowship of the Ring
+    (15, 9, 5, 5, 0, 0), -- The Two Towers
+    (15, 10, 5, 5, 0, 0), -- The Return of the King
+    (15, 11, 5, 5, 0, 0) -- The Hobbit
+;
+
+-- Cologne University of Applied Sciences Library
+INSERT INTO
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+VALUES
+    (16, 12, 5, 5, 0, 0), -- The Silmarillion
+    (16, 13, 5, 5, 0, 0), -- Fantastic Beasts and Where to Find Them
+    (16, 14, 5, 5, 0, 0), -- Quidditch Through the Ages
+    (16, 15, 5, 5, 0, 0), -- The Tales of Beedle the Bard
+    (16, 16, 5, 5, 0, 0) -- The Children of Húrin
 ;
 
 -- Hochschule Bonn-Rhein-Sieg Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (16, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (16, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (16, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- RWTH Aachen University Library
-INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
-VALUES
-    (17, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (17, 4, 4, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (17, 3, 3, 0, 0) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- FH Aachen Library
-INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
-VALUES
-    (18, 2, 2, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (18, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (18, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Technische Hochschule Köln Library
-INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
-VALUES
-    (19, 3, 3, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (19, 2, 2, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (19, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (17, 1, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
+    (17, 2, 5, 5, 0, 0), -- Harry Potter and the Chamber of Secrets
+    (17, 3, 5, 5, 0, 0), -- Harry Potter and the Prisoner of Azkaban
+    (17, 4, 5, 5, 0, 0), -- Harry Potter and the Goblet of Fire
+    (17, 5, 5, 5, 0, 0) -- Harry Potter and the Order of the Phoenix
 ;
 
 -- Rheinische Fachhochschule Köln Library
 INSERT INTO
-    media_inventory (fk_library_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (20, 1, 1, 0, 0), -- Harry Potter and the Philosopher's Stone
-    (20, 1, 1, 0, 0), -- Harry Potter and the Chamber of Secrets
-    (20, 1, 1, 0, 0) -- Harry Potter and the Prisoner of Azkaban
+    (18, 6, 5, 5, 0, 0), -- Harry Potter and the Half-Blood Prince
+    (18, 7, 5, 5, 0, 0), -- Harry Potter and the Deathly Hallows
+    (18, 8, 5, 5, 0, 0), -- The Fellowship of the Ring
+    (18, 9, 5, 5, 0, 0), -- The Two Towers
+    (18, 10, 5, 5, 0, 0) -- The Return of the King
 ;
 
--- insert sample data in rel_media_inventory table
--- Heinrich Heine University Library
+-- Hochschule Düsseldorf Library
 INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (1, 1), -- Harry Potter and the Philosopher's Stone
-    (2, 2), -- Harry Potter and the Chamber of Secrets
-    (3, 3) -- Harry Potter and the Prisoner of Azkaban
+    (19, 11, 5, 5, 0, 0), -- The Hobbit
+    (19, 12, 5, 5, 0, 0), -- The Silmarillion
+    (19, 13, 5, 5, 0, 0), -- Fantastic Beasts and Where to Find Them
+    (19, 14, 5, 5, 0, 0), -- Quidditch Through the Ages
+    (19, 15, 5, 5, 0, 0) -- The Tales of Beedle the Bard
 ;
 
--- Düsseldorf University of Applied Sciences Library
+-- FOM University of Applied Sciences Library
 INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
+    media_inventory (fk_library_id, fk_media_id, total_quantity, available_quantity, checked_out_quantity, lost_quantity)
 VALUES
-    (1, 4), -- Harry Potter and the Philosopher's Stone
-    (2, 5), -- Harry Potter and the Chamber of Secrets
-    (3, 6) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- University of Wuppertal Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 7), -- Harry Potter and the Philosopher's Stone
-    (2, 8), -- Harry Potter and the Chamber of Secrets
-    (3, 9) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- University of Duisburg-Essen Library - Duisburg Campus
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 10), -- Harry Potter and the Philosopher's Stone
-    (2, 11), -- Harry Potter and the Chamber of Secrets
-    (3, 12) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Folkwang University of the Arts Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 13), -- Harry Potter and the Philosopher's Stone
-    (2, 14), -- Harry Potter and the Chamber of Secrets
-    (3, 15) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Bergische Universität Wuppertal Library - Campus Haspel
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 16), -- Harry Potter and the Philosopher's Stone
-    (2, 17), -- Harry Potter and the Chamber of Secrets
-    (3, 18) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Hochschule Niederrhein Library - Campus Krefeld
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 19), -- Harry Potter and the Philosopher's Stone
-    (2, 20), -- Harry Potter and the Chamber of Secrets
-    (3, 21) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- University of Applied Sciences Ruhr West Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 22), -- Harry Potter and the Philosopher's Stone
-    (2, 23), -- Harry Potter and the Chamber of Secrets
-    (3, 24) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- University of Cologne Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 25), -- Harry Potter and the Philosopher's Stone
-    (2, 26), -- Harry Potter and the Chamber of Secrets
-    (3, 27) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- German Sport University Cologne Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 28), -- Harry Potter and the Philosopher's Stone
-    (2, 29), -- Harry Potter and the Chamber of Secrets
-    (3, 30) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Stadtbücherei Düsseldorf - Zentralbibliothek
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 31), -- Harry Potter and the Philosopher's Stone
-    (2, 32), -- Harry Potter and the Chamber of Secrets
-    (3, 33) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Stadtbibliothek Essen
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 34), -- Harry Potter and the Philosopher's Stone
-    (2, 35), -- Harry Potter and the Chamber of Secrets
-    (3, 36) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Stadtbücherei Duisburg
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 37), -- Harry Potter and the Philosopher's Stone
-    (2, 38), -- Harry Potter and the Chamber of Secrets
-    (3, 39) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Stadtbibliothek Krefeld
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 40), -- Harry Potter and the Philosopher's Stone
-    (2, 41), -- Harry Potter and the Chamber of Secrets
-    (3, 42) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Stadtbibliothek Wuppertal
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 43), -- Harry Potter and the Philosopher's Stone
-    (2, 44), -- Harry Potter and the Chamber of Secrets
-    (3, 45) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Hochschule Bonn-Rhein-Sieg Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 46), -- Harry Potter and the Philosopher's Stone
-    (2, 47), -- Harry Potter and the Chamber of Secrets
-    (3, 48) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- RWTH Aachen University Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 49), -- Harry Potter and the Philosopher's Stone
-    (2, 50), -- Harry Potter and the Chamber of Secrets
-    (3, 51) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- FH Aachen Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 52), -- Harry Potter and the Philosopher's Stone
-    (2, 53), -- Harry Potter and the Chamber of Secrets
-    (3, 54) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Technische Hochschule Köln Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 55), -- Harry Potter and the Philosopher's Stone
-    (2, 56), -- Harry Potter and the Chamber of Secrets
-    (3, 57) -- Harry Potter and the Prisoner of Azkaban
-;
-
--- Rheinische Fachhochschule Köln Library
-INSERT INTO
-    rel_media_inventory_media (fk_media_id, fk_media_inventory_id)
-VALUES
-    (1, 58), -- Harry Potter and the Philosopher's Stone
-    (2, 59), -- Harry Potter and the Chamber of Secrets
-    (3, 60) -- Harry Potter and the Prisoner of Azkaban
+    (20, 16, 5, 5, 0, 0), -- The Children of Húrin
+    (20, 1, 5, 5, 0, 0), -- Harry Potter and the Philosopher's Stone
+    (20, 2, 5, 5, 0, 0), -- Harry Potter and the Chamber of Secrets
+    (20, 3, 5, 5, 0, 0), -- Harry Potter and the Prisoner of Azkaban
+    (20, 4, 5, 5, 0, 0) -- Harry Potter and the Goblet of Fire
 ;
 
 -- inserting data in loan_fee_policies table
