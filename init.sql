@@ -193,29 +193,6 @@ CREATE TABLE IF NOT EXISTS library_cards (
 	FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
-CREATE TABLE IF NOT EXISTS media_inventory (
-	media_inventory_id SERIAL PRIMARY KEY,
-	fk_library_id INT NOT NULL,
-	total_quantity INT NOT NULL,
-	available_quantity INT,
-	checked_out_quantity INT,
-	lost_quantity INT,
-	FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE RESTRICT
-);
-
-CREATE TYPE media_instances_status AS ENUM('available', 'checked_out', 'reserved', 'lost');
-
-CREATE TYPE media_instances_access_restriction AS ENUM('internal', 'external', 'general', 'reference_only');
-
-CREATE TABLE IF NOT EXISTS media_instances (
-	instance_id SERIAL PRIMARY KEY,
-	fk_media_inventory_id INT NOT NULL,
-	status media_instances_status NOT NULL DEFAULT 'available',
-	location VARCHAR(100),
-	access_restriction media_instances_access_restriction NOT NULL,
-	FOREIGN KEY (fk_media_inventory_id) REFERENCES media_inventory (media_inventory_id) ON UPDATE CASCADE ON DELETE RESTRICT
-);
-
 CREATE TABLE IF NOT EXISTS media_types (
 	media_type_id SERIAL PRIMARY KEY,
 	media_type_name VARCHAR(50) NOT NULL UNIQUE
@@ -229,6 +206,32 @@ CREATE TABLE IF NOT EXISTS media (
 	language VARCHAR(50) NOT NULL,
 	FOREIGN KEY (fk_media_type_id) REFERENCES media_types (media_type_id) ON UPDATE RESTRICT ON DELETE RESTRICT,
 	CONSTRAINT unique_media UNIQUE (title, fk_media_type_id, publish_date, language)
+);
+
+CREATE TABLE IF NOT EXISTS media_inventory (
+	media_inventory_id SERIAL PRIMARY KEY,
+	fk_library_id INT NOT NULL,
+	fk_media_id INT NOT NULL,
+	total_quantity INT NOT NULL,
+	available_quantity INT,
+	checked_out_quantity INT,
+	lost_quantity INT,
+	FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	CONSTRAINT unique_media_in_library UNIQUE (fk_library_id, fk_media_id)
+);
+
+CREATE TYPE media_instances_status AS ENUM('available', 'checked_out', 'reserved', 'lost');
+
+CREATE TYPE media_instances_access_restriction AS ENUM('internal', 'external', 'general', 'reference_only');
+
+CREATE TABLE IF NOT EXISTS media_instances (
+	instance_id SERIAL PRIMARY KEY,
+	fk_media_inventory_id INT NOT NULL,
+	status media_instances_status NOT NULL DEFAULT 'available',
+	location VARCHAR(100),
+	access_restriction media_instances_access_restriction NOT NULL DEFAULT 'internal',
+	FOREIGN KEY (fk_media_inventory_id) REFERENCES media_inventory (media_inventory_id) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TYPE loan_fee_policies_member_type AS ENUM('internal', 'external', 'general');
@@ -246,14 +249,6 @@ CREATE TABLE IF NOT EXISTS loan_fee_policies (
 	FOREIGN KEY (fk_media_type_id) REFERENCES media_types (media_type_id) ON UPDATE RESTRICT ON DELETE RESTRICT,
 	FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE CASCADE,
 	CONSTRAINT unique_loan_fee_policy UNIQUE (fk_media_type_id, fk_library_id, member_type)
-);
-
-CREATE TABLE IF NOT EXISTS rel_media_inventory_media (
-	fk_media_id INT NOT NULL,
-	fk_media_inventory_id INT NOT NULL,
-	FOREIGN KEY (fk_media_id) REFERENCES media (media_id) ON UPDATE CASCADE ON DELETE RESTRICT,
-	FOREIGN KEY (fk_media_inventory_id) REFERENCES media_inventory (media_inventory_id) ON UPDATE CASCADE ON DELETE RESTRICT,
-	PRIMARY KEY (fk_media_id, fk_media_inventory_id)
 );
 
 CREATE TABLE IF NOT EXISTS magazines (
