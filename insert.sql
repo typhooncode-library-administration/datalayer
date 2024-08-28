@@ -1718,10 +1718,7 @@ VALUES
     (1, 'Quidditch Through the Ages', 2001, 'English'), --14
     (1, 'The Tales of Beedle the Bard', 2008, 'English'), --15
     (1, 'The Children of Húrin', 2009, 'English'), --16
-    (1, 'Beren and Lúthien', 2017, 'English'), --17
-    (1, 'The Fall of Gondolin', 2018, 'English'), --18
-    (1, 'Unfinished Tales', 1980, 'English'), --19
-    (1, 'The History of Middle-earth', 1983, 'English');
+;
 
 -- insert the relevant publishers
 INSERT INTO
