@@ -2050,6 +2050,307 @@ VALUES
     (20, 4, 5, 5, 0, 0) -- Harry Potter and the Goblet of Fire
 ;
 
+-- insert data in media_instances table
+-- Heinrich Heine University Library
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (1, 'available', 'Shelf A1', 'internal'),
+    (1, 'available', 'Shelf A2', 'general'),
+    (1, 'available', 'Shelf A3', 'internal'),
+    (1, 'available', 'Shelf A4', 'external'),
+    (1, 'available', 'Shelf A5', 'reference_only'),
+    (2, 'available', 'Shelf B1', 'internal'),
+    (2, 'available', 'Shelf B2', 'general'),
+    (2, 'available', 'Shelf B3', 'internal'),
+    (2, 'available', 'Shelf B4', 'external'),
+    (2, 'available', 'Shelf B5', 'reference_only'),
+    (3, 'available', 'Shelf C1', 'internal'),
+    (3, 'available', 'Shelf C2', 'general'),
+    (3, 'available', 'Shelf C3', 'internal'),
+    (3, 'available', 'Shelf C4', 'external'),
+    (3, 'available', 'Shelf C5', 'reference_only'),
+    (4, 'available', 'Shelf D1', 'internal'),
+    (4, 'available', 'Shelf D2', 'general'),
+    (4, 'available', 'Shelf D3', 'internal'),
+    (4, 'available', 'Shelf D4', 'external'),
+    (4, 'available', 'Shelf D5', 'reference_only'),
+    (5, 'available', 'Shelf E1', 'internal'),
+    (5, 'available', 'Shelf E2', 'general'),
+    (5, 'available', 'Shelf E3', 'internal'),
+    (5, 'available', 'Shelf E4', 'external'),
+    (5, 'available', 'Shelf E5', 'reference_only');
+
+-- Düsseldorf University of Applied Sciences Library
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (6, 'available', 'Shelf A1', 'internal'),
+    (6, 'available', 'Shelf A2', 'general'),
+    (6, 'available', 'Shelf A3', 'internal'),
+    (6, 'available', 'Shelf A4', 'external'),
+    (6, 'available', 'Shelf A5', 'reference_only'),
+    (7, 'available', 'Shelf B1', 'internal'),
+    (7, 'available', 'Shelf B2', 'general'),
+    (7, 'available', 'Shelf B3', 'internal'),
+    (7, 'available', 'Shelf B4', 'external'),
+    (7, 'available', 'Shelf B5', 'reference_only'),
+    (8, 'available', 'Shelf C1', 'internal'),
+    (8, 'available', 'Shelf C2', 'general'),
+    (8, 'available', 'Shelf C3', 'internal'),
+    (8, 'available', 'Shelf C4', 'external'),
+    (8, 'available', 'Shelf C5', 'reference_only'),
+    (9, 'available', 'Shelf D1', 'internal'),
+    (9, 'available', 'Shelf D2', 'general'),
+    (9, 'available', 'Shelf D3', 'internal'),
+    (9, 'available', 'Shelf D4', 'external'),
+    (9, 'available', 'Shelf D5', 'reference_only'),
+    (10, 'available', 'Shelf E1', 'internal'),
+    (10, 'available', 'Shelf E2', 'general'),
+    (10, 'available', 'Shelf E3', 'internal'),
+    (10, 'available', 'Shelf E4', 'external'),
+    (10, 'available', 'Shelf E5', 'reference_only');
+
+-- University of Wuppertal Library
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (11, 'available', 'Shelf A1', 'internal'),
+    (11, 'available', 'Shelf A2', 'general'),
+    (11, 'available', 'Shelf A3', 'internal'),
+    (11, 'available', 'Shelf A4', 'external'),
+    (11, 'available', 'Shelf A5', 'reference_only'),
+    (12, 'available', 'Shelf B1', 'internal'),
+    (12, 'available', 'Shelf B2', 'general'),
+    (12, 'available', 'Shelf B3', 'internal'),
+    (12, 'available', 'Shelf B4', 'external'),
+    (12, 'available', 'Shelf B5', 'reference_only'),
+    (13, 'available', 'Shelf C1', 'internal'),
+    (13, 'available', 'Shelf C2', 'general'),
+    (13, 'available', 'Shelf C3', 'internal'),
+    (13, 'available', 'Shelf C4', 'external'),
+    (13, 'available', 'Shelf C5', 'reference_only'),
+    (14, 'available', 'Shelf D1', 'internal'),
+    (14, 'available', 'Shelf D2', 'general'),
+    (14, 'available', 'Shelf D3', 'internal'),
+    (14, 'available', 'Shelf D4', 'external'),
+    (14, 'available', 'Shelf D5', 'reference_only'),
+    (15, 'available', 'Shelf E1', 'internal'),
+    (15, 'available', 'Shelf E2', 'general'),
+    (15, 'available', 'Shelf E3', 'internal'),
+    (15, 'available', 'Shelf E4', 'external'),
+    (15, 'available', 'Shelf E5', 'reference_only');
+
+-- University of Duisburg-Essen Library - Duisburg Campus
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (16, 'available', 'Shelf A1', 'internal'),
+    (16, 'available', 'Shelf A2', 'general'),
+    (16, 'available', 'Shelf A3', 'internal'),
+    (16, 'available', 'Shelf A4', 'external'),
+    (16, 'available', 'Shelf A5', 'reference_only'),
+    (17, 'available', 'Shelf B1', 'internal'),
+    (17, 'available', 'Shelf B2', 'general'),
+    (17, 'available', 'Shelf B3', 'internal'),
+    (17, 'available', 'Shelf B4', 'external'),
+    (17, 'available', 'Shelf B5', 'reference_only'),
+    (18, 'available', 'Shelf C1', 'internal'),
+    (18, 'available', 'Shelf C2', 'general'),
+    (18, 'available', 'Shelf C3', 'internal'),
+    (18, 'available', 'Shelf C4', 'external'),
+    (18, 'available', 'Shelf C5', 'reference_only'),
+    (19, 'available', 'Shelf D1', 'internal'),
+    (19, 'available', 'Shelf D2', 'general'),
+    (19, 'available', 'Shelf D3', 'internal'),
+    (19, 'available', 'Shelf D4', 'external'),
+    (19, 'available', 'Shelf D5', 'reference_only'),
+    (20, 'available', 'Shelf E1', 'internal'),
+    (20, 'available', 'Shelf E2', 'general'),
+    (20, 'available', 'Shelf E3', 'internal'),
+    (20, 'available', 'Shelf E4', 'external'),
+    (20, 'available', 'Shelf E5', 'reference_only');
+
+-- Folkwang University of the Arts Library
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (21, 'available', 'Shelf A1', 'internal'),
+    (21, 'available', 'Shelf A2', 'general'),
+    (21, 'available', 'Shelf A3', 'internal'),
+    (21, 'available', 'Shelf A4', 'external'),
+    (21, 'available', 'Shelf A5', 'reference_only'),
+    (22, 'available', 'Shelf B1', 'internal'),
+    (22, 'available', 'Shelf B2', 'general'),
+    (22, 'available', 'Shelf B3', 'internal'),
+    (22, 'available', 'Shelf B4', 'external'),
+    (22, 'available', 'Shelf B5', 'reference_only'),
+    (23, 'available', 'Shelf C1', 'internal'),
+    (23, 'available', 'Shelf C2', 'general'),
+    (23, 'available', 'Shelf C3', 'internal'),
+    (23, 'available', 'Shelf C4', 'external'),
+    (23, 'available', 'Shelf C5', 'reference_only'),
+    (24, 'available', 'Shelf D1', 'internal'),
+    (24, 'available', 'Shelf D2', 'general'),
+    (24, 'available', 'Shelf D3', 'internal'),
+    (24, 'available', 'Shelf D4', 'external'),
+    (24, 'available', 'Shelf D5', 'reference_only'),
+    (25, 'available', 'Shelf E1', 'internal'),
+    (25, 'available', 'Shelf E2', 'general'),
+    (25, 'available', 'Shelf E3', 'internal'),
+    (25, 'available', 'Shelf E4', 'external'),
+    (25, 'available', 'Shelf E5', 'reference_only');
+
+-- Bergische Universität Wuppertal Library - Campus Haspel
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (26, 'available', 'Shelf A1', 'internal'),
+    (26, 'available', 'Shelf A2', 'general'),
+    (26, 'available', 'Shelf A3', 'internal'),
+    (26, 'available', 'Shelf A4', 'external'),
+    (26, 'available', 'Shelf A5', 'reference_only'),
+    (27, 'available', 'Shelf B1', 'internal'),
+    (27, 'available', 'Shelf B2', 'general'),
+    (27, 'available', 'Shelf B3', 'internal'),
+    (27, 'available', 'Shelf B4', 'external'),
+    (27, 'available', 'Shelf B5', 'reference_only'),
+    (28, 'available', 'Shelf C1', 'internal'),
+    (28, 'available', 'Shelf C2', 'general'),
+    (28, 'available', 'Shelf C3', 'internal'),
+    (28, 'available', 'Shelf C4', 'external'),
+    (28, 'available', 'Shelf C5', 'reference_only'),
+    (29, 'available', 'Shelf D1', 'internal'),
+    (29, 'available', 'Shelf D2', 'general'),
+    (29, 'available', 'Shelf D3', 'internal'),
+    (29, 'available', 'Shelf D4', 'external'),
+    (29, 'available', 'Shelf D5', 'reference_only'),
+    (30, 'available', 'Shelf E1', 'internal'),
+    (30, 'available', 'Shelf E2', 'general'),
+    (30, 'available', 'Shelf E3', 'internal'),
+    (30, 'available', 'Shelf E4', 'external'),
+    (30, 'available', 'Shelf E5', 'reference_only');
+
+-- Hochschule Niederrhein Library - Campus Krefeld
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (31, 'available', 'Shelf A1', 'internal'),
+    (31, 'available', 'Shelf A2', 'general'),
+    (31, 'available', 'Shelf A3', 'internal'),
+    (31, 'available', 'Shelf A4', 'external'),
+    (31, 'available', 'Shelf A5', 'reference_only'),
+    (32, 'available', 'Shelf B1', 'internal'),
+    (32, 'available', 'Shelf B2', 'general'),
+    (32, 'available', 'Shelf B3', 'internal'),
+    (32, 'available', 'Shelf B4', 'external'),
+    (32, 'available', 'Shelf B5', 'reference_only'),
+    (33, 'available', 'Shelf C1', 'internal'),
+    (33, 'available', 'Shelf C2', 'general'),
+    (33, 'available', 'Shelf C3', 'internal'),
+    (33, 'available', 'Shelf C4', 'external'),
+    (33, 'available', 'Shelf C5', 'reference_only'),
+    (34, 'available', 'Shelf D1', 'internal'),
+    (34, 'available', 'Shelf D2', 'general'),
+    (34, 'available', 'Shelf D3', 'internal'),
+    (34, 'available', 'Shelf D4', 'external'),
+    (34, 'available', 'Shelf D5', 'reference_only'),
+    (35, 'available', 'Shelf E1', 'internal'),
+    (35, 'available', 'Shelf E2', 'general'),
+    (35, 'available', 'Shelf E3', 'internal'),
+    (35, 'available', 'Shelf E4', 'external'),
+    (35, 'available', 'Shelf E5', 'reference_only');
+
+-- University of Applied Sciences Ruhr West Library
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (36, 'available', 'Shelf A1', 'internal'),
+    (36, 'available', 'Shelf A2', 'general'),
+    (36, 'available', 'Shelf A3', 'internal'),
+    (36, 'available', 'Shelf A4', 'external'),
+    (36, 'available', 'Shelf A5', 'reference_only'),
+    (37, 'available', 'Shelf B1', 'internal'),
+    (37, 'available', 'Shelf B2', 'general'),
+    (37, 'available', 'Shelf B3', 'internal'),
+    (37, 'available', 'Shelf B4', 'external'),
+    (37, 'available', 'Shelf B5', 'reference_only'),
+    (38, 'available', 'Shelf C1', 'internal'),
+    (38, 'available', 'Shelf C2', 'general'),
+    (38, 'available', 'Shelf C3', 'internal'),
+    (38, 'available', 'Shelf C4', 'external'),
+    (38, 'available', 'Shelf C5', 'reference_only'),
+    (39, 'available', 'Shelf D1', 'internal'),
+    (39, 'available', 'Shelf D2', 'general'),
+    (39, 'available', 'Shelf D3', 'internal'),
+    (39, 'available', 'Shelf D4', 'external'),
+    (39, 'available', 'Shelf D5', 'reference_only'),
+    (40, 'available', 'Shelf E1', 'internal'),
+    (40, 'available', 'Shelf E2', 'general'),
+    (40, 'available', 'Shelf E3', 'internal'),
+    (40, 'available', 'Shelf E4', 'external'),
+    (40, 'available', 'Shelf E5', 'reference_only');
+
+-- University of Cologne Library
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (41, 'available', 'Shelf A1', 'internal'),
+    (41, 'available', 'Shelf A2', 'general'),
+    (41, 'available', 'Shelf A3', 'internal'),
+    (41, 'available', 'Shelf A4', 'external'),
+    (41, 'available', 'Shelf A5', 'reference_only'),
+    (42, 'available', 'Shelf B1', 'internal'),
+    (42, 'available', 'Shelf B2', 'general'),
+    (42, 'available', 'Shelf B3', 'internal'),
+    (42, 'available', 'Shelf B4', 'external'),
+    (42, 'available', 'Shelf B5', 'reference_only'),
+    (43, 'available', 'Shelf C1', 'internal'),
+    (43, 'available', 'Shelf C2', 'general'),
+    (43, 'available', 'Shelf C3', 'internal'),
+    (43, 'available', 'Shelf C4', 'external'),
+    (43, 'available', 'Shelf C5', 'reference_only'),
+    (44, 'available', 'Shelf D1', 'internal'),
+    (44, 'available', 'Shelf D2', 'general'),
+    (44, 'available', 'Shelf D3', 'internal'),
+    (44, 'available', 'Shelf D4', 'external'),
+    (44, 'available', 'Shelf D5', 'reference_only'),
+    (45, 'available', 'Shelf E1', 'internal'),
+    (45, 'available', 'Shelf E2', 'general'),
+    (45, 'available', 'Shelf E3', 'internal'),
+    (45, 'available', 'Shelf E4', 'external'),
+    (45, 'available', 'Shelf E5', 'reference_only');
+
+-- German Sport University Cologne Library
+INSERT INTO
+    media_instances (fk_media_inventory_id, status, location, access_restriction)
+VALUES
+    (46, 'available', 'Shelf A1', 'internal'),
+    (46, 'available', 'Shelf A2', 'general'),
+    (46, 'available', 'Shelf A3', 'internal'),
+    (46, 'available', 'Shelf A4', 'external'),
+    (46, 'available', 'Shelf A5', 'reference_only'),
+    (47, 'available', 'Shelf B1', 'internal'),
+    (47, 'available', 'Shelf B2', 'general'),
+    (47, 'available', 'Shelf B3', 'internal'),
+    (47, 'available', 'Shelf B4', 'external'),
+    (47, 'available', 'Shelf B5', 'reference_only'),
+    (48, 'available', 'Shelf C1', 'internal'),
+    (48, 'available', 'Shelf C2', 'general'),
+    (48, 'available', 'Shelf C3', 'internal'),
+    (48, 'available', 'Shelf C4', 'external'),
+    (48, 'available', 'Shelf C5', 'reference_only'),
+    (49, 'available', 'Shelf D1', 'internal'),
+    (49, 'available', 'Shelf D2', 'general'),
+    (49, 'available', 'Shelf D3', 'internal'),
+    (49, 'available', 'Shelf D4', 'external'),
+    (49, 'available', 'Shelf D5', 'reference_only'),
+    (50, 'available', 'Shelf E1', 'internal'),
+    (50, 'available', 'Shelf E2', 'general'),
+    (50, 'available', 'Shelf E3', 'internal'),
+    (50, 'available', 'Shelf E4', 'external'),
+    (50, 'available', 'Shelf E5', 'reference_only');
+
 -- inserting data in loan_fee_policies table
 -- Heinrich Heine University Library (library_id = 1)
 INSERT INTO
