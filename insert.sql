@@ -1745,20 +1745,21 @@ VALUES
 INSERT INTO
     authors (title, gender, first_name, middle_name, last_name, birthdate)
 VALUES
-    ('Mr', 'male', 'J.K.', '', 'Rowling', '1965-07-31'),
+    ('Mr', 'female', 'J.K.', '', 'Rowling', '1965-07-31'),
     ('Mr', 'male', 'J.R.R.', '', 'Tolkien', '1892-01-03');
 
 -- insert the books_data in the books_table
 INSERT INTO
     books (fk_media_id, isbn_10, isbn_13, dewey_code, binding, edition, page_count, overview, excerpt, synopsis, reviews, related)
 VALUES
-    (1, '0747532699', '9780747532699', '823.914', 'Hardcover', '1st', 223, 'The first book in the Harry Potter series.', NULL, NULL, NULL, NULL),
-    (2, '0439064872', '9780439064873', '823.914', 'Hardcover', '1st', 251, 'The second book in the Harry Potter series.', NULL, NULL, NULL, NULL),
-    (3, '0439136369', '9780439136365', '823.914', 'Hardcover', '1st', 317, 'The third book in the Harry Potter series.', NULL, NULL, NULL, NULL),
-    (4, '0439139600', '9780439139601', '823.914', 'Hardcover', '1st', 636, 'The fourth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
-    (5, '043935806X', '9780439358064', '823.914', 'Hardcover', '1st', 766, 'The fifth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
-    (6, '0439785960', '9780439785969', '823.914', 'Hardcover', '1st', 607, 'The sixth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
-    (7, '0545010225', '9780545010221', '823.914', 'Hardcover', '1st', 759, 'The seventh book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    (1, '0747532699', '9780747532699', '823.914', 'Hardcover', '1st', 224, 'The first book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    (2, '0747538492', '9780747538493', '823.914', 'Hardcover', '1st', 251, 'The second book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    (3, '0747542155', '9780747542155', '823.914', 'Hardcover', '1st', 317, 'The third book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    (4, '0747550794', '9780747550792', '823.914', 'Hardcover', '1st', 636, 'The fourth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    (5, '0747551006', '9780747551003', '823.914', 'Hardcover', '1st', 766, 'The fifth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    (6, '0747581088', '9780747581086', '823.914', 'Hardcover', '1st', 607, 'The sixth book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    (7, '0747591059', '9780747591054', '823.914', 'Hardcover', '1st', 607, 'The seventh book in the Harry Potter series.', NULL, NULL, NULL, NULL),
+    --
     (8, '0261103571', '9780261103573', '823.912', 'Hardcover', '1st', 423, 'The first book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
     (9, '0261102362', '9780261102361', '823.912', 'Hardcover', '1st', 352, 'The second book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
     (10, '0261102389', '9780261102385', '823.912', 'Hardcover', '1st', 416, 'The third book in The Lord of the Rings trilogy.', NULL, NULL, NULL, NULL),
@@ -1784,6 +1785,7 @@ VALUES
     (1, 5),
     (1, 6),
     (1, 7),
+    --
     (2, 8),
     (2, 9),
     (2, 10),
@@ -1809,6 +1811,7 @@ VALUES
     (1, 5),
     (1, 6),
     (1, 7),
+    --
     (1, 8),
     (1, 9),
     (1, 10),
@@ -1834,6 +1837,7 @@ VALUES
     (1, 5),
     (1, 6),
     (1, 7),
+    --
     (2, 8),
     (2, 9),
     (2, 10),
