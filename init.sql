@@ -125,13 +125,12 @@ CREATE TABLE IF NOT EXISTS employees (
 
 CREATE TABLE IF NOT EXISTS activities (
 	activity_id SERIAL PRIMARY KEY,
-	fk_position_id INT NOT NULL,
 	activity_name VARCHAR(100),
 	activity_description TEXT,
-	FOREIGN KEY (fk_position_id) REFERENCES positions (position_id) ON UPDATE CASCADE ON DELETE CASCADE,
 	CONSTRAINT unique_activities UNIQUE (activity_name)
 );
 
+-- TODO: Create rel_activities_table and update the related inserts
 CREATE TABLE IF NOT EXISTS rel_employee_activites (
 	fk_employee_id INT NOT NULL,
 	fk_activity_id INT NOT NULL,
