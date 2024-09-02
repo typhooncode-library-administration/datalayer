@@ -2113,6 +2113,9 @@ VALUES
 --     (20, 'Grant Writing', 'Write grant proposals to secure funding for programs'),
 --     (20, 'Report Writing', 'Prepare reports on program outcomes for library management'),
 --     (20, 'Stakeholder Engagement', 'Engage with stakeholders to ensure program success');
+--
+--
+--
 -- Assigning additional cross-functional activities to employees to reflect broader skillsets beyond their primary roles. 
 -- These tasks fall outside their typical job responsibilities but are still relevant to the library's operations.
 -- Heinrich Heine University Library
