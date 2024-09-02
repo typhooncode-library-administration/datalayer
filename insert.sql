@@ -884,26 +884,27 @@ VALUES
 INSERT INTO
     positions (position_name, position_description, min_salary, max_salary, full_time, requires_degree)
 VALUES
-    ('Library Manager', 'Oversees the daily operations of the library, including managing staff and budgets.', 70000.00, 100000.00, TRUE, TRUE),
-    ('Assistant Library Manager', 'Assists the Library Manager in managing the library operations and staff.', 60000.00, 85000.00, TRUE, TRUE),
-    ('Librarian', 'Provides reference services, organizes resources, and helps patrons find information.', 50000.00, 75000.00, TRUE, TRUE),
-    ('Archivist', 'Responsible for preserving, organizing, and managing historical records and archives.', 50000.00, 75000.00, TRUE, TRUE),
-    ('Systems Librarian', 'Manages and maintains the library’s IT systems and digital resources.', 55000.00, 80000.00, TRUE, TRUE),
-    ('IT Support Specialist', 'Provides IT support and troubleshooting for the library’s systems and resources.', 50000.00, 70000.00, TRUE, TRUE),
-    ('Database Administrator', 'Oversees and manages the library’s databases, ensuring data integrity and performance.', 62500.00, 87500.00, TRUE, TRUE),
-    ('Web Developer', 'Develops and maintains the library’s website and online resources.', 62500.00, 87500.00, TRUE, TRUE),
-    ('Event Coordinator', 'Plans and organizes events and programs within the library.', 40000.00, 60000.00, TRUE, FALSE),
-    ('Administrative Assistant', 'Provides administrative support to the library staff and management.', 35000.00, 50000.00, TRUE, FALSE),
-    ('HR Manager', 'Manages human resources functions, including hiring, training, and employee relations.', 60000.00, 80000.00, TRUE, TRUE),
-    ('Library Assistant', 'Supports daily library operations, including shelving books and assisting patrons.', 30000.00, 40000.00, TRUE, FALSE),
-    ('Customer Service Representative', 'Provides assistance to library patrons with inquiries and services.', 32000.00, 42000.00, TRUE, FALSE),
-    ('Public Relations Officer', 'Manages the library’s public image and communication strategies.', 50000.00, 70000.00, TRUE, TRUE),
-    ('Facilities Manager', 'Oversees the maintenance and operations of the library’s physical facilities.', 50000.00, 70000.00, TRUE, TRUE),
-    ('Maintenance Worker', 'Performs maintenance tasks to ensure the library’s facilities are well-kept.', 30000.00, 42000.00, TRUE, FALSE),
-    ('Security Officer', 'Ensures the safety and security of the library’s patrons and staff.', 32000.00, 45000.00, TRUE, FALSE),
-    ('Custodian', 'Responsible for cleaning and maintaining the library’s facilities.', 28000.00, 35000.00, TRUE, FALSE),
-    ('Instructor', 'Provides educational training and workshops for library patrons.', 45000.00, 65000.00, TRUE, TRUE),
-    ('Program Coordinator', 'Coordinates educational and training programs offered by the library.', 40000.00, 60000.00, TRUE, TRUE);
+    ('Library Manager', 'Oversees the daily operations of the library, including managing staff and budgets.', 70000.00, 100000.00, TRUE, TRUE), --1
+    ('Assistant Library Manager', 'Assists the Library Manager in managing the library operations and staff.', 60000.00, 85000.00, TRUE, TRUE), --2
+    ('Librarian', 'Provides reference services, organizes resources, and helps patrons find information.', 50000.00, 75000.00, TRUE, TRUE), --3
+    ('Archivist', 'Responsible for preserving, organizing, and managing historical records and archives.', 50000.00, 75000.00, TRUE, TRUE), --4
+    ('Systems Librarian', 'Manages and maintains the library’s IT systems and digital resources.', 55000.00, 80000.00, TRUE, TRUE), --5
+    ('IT Support Specialist', 'Provides IT support and troubleshooting for the library’s systems and resources.', 50000.00, 70000.00, TRUE, TRUE), --6
+    ('Database Administrator', 'Oversees and manages the library’s databases, ensuring data integrity and performance.', 62500.00, 87500.00, TRUE, TRUE), --7
+    ('Web Developer', 'Develops and maintains the library’s website and online resources.', 62500.00, 87500.00, TRUE, TRUE), --8
+    ('Event Coordinator', 'Plans and organizes events and programs within the library.', 40000.00, 60000.00, TRUE, FALSE), --9
+    ('Administrative Assistant', 'Provides administrative support to the library staff and management.', 35000.00, 50000.00, TRUE, FALSE), --10
+    ('HR Manager', 'Manages human resources functions, including hiring, training, and employee relations.', 60000.00, 80000.00, TRUE, TRUE), --11
+    ('Library Assistant', 'Supports daily library operations, including shelving books and assisting patrons.', 30000.00, 40000.00, TRUE, FALSE), --12
+    ('Customer Service Representative', 'Provides assistance to library patrons with inquiries and services.', 32000.00, 42000.00, TRUE, FALSE), --13
+    ('Public Relations Officer', 'Manages the library’s public image and communication strategies.', 50000.00, 70000.00, TRUE, TRUE), --14
+    ('Facilities Manager', 'Oversees the maintenance and operations of the library’s physical facilities.', 50000.00, 70000.00, TRUE, TRUE), --15
+    ('Maintenance Worker', 'Performs maintenance tasks to ensure the library’s facilities are well-kept.', 30000.00, 42000.00, TRUE, FALSE), --16
+    ('Security Officer', 'Ensures the safety and security of the library’s patrons and staff.', 32000.00, 45000.00, TRUE, FALSE), --17
+    ('Custodian', 'Responsible for cleaning and maintaining the library’s facilities.', 28000.00, 35000.00, TRUE, FALSE), --18
+    ('Instructor', 'Provides educational training and workshops for library patrons.', 45000.00, 65000.00, TRUE, TRUE), --19
+    ('Program Coordinator', 'Coordinates educational and training programs offered by the library.', 40000.00, 60000.00, TRUE, TRUE) --20
+;
 
 -- Insert statements for employee table
 -- Library 1: Heinrich Heine University Düsseldorf Library
@@ -1307,306 +1308,811 @@ VALUES
     (20, 18, 1, 'female', 'Ute', 'Gisela', 'Schmidt', '1987-05-07', 'ute.schmidt@rfh-koeln.de', '+49', '0221', '203033', '2012-06-20', FALSE, 46000.00),
     (20, 19, 1, 'male', 'Lothar', 'Paul', 'Weber', '1986-10-25', 'lothar.weber@rfh-koeln.de', '+49', '0221', '203034', '2005-11-25', FALSE, 48000.00);
 
+-- Insert activities for various positions
+INSERT INTO
+    activities (activity_name, activity_description)
+VALUES
+    ('Strategic Planning', 'Develop long-term plans for library growth and development'),
+    ('Budget Management', 'Oversee the library budget and financial planning'),
+    ('Staff Supervision', 'Supervise library staff and manage HR activities'),
+    ('Policy Development', 'Develop and implement library policies'),
+    ('Community Engagement', 'Engage with the community to understand their needs and improve services'),
+    ('Resource Allocation', 'Allocate library resources effectively to meet objectives'),
+    ('Performance Evaluation', 'Evaluate the performance of library staff'),
+    ('Board Reporting', 'Report to the library board and stakeholders on library performance'),
+    ('Crisis Management', 'Handle crises and emergencies that may affect library operations'),
+    ('Facilities Planning', 'Plan and oversee the maintenance and development of library facilities'),
+    ('Daily Operations', 'Oversee day-to-day operations of the library'),
+    ('Staff Scheduling', 'Create and manage staff schedules'),
+    ('Training Coordination', 'Coordinate and conduct training sessions for new staff'),
+    ('Inventory Management', 'Manage library inventory and supplies'),
+    ('Customer Service Management', 'Ensure high-quality customer service is delivered'),
+    ('Event Planning Support', 'Assist in planning and executing library events'),
+    ('Budget Assistance', 'Assist in budget preparation and monitoring'),
+    ('Policy Enforcement', 'Ensure compliance with library policies and procedures'),
+    ('Report Preparation', 'Prepare reports for library management'),
+    ('Facilities Maintenance Support', 'Support the maintenance of library facilities'),
+    ('Cataloging', 'Classify and organize library materials for easy retrieval'),
+    ('Reference Services', 'Assist patrons in finding information and using library resources'),
+    ('Collection Development', 'Select and acquire new materials for the library'),
+    ('Reader Advisory', 'Recommend books and other materials to patrons'),
+    ('Information Literacy Instruction', 'Teach patrons how to effectively use library resources'),
+    ('Digital Resources Management', 'Manage and maintain digital library resources'),
+    ('Library Programming', 'Develop and implement educational programs'),
+    ('Archival Work', 'Preserve and manage special collections and archives'),
+    ('Interlibrary Loan Coordination', 'Manage interlibrary loan requests and processes'),
+    ('Public Relations', 'Promote the library and its services to the public'),
+    ('Collection Preservation', 'Ensure the preservation and care of archived materials'),
+    ('Archival Cataloging', 'Organize and catalog archived collections'),
+    ('Digitization Projects', 'Oversee the digitization of archival materials'),
+    ('Research Assistance', 'Assist researchers in accessing archival materials'),
+    ('Acquisition of Archival Materials', 'Select and acquire materials for the archives'),
+    ('Exhibit Planning', 'Plan and organize exhibits showcasing archival materials'),
+    ('Public Outreach', 'Engage the public with archival collections through events and publications'),
+    ('Grant Writing', 'Apply for grants to fund archival projects'),
+    ('Collection Access Management', 'Manage access to restricted or sensitive archival materials'),
+    ('Policy Development for Archives', 'Develop policies for the management of archival collections'),
+    ('Library Systems Management', 'Manage integrated library systems (ILS)'),
+    ('Technical Support', 'Provide technical support for library systems and staff'),
+    ('Software Updates', 'Ensure that all library software is up to date'),
+    ('System Security', 'Maintain security of library IT systems'),
+    ('Database Management', 'Manage and optimize library databases'),
+    ('Digital Collection Development', 'Develop and maintain digital collections'),
+    ('Website Maintenance', 'Maintain and update the library website'),
+    ('System Troubleshooting', 'Troubleshoot issues with library systems'),
+    ('Training Staff on Systems', 'Train library staff on how to use library systems effectively'),
+    ('Vendor Management', 'Coordinate with vendors for system upgrades and support'),
+    ('Technical Assistance', 'Provide technical support to library staff and patrons'),
+    ('Hardware Maintenance', 'Maintain and repair library hardware such as computers and printers'),
+    ('Network Management', 'Manage and troubleshoot library networks'),
+    ('Software Installation', 'Install and update software on library computers'),
+    ('Cybersecurity Monitoring', 'Monitor and protect against cybersecurity threats'),
+    ('Help Desk Management', 'Operate the IT help desk for library staff'),
+    ('Training Sessions', 'Conduct training sessions on IT tools and software'),
+    ('Inventory Management', 'Track and manage IT inventory including hardware and software licenses'),
+    ('Backup and Recovery', 'Manage data backup and recovery processes'),
+    ('IT Policy Development', 'Assist in developing IT policies for the library'),
+    ('Database Maintenance', 'Maintain and optimize the performance of library databases'),
+    ('Data Backup', 'Ensure regular backups of all library databases'),
+    ('Data Security', 'Implement security measures to protect library data'),
+    ('Data Recovery', 'Develop and execute data recovery plans'),
+    ('Database Design', 'Design and implement new databases as needed'),
+    ('User Management', 'Manage database access for library staff'),
+    ('Performance Tuning', 'Tune database performance for optimal efficiency'),
+    ('Data Migration', 'Manage data migration projects'),
+    ('Data Analysis', 'Provide data analysis and reporting to library management'),
+    ('Documentation', 'Maintain comprehensive documentation for all database systems'),
+    ('Website Design', 'Design and implement the library website'),
+    ('Front-End Development', 'Develop and maintain the front-end of the library website'),
+    ('Back-End Development', 'Develop and maintain the back-end of the library website'),
+    ('Content Management', 'Manage and update website content'),
+    ('Website Security', 'Implement security measures to protect the library website'),
+    ('SEO Optimization', 'Optimize the website for search engines'),
+    ('User Experience Design', 'Ensure the website is user-friendly and accessible'),
+    ('Bug Fixing', 'Identify and fix bugs on the library website'),
+    ('API Development', 'Develop and maintain APIs for the library website'),
+    ('Website Analytics', 'Monitor and report on website performance'),
+    ('Event Planning', 'Plan and organize library events and programs'),
+    ('Vendor Coordination', 'Coordinate with vendors for event supplies and services'),
+    ('Event Marketing', 'Promote library events to the public'),
+    ('Budget Management', 'Manage the budget for library events'),
+    ('Volunteer Coordination', 'Coordinate volunteers for events'),
+    ('Logistics Management', 'Manage the logistics of setting up and running events'),
+    ('Event Registration', 'Handle event registrations and attendee management'),
+    ('Post-Event Reporting', 'Prepare reports on event outcomes and attendance'),
+    ('Public Relations', 'Work with the PR team to ensure positive event coverage'),
+    ('Community Engagement', 'Engage with the community to identify event needs'),
+    ('Office Management', 'Manage the day-to-day operations of the library office'),
+    ('Record Keeping', 'Maintain accurate records of library activities and transactions'),
+    ('Scheduling', 'Schedule appointments and meetings for library staff'),
+    ('Correspondence', 'Handle correspondence for the library management'),
+    ('Supply Management', 'Manage office supplies and inventory'),
+    ('Data Entry', 'Enter and update data in library systems'),
+    ('Visitor Management', 'Manage visitors and direct them to appropriate staff'),
+    ('Report Preparation', 'Prepare reports for library management'),
+    ('Travel Arrangements', 'Make travel arrangements for library staff'),
+    ('Customer Service', 'Provide customer service at the library front desk'),
+    ('Recruitment', 'Manage the recruitment process for library staff'),
+    ('Employee Relations', 'Manage employee relations and resolve conflicts'),
+    ('Payroll Management', 'Oversee payroll and benefits administration'),
+    ('Performance Management', 'Manage performance appraisals and reviews'),
+    ('Training and Development', 'Develop and implement training programs for staff'),
+    ('Policy Development', 'Develop HR policies and procedures'),
+    ('Compliance', 'Ensure compliance with labor laws and regulations'),
+    ('Employee Engagement', 'Plan and implement employee engagement initiatives'),
+    ('HR Reporting', 'Prepare HR reports for library management'),
+    ('Succession Planning', 'Develop and implement succession plans for key positions'),
+    ('Book Shelving', 'Shelve returned books and materials in the correct order'),
+    ('Circulation Desk Support', 'Assist at the circulation desk with check-ins and check-outs'),
+    ('Customer Assistance', 'Help patrons find books and use library resources'),
+    ('Material Processing', 'Process new books and materials for the collection'),
+    ('Library Program Support', 'Assist with library programs and events'),
+    ('Interlibrary Loan Support', 'Assist with interlibrary loan requests'),
+    ('Inventory Management Support', 'Assist with library inventory management'),
+    ('Library Maintenance', 'Help maintain the cleanliness and organization of the library'),
+    ('Data Entry', 'Assist with data entry tasks for library records'),
+    ('Customer Service', 'Provide customer service at the library front desk'),
+    ('Front Desk Support', 'Manage the front desk and greet patrons'),
+    ('Telephone Support', 'Handle incoming calls and direct them appropriately'),
+    ('Customer Inquiries', 'Respond to customer inquiries and resolve issues'),
+    ('Event Registration Support', 'Assist patrons with event registrations'),
+    ('Feedback Collection', 'Collect feedback from patrons and report to management'),
+    ('Issue Resolution', 'Resolve customer issues and complaints'),
+    ('Library Tours', 'Provide tours of the library to new patrons'),
+    ('Membership Management', 'Manage library memberships and renewals'),
+    ('Payment Processing', 'Process payments for library fines and fees'),
+    ('Customer Relations', 'Maintain positive relationships with library patrons'),
+    ('Press Releases', 'Prepare and distribute press releases for the library'),
+    ('Media Relations', 'Build and maintain relationships with media outlets'),
+    ('Social Media Management', 'Manage the librarys social media accounts'),
+    ('Event Promotion', 'Promote library events TO the public and media'),
+    ('Crisis Communication', 'Manage communication during crises OR emergencies'),
+    ('Content Creation', 'Create content FOR library newsletters,blogs and other publications'),
+    ('Public Speaking', 'Represent the library at public events and conferences'),
+    ('Brand Management', 'Ensure the librarys brand is consistently represented'),
+    ('Community Outreach', 'Engage with the community to promote the library services '),
+    ('Annual Reports', 'Prepare the library annual report for public release'),
+    ('Building Maintenance', 'Oversee the maintenance of library buildings and facilities'),
+    ('Vendor Coordination', 'Coordinate with vendors for maintenance and repair services'),
+    ('Safety Inspections', 'Conduct regular safety inspections of library facilities'),
+    ('Budget Management', 'Manage the budget for facilities maintenance and repairs'),
+    ('Space Planning', 'Plan and manage the use of library spaces'),
+    ('Renovation Projects', 'Oversee library renovation projects'),
+    ('Environmental Sustainability', 'Implement and manage sustainability initiatives'),
+    ('Emergency Preparedness', 'Develop and implement emergency preparedness plans'),
+    ('Facilities Staff Supervision', 'Supervise facilities maintenance staff'),
+    ('Inventory Management', 'Manage inventory of maintenance supplies and equipment'),
+    ('Routine Maintenance', 'Perform routine maintenance tasks around the library'),
+    ('Repair Work', 'Perform minor repairs to library facilities and equipment'),
+    ('Cleaning Duties', 'Keep the library clean and orderly'),
+    ('Event Setup', 'Assist with setting up facilities for library events'),
+    ('Waste Management', 'Manage waste disposal and recycling processes'),
+    ('Equipment Maintenance', 'Maintain and repair library equipment'),
+    ('Safety Checks', 'Perform safety checks on library facilities'),
+    ('Landscaping', 'Maintain the landscaping around the library'),
+    ('Winter Maintenance', 'Perform snow and ice removal during the winter months'),
+    ('Inventory Management', 'Assist with managing maintenance inventory and supplies'),
+    ('Patrol Duties', 'Patrol the library premises to ensure safety and security'),
+    ('Incident Reporting', 'Report and document any incidents or security breaches'),
+    ('Access Control', 'Control access to restricted areas within the library'),
+    ('Security Systems Monitoring', 'Monitor and maintain security systems such as cameras and alarms'),
+    ('Emergency Response', 'Respond to emergencies and coordinate with law enforcement if needed'),
+    ('Visitor Assistance', 'Assist visitors with security-related inquiries or issues'),
+    ('Crowd Control', 'Manage crowds during events or busy periods'),
+    ('Training', 'Provide security training to library staff'),
+    ('Key Management', 'Manage the distribution and control of library keys'),
+    ('Safety Inspections', 'Conduct regular safety inspections and audits'),
+    ('Cleaning', 'Perform regular cleaning of library facilities including restrooms, offices, and public areas'),
+    ('Trash Removal', 'Collect and dispose of trash and recycling'),
+    ('Floor Care', 'Sweep, mop, and vacuum floors in the library'),
+    ('Restroom Maintenance', 'Ensure restrooms are clean and well-stocked'),
+    ('Window Cleaning', 'Clean windows and glass surfaces in the library'),
+    ('Furniture Setup', 'Arrange and set up furniture for library events or reconfigurations'),
+    ('Supplies Management', 'Manage cleaning supplies and re-order as needed'),
+    ('Safety Checks', 'Perform routine safety checks on library facilities'),
+    ('Light Maintenance', 'Perform light maintenance tasks such as changing bulbs and unclogging drains'),
+    ('Snow and Ice Removal', 'Clear snow and ice from walkways during winter'),
+    ('Lesson Planning', 'Plan and develop lessons for library educational programs'),
+    ('Teaching', 'Conduct educational sessions and workshops in the library'),
+    ('Student Assessment', 'Assess and evaluate student progress'),
+    ('Curriculum Development', 'Develop and update curriculum for library programs'),
+    ('Resource Preparation', 'Prepare and organize teaching materials and resources'),
+    ('Mentoring', 'Provide mentoring and support to students'),
+    ('Program Evaluation', 'Evaluate the effectiveness of educational programs'),
+    ('Community Outreach', 'Engage with the community to promote educational programs'),
+    ('Guest Lectures', 'Invite guest lecturers and coordinate special sessions'),
+    ('Technology Integration', 'Integrate technology into educational programs'),
+    ('Program Planning', 'Plan and coordinate library programs and events'),
+    ('Volunteer Coordination', 'Recruit and manage volunteers for library programs'),
+    ('Budget Management', 'Manage the budget for library programs'),
+    ('Program Marketing', 'Promote library programs to the public'),
+    ('Community Partnerships', 'Develop partnerships with community organizations'),
+    ('Event Coordination', 'Coordinate logistics for library events and programs'),
+    ('Program Evaluation', 'Evaluate the success and impact of library programs'),
+    ('Grant Writing', 'Write grant proposals to secure funding for programs'),
+    ('Report Writing', 'Prepare reports on program outcomes for library management'),
+    ('Stakeholder Engagement', 'Engage with stakeholders to ensure program success');
+
 -- Library Manager (position_id = 1)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (1, 'Strategic Planning', 'Develop long-term plans for library growth and development'),
-    (1, 'Budget Management', 'Oversee the library budget and financial planning'),
-    (1, 'Staff Supervision', 'Supervise library staff and manage HR activities'),
-    (1, 'Policy Development', 'Develop and implement library policies'),
-    (1, 'Community Engagement', 'Engage with the community to understand their needs and improve services'),
-    (1, 'Resource Allocation', 'Allocate library resources effectively to meet objectives'),
-    (1, 'Performance Evaluation', 'Evaluate the performance of library staff'),
-    (1, 'Board Reporting', 'Report to the library board and stakeholders on library performance'),
-    (1, 'Crisis Management', 'Handle crises and emergencies that may affect library operations'),
-    (1, 'Facilities Planning', 'Plan and oversee the maintenance and development of library facilities');
+    (1, 1), -- Strategic Planning
+    (2, 1), -- Budget Management
+    (3, 1), -- Staff Supervision
+    (4, 1), -- Policy Development
+    (5, 1), -- Community Engagement
+    (6, 1), -- Resource Allocation
+    (7, 1), -- Performance Evaluation
+    (8, 1), -- Board Reporting
+    (9, 1), -- Crisis Management
+    (10, 1) -- Facilities Planning
+;
 
 -- Assistant Library Manager (position_id = 2)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (2, 'Daily Operations', 'Oversee day-to-day operations of the library'),
-    (2, 'Staff Scheduling', 'Create and manage staff schedules'),
-    (2, 'Training Coordination', 'Coordinate and conduct training sessions for new staff'),
-    (2, 'Inventory Management', 'Manage library inventory and supplies'),
-    (2, 'Customer Service Management', 'Ensure high-quality customer service is delivered'),
-    (2, 'Event Planning Support', 'Assist in planning and executing library events'),
-    (2, 'Budget Assistance', 'Assist in budget preparation and monitoring'),
-    (2, 'Policy Enforcement', 'Ensure compliance with library policies and procedures'),
-    (2, 'Report Preparation', 'Prepare reports for library management'),
-    (2, 'Facilities Maintenance Support', 'Support the maintenance of library facilities');
+    (11, 2), -- Daily Operations
+    (12, 2), -- Staff Scheduling
+    (13, 2), -- Training Coordination
+    (14, 2), -- Inventory Management
+    (15, 2), -- Customer Service Management
+    (16, 2), -- Event Planning Support
+    (17, 2), -- Budget Assistance
+    (18, 2), -- Policy Enforcement
+    (19, 2), -- Report Preparation
+    (20, 2) -- Facilities Maintenance Support
+;
 
 -- Librarian (position_id = 3)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (3, 'Cataloging', 'Classify and organize library materials for easy retrieval'),
-    (3, 'Reference Services', 'Assist patrons in finding information and using library resources'),
-    (3, 'Collection Development', 'Select and acquire new materials for the library'),
-    (3, 'Reader Advisory', 'Recommend books and other materials to patrons'),
-    (3, 'Information Literacy Instruction', 'Teach patrons how to effectively use library resources'),
-    (3, 'Digital Resources Management', 'Manage and maintain digital library resources'),
-    (3, 'Library Programming', 'Develop and implement educational programs'),
-    (3, 'Archival Work', 'Preserve and manage special collections and archives'),
-    (3, 'Interlibrary Loan Coordination', 'Manage interlibrary loan requests and processes'),
-    (3, 'Public Relations', 'Promote the library and its services to the public');
+    (21, 3), -- Cataloging
+    (22, 3), -- Reference Services
+    (23, 3), -- Collection Development
+    (24, 3), -- Reader Advisory
+    (25, 3), -- Information Literacy Instruction
+    (26, 3), -- Digital Resources Management
+    (27, 3), -- Library Programming
+    (28, 3), -- Archival Work
+    (29, 3), -- Interlibrary Loan Coordination
+    (30, 3) -- Public Relations
+;
 
 -- Archivist (position_id = 4)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (4, 'Collection Preservation', 'Ensure the preservation and care of archived materials'),
-    (4, 'Archival Cataloging', 'Organize and catalog archived collections'),
-    (4, 'Digitization Projects', 'Oversee the digitization of archival materials'),
-    (4, 'Research Assistance', 'Assist researchers in accessing archival materials'),
-    (4, 'Acquisition of Archival Materials', 'Select and acquire materials for the archives'),
-    (4, 'Exhibit Planning', 'Plan and organize exhibits showcasing archival materials'),
-    (4, 'Public Outreach', 'Engage the public with archival collections through events and publications'),
-    (4, 'Grant Writing', 'Apply for grants to fund archival projects'),
-    (4, 'Collection Access Management', 'Manage access to restricted or sensitive archival materials'),
-    (4, 'Policy Development for Archives', 'Develop policies for the management of archival collections');
+    (31, 4), -- Collection Preservation
+    (32, 4), -- Archival Cataloging
+    (33, 4), -- Digitization Projects
+    (34, 4), -- Research Assistance
+    (35, 4), -- Acquisition of Archival Materials
+    (36, 4), -- Exhibit Planning
+    (37, 4), -- Public Outreach
+    (38, 4), -- Grant Writing
+    (39, 4), -- Collection Access Management
+    (40, 4) -- Policy Development for Archives
+;
 
 -- Systems Librarian (position_id = 5)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (5, 'Library Systems Management', 'Manage integrated library systems (ILS)'),
-    (5, 'Technical Support', 'Provide technical support for library systems and staff'),
-    (5, 'Software Updates', 'Ensure that all library software is up to date'),
-    (5, 'System Security', 'Maintain security of library IT systems'),
-    (5, 'Database Management', 'Manage and optimize library databases'),
-    (5, 'Digital Collection Development', 'Develop and maintain digital collections'),
-    (5, 'Website Maintenance', 'Maintain and update the library website'),
-    (5, 'System Troubleshooting', 'Troubleshoot issues with library systems'),
-    (5, 'Training Staff on Systems', 'Train library staff on how to use library systems effectively'),
-    (5, 'Vendor Management', 'Coordinate with vendors for system upgrades and support');
+    (41, 5), -- Library Systems Management
+    (42, 5), -- Technical Support
+    (43, 5), -- Software Updates
+    (44, 5), -- System Security
+    (45, 5), -- Database Management
+    (46, 5), -- Digital Collection Development
+    (47, 5), -- Website Maintenance
+    (48, 5), -- System Troubleshooting
+    (49, 5), -- Training Staff on Systems
+    (50, 5) -- Vendor Management
+;
 
 -- IT Support Specialist (position_id = 6)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (6, 'Technical Assistance', 'Provide technical support to library staff and patrons'),
-    (6, 'Hardware Maintenance', 'Maintain and repair library hardware such as computers and printers'),
-    (6, 'Network Management', 'Manage and troubleshoot library networks'),
-    (6, 'Software Installation', 'Install and update software on library computers'),
-    (6, 'Cybersecurity Monitoring', 'Monitor and protect against cybersecurity threats'),
-    (6, 'Help Desk Management', 'Operate the IT help desk for library staff'),
-    (6, 'Training Sessions', 'Conduct training sessions on IT tools and software'),
-    (6, 'Inventory Management', 'Track and manage IT inventory including hardware and software licenses'),
-    (6, 'Backup and Recovery', 'Manage data backup and recovery processes'),
-    (6, 'IT Policy Development', 'Assist in developing IT policies for the library');
+    (51, 6), -- Technical Assistance
+    (52, 6), -- Hardware Maintenance
+    (53, 6), -- Network Management
+    (54, 6), -- Software Installation
+    (55, 6), -- Cybersecurity Monitoring
+    (56, 6), -- Help Desk Management
+    (57, 6), -- Training Sessions
+    (58, 6), -- Inventory Management
+    (59, 6), -- Backup and Recovery
+    (60, 6) -- IT Policy Development
+;
 
 -- Database Administrator (position_id = 7)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (7, 'Database Maintenance', 'Maintain and optimize the performance of library databases'),
-    (7, 'Data Backup', 'Ensure regular backups of all library databases'),
-    (7, 'Data Security', 'Implement security measures to protect library data'),
-    (7, 'Data Recovery', 'Develop and execute data recovery plans'),
-    (7, 'Database Design', 'Design and implement new databases as needed'),
-    (7, 'User Management', 'Manage database access for library staff'),
-    (7, 'Performance Tuning', 'Tune database performance for optimal efficiency'),
-    (7, 'Data Migration', 'Manage data migration projects'),
-    (7, 'Data Analysis', 'Provide data analysis and reporting to library management'),
-    (7, 'Documentation', 'Maintain comprehensive documentation for all database systems');
+    (61, 7), -- Database Maintenance
+    (62, 7), -- Data Backup
+    (63, 7), -- Data Security
+    (64, 7), -- Data Recovery
+    (65, 7), -- Database Design
+    (66, 7), -- User Management
+    (67, 7), -- Performance Tuning
+    (68, 7), -- Data Migration
+    (69, 7), -- Data Analysis
+    (70, 7) -- Documentation
+;
 
 -- Web Developer (position_id = 8)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (8, 'Website Design', 'Design and implement the library website'),
-    (8, 'Front-End Development', 'Develop and maintain the front-end of the library website'),
-    (8, 'Back-End Development', 'Develop and maintain the back-end of the library website'),
-    (8, 'Content Management', 'Manage and update website content'),
-    (8, 'Website Security', 'Implement security measures to protect the library website'),
-    (8, 'SEO Optimization', 'Optimize the website for search engines'),
-    (8, 'User Experience Design', 'Ensure the website is user-friendly and accessible'),
-    (8, 'Bug Fixing', 'Identify and fix bugs on the library website'),
-    (8, 'API Development', 'Develop and maintain APIs for the library website'),
-    (8, 'Website Analytics', 'Monitor and report on website performance');
+    (71, 8), -- Website Design
+    (72, 8), -- Front-End Development
+    (73, 8), -- Back-End Development
+    (74, 8), -- Content Management
+    (75, 8), -- Website Security
+    (76, 8), -- SEO Optimization
+    (77, 8), -- User Experience Design
+    (78, 8), -- Bug Fixing
+    (79, 8), -- API Development
+    (80, 8) -- Website Analytics
+;
 
 -- Event Coordinator (position_id = 9)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (9, 'Event Planning', 'Plan and organize library events and programs'),
-    (9, 'Vendor Coordination', 'Coordinate with vendors for event supplies and services'),
-    (9, 'Event Marketing', 'Promote library events to the public'),
-    (9, 'Budget Management', 'Manage the budget for library events'),
-    (9, 'Volunteer Coordination', 'Coordinate volunteers for events'),
-    (9, 'Logistics Management', 'Manage the logistics of setting up and running events'),
-    (9, 'Event Registration', 'Handle event registrations and attendee management'),
-    (9, 'Post-Event Reporting', 'Prepare reports on event outcomes and attendance'),
-    (9, 'Public Relations', 'Work with the PR team to ensure positive event coverage'),
-    (9, 'Community Engagement', 'Engage with the community to identify event needs');
+    (81, 9), -- Event Planning
+    (82, 9), -- Vendor Coordination
+    (83, 9), -- Event Marketing
+    (84, 9), -- Budget Management
+    (85, 9), -- Volunteer Coordination
+    (86, 9), -- Logistics Management
+    (87, 9), -- Event Registration
+    (88, 9), -- Post-Event Reporting
+    (89, 9), -- Public Relations
+    (90, 9) -- Community Engagement
+;
 
 -- Administrative Assistant (position_id = 10)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (10, 'Office Management', 'Manage the day-to-day operations of the library office'),
-    (10, 'Record Keeping', 'Maintain accurate records of library activities and transactions'),
-    (10, 'Scheduling', 'Schedule appointments and meetings for library staff'),
-    (10, 'Correspondence', 'Handle correspondence for the library management'),
-    (10, 'Supply Management', 'Manage office supplies and inventory'),
-    (10, 'Data Entry', 'Enter and update data in library systems'),
-    (10, 'Visitor Management', 'Manage visitors and direct them to appropriate staff'),
-    (10, 'Report Preparation', 'Prepare reports for library management'),
-    (10, 'Travel Arrangements', 'Make travel arrangements for library staff'),
-    (10, 'Customer Service', 'Provide customer service at the library front desk');
+    (91, 10), -- Office Management
+    (92, 10), -- Record Keeping
+    (93, 10), -- Scheduling
+    (94, 10), -- Correspondence
+    (95, 10), -- Supply Management
+    (96, 10), -- Data Entry
+    (97, 10), -- Visitor Management
+    (98, 10), -- Report Preparation
+    (99, 10), -- Travel Arrangements
+    (100, 10) -- Customer Service
+;
 
 -- HR Manager (position_id = 11)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (11, 'Recruitment', 'Manage the recruitment process for library staff'),
-    (11, 'Employee Relations', 'Manage employee relations and resolve conflicts'),
-    (11, 'Payroll Management', 'Oversee payroll and benefits administration'),
-    (11, 'Performance Management', 'Manage performance appraisals and reviews'),
-    (11, 'Training and Development', 'Develop and implement training programs for staff'),
-    (11, 'Policy Development', 'Develop HR policies and procedures'),
-    (11, 'Compliance', 'Ensure compliance with labor laws and regulations'),
-    (11, 'Employee Engagement', 'Plan and implement employee engagement initiatives'),
-    (11, 'HR Reporting', 'Prepare HR reports for library management'),
-    (11, 'Succession Planning', 'Develop and implement succession plans for key positions');
+    (101, 11), -- Recruitment
+    (102, 11), -- Employee Relations
+    (103, 11), -- Payroll Management
+    (104, 11), -- Performance Management
+    (105, 11), -- Training and Development
+    (106, 11), -- Policy Development
+    (107, 11), -- Compliance
+    (108, 11), -- Employee Engagement
+    (109, 11), -- HR Reporting
+    (110, 11) -- Succession Planning
+;
 
 -- Library Assistant (position_id = 12)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (12, 'Book Shelving', 'Shelve returned books and materials in the correct order'),
-    (12, 'Circulation Desk Support', 'Assist at the circulation desk with check-ins and check-outs'),
-    (12, 'Customer Assistance', 'Help patrons find books and use library resources'),
-    (12, 'Material Processing', 'Process new books and materials for the collection'),
-    (12, 'Library Program Support', 'Assist with library programs and events'),
-    (12, 'Interlibrary Loan Support', 'Assist with interlibrary loan requests'),
-    (12, 'Inventory Management Support', 'Assist with library inventory management'),
-    (12, 'Library Maintenance', 'Help maintain the cleanliness and organization of the library'),
-    (12, 'Data Entry', 'Assist with data entry tasks for library records'),
-    (12, 'Customer Service', 'Provide customer service at the library front desk');
+    (111, 12), -- Book Shelving
+    (112, 12), -- Circulation Desk Support
+    (113, 12), -- Customer Assistance
+    (114, 12), -- Material Processing
+    (115, 12), -- Library Program Support
+    (116, 12), -- Interlibrary Loan Support
+    (117, 12), -- Inventory Management Support
+    (118, 12), -- Library Maintenance
+    (119, 12), -- Data Entry
+    (120, 12) -- Customer Service
+;
 
 -- Customer Service Representative (position_id = 13)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (13, 'Front Desk Support', 'Manage the front desk and greet patrons'),
-    (13, 'Telephone Support', 'Handle incoming calls and direct them appropriately'),
-    (13, 'Customer Inquiries', 'Respond to customer inquiries and resolve issues'),
-    (13, 'Event Registration Support', 'Assist patrons with event registrations'),
-    (13, 'Feedback Collection', 'Collect feedback from patrons and report to management'),
-    (13, 'Issue Resolution', 'Resolve customer issues and complaints'),
-    (13, 'Library Tours', 'Provide tours of the library to new patrons'),
-    (13, 'Membership Management', 'Manage library memberships and renewals'),
-    (13, 'Payment Processing', 'Process payments for library fines and fees'),
-    (13, 'Customer Relations', 'Maintain positive relationships with library patrons');
+    (121, 13), -- Front Desk Support
+    (122, 13), -- Telephone Support
+    (123, 13), -- Customer Inquiries
+    (124, 13), -- Event Registration Support
+    (125, 13), -- Feedback Collection
+    (126, 13), -- Issue Resolution
+    (127, 13), -- Library Tours
+    (128, 13), -- Membership Management
+    (129, 13), -- Payment Processing
+    (130, 13) -- Customer Relations
+;
 
 -- Public Relations Officer (position_id = 14)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (14, 'Press Releases', 'Prepare and distribute press releases for the library'),
-    (14, 'Media Relations', 'Build and maintain relationships with media outlets'),
-    (14, 'Social Media Management', 'Manage the librarys social media accounts'),
-    (14, 'Event Promotion', 'Promote library events TO the public and media'),
-    (14, 'Crisis Communication', 'Manage communication during crises OR emergencies'),
-    (14, 'Content Creation', 'Create content FOR library newsletters,blogs and other publications'),
-    (14, 'Public Speaking', 'Represent the library at public events and conferences'),
-    (14, 'Brand Management', 'Ensure the librarys brand is consistently represented'),
-    (14, 'Community Outreach', 'Engage with the community to promote the library services '),
-    (14, 'Annual Reports', 'Prepare the library annual report for public release');
+    (131, 14), -- Press Releases
+    (132, 14), -- Media Relations
+    (133, 14), -- Social Media Management
+    (134, 14), -- Event Promotion
+    (135, 14), -- Crisis Communication
+    (136, 14), -- Content Creation
+    (137, 14), -- Public Speaking
+    (138, 14), -- Brand Management
+    (139, 14), -- Community Outreach
+    (140, 14) -- Annual Reports
+;
 
 -- Facilities Manager (position_id = 15)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (15, 'Building Maintenance', 'Oversee the maintenance of library buildings and facilities'),
-    (15, 'Vendor Coordination', 'Coordinate with vendors for maintenance and repair services'),
-    (15, 'Safety Inspections', 'Conduct regular safety inspections of library facilities'),
-    (15, 'Budget Management', 'Manage the budget for facilities maintenance and repairs'),
-    (15, 'Space Planning', 'Plan and manage the use of library spaces'),
-    (15, 'Renovation Projects', 'Oversee library renovation projects'),
-    (15, 'Environmental Sustainability', 'Implement and manage sustainability initiatives'),
-    (15, 'Emergency Preparedness', 'Develop and implement emergency preparedness plans'),
-    (15, 'Facilities Staff Supervision', 'Supervise facilities maintenance staff'),
-    (15, 'Inventory Management', 'Manage inventory of maintenance supplies and equipment');
+    (141, 15), -- Building Maintenance
+    (142, 15), -- Vendor Coordination
+    (143, 15), -- Safety Inspections
+    (144, 15), -- Budget Management
+    (145, 15), -- Space Planning
+    (146, 15), -- Renovation Projects
+    (147, 15), -- Environmental Sustainability
+    (148, 15), -- Emergency Preparedness
+    (149, 15), -- Facilities Staff Supervision
+    (150, 15) -- Inventory Management
+;
 
 -- Maintenance Worker (position_id = 16)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (16, 'Routine Maintenance', 'Perform routine maintenance tasks around the library'),
-    (16, 'Repair Work', 'Perform minor repairs to library facilities and equipment'),
-    (16, 'Cleaning Duties', 'Keep the library clean and orderly'),
-    (16, 'Event Setup', 'Assist with setting up facilities for library events'),
-    (16, 'Waste Management', 'Manage waste disposal and recycling processes'),
-    (16, 'Equipment Maintenance', 'Maintain and repair library equipment'),
-    (16, 'Safety Checks', 'Perform safety checks on library facilities'),
-    (16, 'Landscaping', 'Maintain the landscaping around the library'),
-    (16, 'Winter Maintenance', 'Perform snow and ice removal during the winter months'),
-    (16, 'Inventory Management', 'Assist with managing maintenance inventory and supplies');
+    (151, 16), -- Routine Maintenance
+    (152, 16), -- Repair Work
+    (153, 16), -- Cleaning Duties
+    (154, 16), -- Event Setup
+    (155, 16), -- Waste Management
+    (156, 16), -- Equipment Maintenance
+    (157, 16), -- Safety Checks
+    (158, 16), -- Landscaping
+    (159, 16), -- Winter Maintenance
+    (160, 16) -- Inventory Management
+;
 
 -- Security Officer (position_id = 17)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (17, 'Patrol Duties', 'Patrol the library premises to ensure safety and security'),
-    (17, 'Incident Reporting', 'Report and document any incidents or security breaches'),
-    (17, 'Access Control', 'Control access to restricted areas within the library'),
-    (17, 'Security Systems Monitoring', 'Monitor and maintain security systems such as cameras and alarms'),
-    (17, 'Emergency Response', 'Respond to emergencies and coordinate with law enforcement if needed'),
-    (17, 'Visitor Assistance', 'Assist visitors with security-related inquiries or issues'),
-    (17, 'Crowd Control', 'Manage crowds during events or busy periods'),
-    (17, 'Training', 'Provide security training to library staff'),
-    (17, 'Key Management', 'Manage the distribution and control of library keys'),
-    (17, 'Safety Inspections', 'Conduct regular safety inspections and audits');
+    (161, 17), -- Patrol Duties
+    (162, 17), -- Incident Reporting
+    (163, 17), -- Access Control
+    (164, 17), -- Security Systems Monitoring
+    (165, 17), -- Emergency Response
+    (166, 17), -- Visitor Assistance
+    (167, 17), -- Crowd Control
+    (168, 17), -- Training
+    (169, 17), -- Key Management
+    (170, 17) -- Safety Inspections
+;
 
 -- Custodian (position_id = 18)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (18, 'Cleaning', 'Perform regular cleaning of library facilities including restrooms, offices, and public areas'),
-    (18, 'Trash Removal', 'Collect and dispose of trash and recycling'),
-    (18, 'Floor Care', 'Sweep, mop, and vacuum floors in the library'),
-    (18, 'Restroom Maintenance', 'Ensure restrooms are clean and well-stocked'),
-    (18, 'Window Cleaning', 'Clean windows and glass surfaces in the library'),
-    (18, 'Furniture Setup', 'Arrange and set up furniture for library events or reconfigurations'),
-    (18, 'Supplies Management', 'Manage cleaning supplies and re-order as needed'),
-    (18, 'Safety Checks', 'Perform routine safety checks on library facilities'),
-    (18, 'Light Maintenance', 'Perform light maintenance tasks such as changing bulbs and unclogging drains'),
-    (18, 'Snow and Ice Removal', 'Clear snow and ice from walkways during winter');
+    (171, 18), -- Cleaning
+    (172, 18), -- Trash Removal
+    (173, 18), -- Floor Care
+    (174, 18), -- Restroom Maintenance
+    (175, 18), -- Window Cleaning
+    (176, 18), -- Furniture Setup
+    (177, 18), -- Supplies Management
+    (178, 18), -- Safety Checks
+    (179, 18), -- Light Maintenance
+    (180, 18) -- Snow and Ice Removal
+;
 
 -- Instructor (position_id = 19)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (19, 'Lesson Planning', 'Plan and develop lessons for library educational programs'),
-    (19, 'Teaching', 'Conduct educational sessions and workshops in the library'),
-    (19, 'Student Assessment', 'Assess and evaluate student progress'),
-    (19, 'Curriculum Development', 'Develop and update curriculum for library programs'),
-    (19, 'Resource Preparation', 'Prepare and organize teaching materials and resources'),
-    (19, 'Mentoring', 'Provide mentoring and support to students'),
-    (19, 'Program Evaluation', 'Evaluate the effectiveness of educational programs'),
-    (19, 'Community Outreach', 'Engage with the community to promote educational programs'),
-    (19, 'Guest Lectures', 'Invite guest lecturers and coordinate special sessions'),
-    (19, 'Technology Integration', 'Integrate technology into educational programs');
+    (181, 19), -- Lesson Planning
+    (182, 19), -- Teaching
+    (183, 19), -- Student Assessment
+    (184, 19), -- Curriculum Development
+    (185, 19), -- Resource Preparation
+    (186, 19), -- Mentoring
+    (187, 19), -- Program Evaluation
+    (188, 19), -- Community Outreach
+    (189, 19), -- Guest Lectures
+    (190, 19) -- Technology Integration
+;
 
 -- Program Coordinator (position_id = 20)
 INSERT INTO
-    activities (fk_position_id, activity_name, activity_description)
+    rel_activities_positions (fk_activity_id, fk_position_id)
 VALUES
-    (20, 'Program Planning', 'Plan and coordinate library programs and events'),
-    (20, 'Volunteer Coordination', 'Recruit and manage volunteers for library programs'),
-    (20, 'Budget Management', 'Manage the budget for library programs'),
-    (20, 'Program Marketing', 'Promote library programs to the public'),
-    (20, 'Community Partnerships', 'Develop partnerships with community organizations'),
-    (20, 'Event Coordination', 'Coordinate logistics for library events and programs'),
-    (20, 'Program Evaluation', 'Evaluate the success and impact of library programs'),
-    (20, 'Grant Writing', 'Write grant proposals to secure funding for programs'),
-    (20, 'Report Writing', 'Prepare reports on program outcomes for library management'),
-    (20, 'Stakeholder Engagement', 'Engage with stakeholders to ensure program success');
+    (191, 20), -- Program Planning
+    (192, 20), -- Volunteer Coordination
+    (193, 20), -- Budget Management
+    (194, 20), -- Program Marketing
+    (195, 20), -- Community Partnerships
+    (196, 20), -- Event Coordination
+    (197, 20), -- Program Evaluation
+    (198, 20), -- Grant Writing
+    (199, 20), -- Report Writing
+    (200, 20) -- Stakeholder Engagement
+;
 
+-- -- Library Manager (position_id = 1)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (1, 'Strategic Planning', 'Develop long-term plans for library growth and development'),
+--     (1, 'Budget Management', 'Oversee the library budget and financial planning'),
+--     (1, 'Staff Supervision', 'Supervise library staff and manage HR activities'),
+--     (1, 'Policy Development', 'Develop and implement library policies'),
+--     (1, 'Community Engagement', 'Engage with the community to understand their needs and improve services'),
+--     (1, 'Resource Allocation', 'Allocate library resources effectively to meet objectives'),
+--     (1, 'Performance Evaluation', 'Evaluate the performance of library staff'),
+--     (1, 'Board Reporting', 'Report to the library board and stakeholders on library performance'),
+--     (1, 'Crisis Management', 'Handle crises and emergencies that may affect library operations'),
+--     (1, 'Facilities Planning', 'Plan and oversee the maintenance and development of library facilities');
+-- -- Assistant Library Manager (position_id = 2)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (2, 'Daily Operations', 'Oversee day-to-day operations of the library'),
+--     (2, 'Staff Scheduling', 'Create and manage staff schedules'),
+--     (2, 'Training Coordination', 'Coordinate and conduct training sessions for new staff'),
+--     (2, 'Inventory Management', 'Manage library inventory and supplies'),
+--     (2, 'Customer Service Management', 'Ensure high-quality customer service is delivered'),
+--     (2, 'Event Planning Support', 'Assist in planning and executing library events'),
+--     (2, 'Budget Assistance', 'Assist in budget preparation and monitoring'),
+--     (2, 'Policy Enforcement', 'Ensure compliance with library policies and procedures'),
+--     (2, 'Report Preparation', 'Prepare reports for library management'),
+--     (2, 'Facilities Maintenance Support', 'Support the maintenance of library facilities');
+-- -- Librarian (position_id = 3)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (3, 'Cataloging', 'Classify and organize library materials for easy retrieval'),
+--     (3, 'Reference Services', 'Assist patrons in finding information and using library resources'),
+--     (3, 'Collection Development', 'Select and acquire new materials for the library'),
+--     (3, 'Reader Advisory', 'Recommend books and other materials to patrons'),
+--     (3, 'Information Literacy Instruction', 'Teach patrons how to effectively use library resources'),
+--     (3, 'Digital Resources Management', 'Manage and maintain digital library resources'),
+--     (3, 'Library Programming', 'Develop and implement educational programs'),
+--     (3, 'Archival Work', 'Preserve and manage special collections and archives'),
+--     (3, 'Interlibrary Loan Coordination', 'Manage interlibrary loan requests and processes'),
+--     (3, 'Public Relations', 'Promote the library and its services to the public');
+-- -- Archivist (position_id = 4)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (4, 'Collection Preservation', 'Ensure the preservation and care of archived materials'),
+--     (4, 'Archival Cataloging', 'Organize and catalog archived collections'),
+--     (4, 'Digitization Projects', 'Oversee the digitization of archival materials'),
+--     (4, 'Research Assistance', 'Assist researchers in accessing archival materials'),
+--     (4, 'Acquisition of Archival Materials', 'Select and acquire materials for the archives'),
+--     (4, 'Exhibit Planning', 'Plan and organize exhibits showcasing archival materials'),
+--     (4, 'Public Outreach', 'Engage the public with archival collections through events and publications'),
+--     (4, 'Grant Writing', 'Apply for grants to fund archival projects'),
+--     (4, 'Collection Access Management', 'Manage access to restricted or sensitive archival materials'),
+--     (4, 'Policy Development for Archives', 'Develop policies for the management of archival collections');
+-- -- Systems Librarian (position_id = 5)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (5, 'Library Systems Management', 'Manage integrated library systems (ILS)'),
+--     (5, 'Technical Support', 'Provide technical support for library systems and staff'),
+--     (5, 'Software Updates', 'Ensure that all library software is up to date'),
+--     (5, 'System Security', 'Maintain security of library IT systems'),
+--     (5, 'Database Management', 'Manage and optimize library databases'),
+--     (5, 'Digital Collection Development', 'Develop and maintain digital collections'),
+--     (5, 'Website Maintenance', 'Maintain and update the library website'),
+--     (5, 'System Troubleshooting', 'Troubleshoot issues with library systems'),
+--     (5, 'Training Staff on Systems', 'Train library staff on how to use library systems effectively'),
+--     (5, 'Vendor Management', 'Coordinate with vendors for system upgrades and support');
+-- -- IT Support Specialist (position_id = 6)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (6, 'Technical Assistance', 'Provide technical support to library staff and patrons'),
+--     (6, 'Hardware Maintenance', 'Maintain and repair library hardware such as computers and printers'),
+--     (6, 'Network Management', 'Manage and troubleshoot library networks'),
+--     (6, 'Software Installation', 'Install and update software on library computers'),
+--     (6, 'Cybersecurity Monitoring', 'Monitor and protect against cybersecurity threats'),
+--     (6, 'Help Desk Management', 'Operate the IT help desk for library staff'),
+--     (6, 'Training Sessions', 'Conduct training sessions on IT tools and software'),
+--     (6, 'Inventory Management', 'Track and manage IT inventory including hardware and software licenses'),
+--     (6, 'Backup and Recovery', 'Manage data backup and recovery processes'),
+--     (6, 'IT Policy Development', 'Assist in developing IT policies for the library');
+-- -- Database Administrator (position_id = 7)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (7, 'Database Maintenance', 'Maintain and optimize the performance of library databases'),
+--     (7, 'Data Backup', 'Ensure regular backups of all library databases'),
+--     (7, 'Data Security', 'Implement security measures to protect library data'),
+--     (7, 'Data Recovery', 'Develop and execute data recovery plans'),
+--     (7, 'Database Design', 'Design and implement new databases as needed'),
+--     (7, 'User Management', 'Manage database access for library staff'),
+--     (7, 'Performance Tuning', 'Tune database performance for optimal efficiency'),
+--     (7, 'Data Migration', 'Manage data migration projects'),
+--     (7, 'Data Analysis', 'Provide data analysis and reporting to library management'),
+--     (7, 'Documentation', 'Maintain comprehensive documentation for all database systems');
+-- -- Web Developer (position_id = 8)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (8, 'Website Design', 'Design and implement the library website'),
+--     (8, 'Front-End Development', 'Develop and maintain the front-end of the library website'),
+--     (8, 'Back-End Development', 'Develop and maintain the back-end of the library website'),
+--     (8, 'Content Management', 'Manage and update website content'),
+--     (8, 'Website Security', 'Implement security measures to protect the library website'),
+--     (8, 'SEO Optimization', 'Optimize the website for search engines'),
+--     (8, 'User Experience Design', 'Ensure the website is user-friendly and accessible'),
+--     (8, 'Bug Fixing', 'Identify and fix bugs on the library website'),
+--     (8, 'API Development', 'Develop and maintain APIs for the library website'),
+--     (8, 'Website Analytics', 'Monitor and report on website performance');
+-- -- Event Coordinator (position_id = 9)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (9, 'Event Planning', 'Plan and organize library events and programs'),
+--     (9, 'Vendor Coordination', 'Coordinate with vendors for event supplies and services'),
+--     (9, 'Event Marketing', 'Promote library events to the public'),
+--     (9, 'Budget Management', 'Manage the budget for library events'),
+--     (9, 'Volunteer Coordination', 'Coordinate volunteers for events'),
+--     (9, 'Logistics Management', 'Manage the logistics of setting up and running events'),
+--     (9, 'Event Registration', 'Handle event registrations and attendee management'),
+--     (9, 'Post-Event Reporting', 'Prepare reports on event outcomes and attendance'),
+--     (9, 'Public Relations', 'Work with the PR team to ensure positive event coverage'),
+--     (9, 'Community Engagement', 'Engage with the community to identify event needs');
+-- -- Administrative Assistant (position_id = 10)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (10, 'Office Management', 'Manage the day-to-day operations of the library office'),
+--     (10, 'Record Keeping', 'Maintain accurate records of library activities and transactions'),
+--     (10, 'Scheduling', 'Schedule appointments and meetings for library staff'),
+--     (10, 'Correspondence', 'Handle correspondence for the library management'),
+--     (10, 'Supply Management', 'Manage office supplies and inventory'),
+--     (10, 'Data Entry', 'Enter and update data in library systems'),
+--     (10, 'Visitor Management', 'Manage visitors and direct them to appropriate staff'),
+--     (10, 'Report Preparation', 'Prepare reports for library management'),
+--     (10, 'Travel Arrangements', 'Make travel arrangements for library staff'),
+--     (10, 'Customer Service', 'Provide customer service at the library front desk');
+-- -- HR Manager (position_id = 11)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (11, 'Recruitment', 'Manage the recruitment process for library staff'),
+--     (11, 'Employee Relations', 'Manage employee relations and resolve conflicts'),
+--     (11, 'Payroll Management', 'Oversee payroll and benefits administration'),
+--     (11, 'Performance Management', 'Manage performance appraisals and reviews'),
+--     (11, 'Training and Development', 'Develop and implement training programs for staff'),
+--     (11, 'Policy Development', 'Develop HR policies and procedures'),
+--     (11, 'Compliance', 'Ensure compliance with labor laws and regulations'),
+--     (11, 'Employee Engagement', 'Plan and implement employee engagement initiatives'),
+--     (11, 'HR Reporting', 'Prepare HR reports for library management'),
+--     (11, 'Succession Planning', 'Develop and implement succession plans for key positions');
+-- -- Library Assistant (position_id = 12)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (12, 'Book Shelving', 'Shelve returned books and materials in the correct order'),
+--     (12, 'Circulation Desk Support', 'Assist at the circulation desk with check-ins and check-outs'),
+--     (12, 'Customer Assistance', 'Help patrons find books and use library resources'),
+--     (12, 'Material Processing', 'Process new books and materials for the collection'),
+--     (12, 'Library Program Support', 'Assist with library programs and events'),
+--     (12, 'Interlibrary Loan Support', 'Assist with interlibrary loan requests'),
+--     (12, 'Inventory Management Support', 'Assist with library inventory management'),
+--     (12, 'Library Maintenance', 'Help maintain the cleanliness and organization of the library'),
+--     (12, 'Data Entry', 'Assist with data entry tasks for library records'),
+--     (12, 'Customer Service', 'Provide customer service at the library front desk');
+-- -- Customer Service Representative (position_id = 13)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (13, 'Front Desk Support', 'Manage the front desk and greet patrons'),
+--     (13, 'Telephone Support', 'Handle incoming calls and direct them appropriately'),
+--     (13, 'Customer Inquiries', 'Respond to customer inquiries and resolve issues'),
+--     (13, 'Event Registration Support', 'Assist patrons with event registrations'),
+--     (13, 'Feedback Collection', 'Collect feedback from patrons and report to management'),
+--     (13, 'Issue Resolution', 'Resolve customer issues and complaints'),
+--     (13, 'Library Tours', 'Provide tours of the library to new patrons'),
+--     (13, 'Membership Management', 'Manage library memberships and renewals'),
+--     (13, 'Payment Processing', 'Process payments for library fines and fees'),
+--     (13, 'Customer Relations', 'Maintain positive relationships with library patrons');
+-- -- Public Relations Officer (position_id = 14)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (14, 'Press Releases', 'Prepare and distribute press releases for the library'),
+--     (14, 'Media Relations', 'Build and maintain relationships with media outlets'),
+--     (14, 'Social Media Management', 'Manage the librarys social media accounts'),
+--     (14, 'Event Promotion', 'Promote library events TO the public and media'),
+--     (14, 'Crisis Communication', 'Manage communication during crises OR emergencies'),
+--     (14, 'Content Creation', 'Create content FOR library newsletters,blogs and other publications'),
+--     (14, 'Public Speaking', 'Represent the library at public events and conferences'),
+--     (14, 'Brand Management', 'Ensure the librarys brand is consistently represented'),
+--     (14, 'Community Outreach', 'Engage with the community to promote the library services '),
+--     (14, 'Annual Reports', 'Prepare the library annual report for public release');
+-- -- Facilities Manager (position_id = 15)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (15, 'Building Maintenance', 'Oversee the maintenance of library buildings and facilities'),
+--     (15, 'Vendor Coordination', 'Coordinate with vendors for maintenance and repair services'),
+--     (15, 'Safety Inspections', 'Conduct regular safety inspections of library facilities'),
+--     (15, 'Budget Management', 'Manage the budget for facilities maintenance and repairs'),
+--     (15, 'Space Planning', 'Plan and manage the use of library spaces'),
+--     (15, 'Renovation Projects', 'Oversee library renovation projects'),
+--     (15, 'Environmental Sustainability', 'Implement and manage sustainability initiatives'),
+--     (15, 'Emergency Preparedness', 'Develop and implement emergency preparedness plans'),
+--     (15, 'Facilities Staff Supervision', 'Supervise facilities maintenance staff'),
+--     (15, 'Inventory Management', 'Manage inventory of maintenance supplies and equipment');
+-- -- Maintenance Worker (position_id = 16)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (16, 'Routine Maintenance', 'Perform routine maintenance tasks around the library'),
+--     (16, 'Repair Work', 'Perform minor repairs to library facilities and equipment'),
+--     (16, 'Cleaning Duties', 'Keep the library clean and orderly'),
+--     (16, 'Event Setup', 'Assist with setting up facilities for library events'),
+--     (16, 'Waste Management', 'Manage waste disposal and recycling processes'),
+--     (16, 'Equipment Maintenance', 'Maintain and repair library equipment'),
+--     (16, 'Safety Checks', 'Perform safety checks on library facilities'),
+--     (16, 'Landscaping', 'Maintain the landscaping around the library'),
+--     (16, 'Winter Maintenance', 'Perform snow and ice removal during the winter months'),
+--     (16, 'Inventory Management', 'Assist with managing maintenance inventory and supplies');
+-- -- Security Officer (position_id = 17)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (17, 'Patrol Duties', 'Patrol the library premises to ensure safety and security'),
+--     (17, 'Incident Reporting', 'Report and document any incidents or security breaches'),
+--     (17, 'Access Control', 'Control access to restricted areas within the library'),
+--     (17, 'Security Systems Monitoring', 'Monitor and maintain security systems such as cameras and alarms'),
+--     (17, 'Emergency Response', 'Respond to emergencies and coordinate with law enforcement if needed'),
+--     (17, 'Visitor Assistance', 'Assist visitors with security-related inquiries or issues'),
+--     (17, 'Crowd Control', 'Manage crowds during events or busy periods'),
+--     (17, 'Training', 'Provide security training to library staff'),
+--     (17, 'Key Management', 'Manage the distribution and control of library keys'),
+--     (17, 'Safety Inspections', 'Conduct regular safety inspections and audits');
+-- -- Custodian (position_id = 18)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (18, 'Cleaning', 'Perform regular cleaning of library facilities including restrooms, offices, and public areas'),
+--     (18, 'Trash Removal', 'Collect and dispose of trash and recycling'),
+--     (18, 'Floor Care', 'Sweep, mop, and vacuum floors in the library'),
+--     (18, 'Restroom Maintenance', 'Ensure restrooms are clean and well-stocked'),
+--     (18, 'Window Cleaning', 'Clean windows and glass surfaces in the library'),
+--     (18, 'Furniture Setup', 'Arrange and set up furniture for library events or reconfigurations'),
+--     (18, 'Supplies Management', 'Manage cleaning supplies and re-order as needed'),
+--     (18, 'Safety Checks', 'Perform routine safety checks on library facilities'),
+--     (18, 'Light Maintenance', 'Perform light maintenance tasks such as changing bulbs and unclogging drains'),
+--     (18, 'Snow and Ice Removal', 'Clear snow and ice from walkways during winter');
+-- -- Instructor (position_id = 19)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (19, 'Lesson Planning', 'Plan and develop lessons for library educational programs'),
+--     (19, 'Teaching', 'Conduct educational sessions and workshops in the library'),
+--     (19, 'Student Assessment', 'Assess and evaluate student progress'),
+--     (19, 'Curriculum Development', 'Develop and update curriculum for library programs'),
+--     (19, 'Resource Preparation', 'Prepare and organize teaching materials and resources'),
+--     (19, 'Mentoring', 'Provide mentoring and support to students'),
+--     (19, 'Program Evaluation', 'Evaluate the effectiveness of educational programs'),
+--     (19, 'Community Outreach', 'Engage with the community to promote educational programs'),
+--     (19, 'Guest Lectures', 'Invite guest lecturers and coordinate special sessions'),
+--     (19, 'Technology Integration', 'Integrate technology into educational programs');
+-- -- Program Coordinator (position_id = 20)
+-- INSERT INTO
+--     activities (fk_position_id, activity_name, activity_description)
+-- VALUES
+--     (20, 'Program Planning', 'Plan and coordinate library programs and events'),
+--     (20, 'Volunteer Coordination', 'Recruit and manage volunteers for library programs'),
+--     (20, 'Budget Management', 'Manage the budget for library programs'),
+--     (20, 'Program Marketing', 'Promote library programs to the public'),
+--     (20, 'Community Partnerships', 'Develop partnerships with community organizations'),
+--     (20, 'Event Coordination', 'Coordinate logistics for library events and programs'),
+--     (20, 'Program Evaluation', 'Evaluate the success and impact of library programs'),
+--     (20, 'Grant Writing', 'Write grant proposals to secure funding for programs'),
+--     (20, 'Report Writing', 'Prepare reports on program outcomes for library management'),
+--     (20, 'Stakeholder Engagement', 'Engage with stakeholders to ensure program success');
 -- Assigning additional cross-functional activities to employees to reflect broader skillsets beyond their primary roles. 
 -- These tasks fall outside their typical job responsibilities but are still relevant to the library's operations.
 -- Heinrich Heine University Library
