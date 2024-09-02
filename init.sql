@@ -131,11 +131,19 @@ CREATE TABLE IF NOT EXISTS activities (
 );
 
 -- TODO: Create rel_activities_table and update the related inserts
+CREATE TABLE IF NOT EXISTS rel_activities_positions (
+	fk_activity_id INT NOT NULL,
+	fk_position_id INT NOT NULL,
+	FOREIGN KEY (fk_activity_id) REFERENCES activities (activity_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (fk_position_id) REFERENCES positions (position_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	PRIMARY KEY (fk_activity_id, fk_position_id)
+);
+
 CREATE TABLE IF NOT EXISTS rel_employee_activites (
 	fk_employee_id INT NOT NULL,
 	fk_activity_id INT NOT NULL,
 	FOREIGN KEY (fk_employee_id) REFERENCES employees (employee_id) ON UPDATE CASCADE ON DELETE CASCADE,
-	FOREIGN KEY (fk_activity_id) REFERENCES activities (activity_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (fk_activity_id) REFERENCES activities (activity_id) ON UPDATE CASCADE ON DELETE RESTRICT,
 	PRIMARY KEY (fk_employee_id, fk_activity_id)
 );
 
