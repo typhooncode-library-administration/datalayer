@@ -93,6 +93,13 @@ CREATE TABLE IF NOT EXISTS positions (
 	CONSTRAINT unique_positions UNIQUE (position_name)
 );
 
+CREATE TABLE IF NOT EXISTS departments (
+	department_id SERIAL PRIMARY KEY,
+	department_name VARCHAR(100),
+	department_description TEXT,
+	CONSTRAINT unique_departments UNIQUE (department_name)
+);
+
 CREATE TYPE gender_type AS ENUM('male', 'female', 'non-binary', 'diverse', 'prefer_not_to_say');
 
 CREATE TABLE IF NOT EXISTS employees (
@@ -100,6 +107,7 @@ CREATE TABLE IF NOT EXISTS employees (
 	fk_library_id INT NOT NULL,
 	fk_position_id INT NOT NULL,
 	fk_supervisor_id INT,
+	fk_department_id INT NOT NULL,
 	gender gender_type DEFAULT 'prefer_not_to_say',
 	first_name VARCHAR(50) NOT NULL,
 	middle_name VARCHAR(50),
@@ -114,7 +122,8 @@ CREATE TABLE IF NOT EXISTS employees (
 	salary DECIMAL(10, 2) NOT NULL,
 	FOREIGN KEY (fk_library_id) REFERENCES libraries (library_id) ON UPDATE CASCADE ON DELETE RESTRICT,
 	FOREIGN KEY (fk_position_id) REFERENCES positions (position_id) ON UPDATE CASCADE ON DELETE RESTRICT,
-	FOREIGN KEY (fk_supervisor_id) REFERENCES employees (employee_id) ON UPDATE CASCADE ON DELETE RESTRICT
+	FOREIGN KEY (fk_supervisor_id) REFERENCES employees (employee_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	FOREIGN KEY (fk_department_id) REFERENCES departments (department_id) ON UPDATE CASCADE ON DELETE RESTRICT
 	/* sql-formatter-disable */
 	--CONSTRAINT check_salary_within_range CHECK (
 	--salary >= (SELECT min_salary FROM positions WHERE position_id = fk_position_id) AND 
@@ -125,18 +134,11 @@ CREATE TABLE IF NOT EXISTS employees (
 
 CREATE TABLE IF NOT EXISTS activities (
 	activity_id SERIAL PRIMARY KEY,
+	fk_position_id INT NOT NULL,
 	activity_name VARCHAR(100),
 	activity_description TEXT,
-	CONSTRAINT unique_activities UNIQUE (activity_name)
-);
-
--- TODO: Create rel_activities_table and update the related inserts
-CREATE TABLE IF NOT EXISTS rel_activities_positions (
-	fk_activity_id INT NOT NULL,
-	fk_position_id INT NOT NULL,
-	FOREIGN KEY (fk_activity_id) REFERENCES activities (activity_id) ON UPDATE CASCADE ON DELETE RESTRICT,
 	FOREIGN KEY (fk_position_id) REFERENCES positions (position_id) ON UPDATE CASCADE ON DELETE RESTRICT,
-	PRIMARY KEY (fk_activity_id, fk_position_id)
+	CONSTRAINT unique_activities UNIQUE (activity_name, fk_position_id)
 );
 
 CREATE TABLE IF NOT EXISTS rel_employee_activites (
